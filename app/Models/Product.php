@@ -45,4 +45,15 @@ class Product extends Model
         $product->save();
         return $product;
     }
+
+
+    public function otherImages()
+    {
+        return $this->hasMany(ProductOtherImage::class);
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

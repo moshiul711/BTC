@@ -12,13 +12,14 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public $product, $categories,$subCategories,$brands,$units;
+    public $product,$products,$categories,$subCategories,$brands,$units;
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $this->products = Product::all();
+        return view('admin.product.index',['products'=>$this->products]);
     }
 
     public function productDetail()
@@ -54,6 +55,7 @@ class ProductController extends Controller
     {
         $this->product = Product::storeProduct($request);
         ProductOtherImage::storeOtherImages($request->file('other_image'),$this->product->id);
+        return back()->with('message','Product Uploaded Successfully...');
     }
 
     /**
