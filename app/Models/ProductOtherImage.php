@@ -9,17 +9,17 @@ use function Symfony\Component\String\s;
 class ProductOtherImage extends Model
 {
     use HasFactory;
-    private static $otherImage,$imageUrl,$image,$imageName,$imageExt,$imageFullName,$imagePath;
+    private static $productOtherImage,$imageUrl,$image,$imageName,$imageExt,$imageFullName,$imagePath;
 
     public static function storeOtherImages($otherImages,$id)
     {
         foreach ($otherImages as $otherImage)
         {
             self::$imageUrl = self::getImageUrl($otherImage);
-            self::$otherImage = new ProductOtherImage();
-            self::$otherImage->product_id = $id;
-            self::$otherImage->image = self::$imageUrl;
-            return self::$otherImage->save();
+            self::$productOtherImage = new ProductOtherImage();
+            self::$productOtherImage->product_id = $id;
+            self::$productOtherImage->image = self::$imageUrl;
+            self::$productOtherImage->save();
         }
     }
 
