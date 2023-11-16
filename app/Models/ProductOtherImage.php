@@ -9,7 +9,7 @@ use function Symfony\Component\String\s;
 class ProductOtherImage extends Model
 {
     use HasFactory;
-    private static $productOtherImage,$imageUrl,$image,$imageName,$imageExt,$imageFullName,$imagePath;
+    private static $productOtherImage,$productOtherImages,$imageUrl,$image,$imageName,$imageExt,$imageFullName,$imagePath;
 
     public static function storeOtherImages($otherImages,$id)
     {
@@ -30,5 +30,18 @@ class ProductOtherImage extends Model
         $otherImage->move(self::$imagePath,self::$imageFullName);
         self::$imageUrl = self::$imagePath.self::$imageFullName;
         return self::$imageUrl;
+    }
+
+    public static function deleteOtherImages($id)
+    {
+        self::$productOtherImages = ProductOtherImage::where('product_is',$id)->get();
+        foreach (self::$productOtherImages as $productOtherImage)
+        {
+            if (file_exists($productOtherImage->image))
+            {
+                unlink($productOtherImage->image);
+            }
+            $productOtherImage->delete();
+        }
     }
 }

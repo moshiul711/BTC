@@ -47,12 +47,44 @@
                                     <td>{{ $product->sales_count }}</td>
 
                                     <td>
-                                        <a href="{{ route('product.edit',$product->id) }}" class="btn btn-info" title="Product Edit">
+                                        <a href="{{ route('product.edit',$product->id) }}" class="btn btn-sm btn-info" title="Product Edit">
                                             <i class="fa fa-edit"></i>
                                         </a>
-                                        <a href="{{ route('product.destroy',$product->id) }}" onclick="return confirm('Are you sure to delete this?')" class="btn btn-danger" title="Category Delete">
-                                            <i class="fa fa-trash"></i>
-                                        </a>
+
+                                        {{--<form action="{{route('product.destroy',$product->id)}}" id="deleteForm{{$product->id}}" method="POST">--}}
+                                            {{--@csrf--}}
+                                            {{--@method('DELETE')--}}
+                                            {{--<button type="submit" data-id="{{$product->id}}"  class="btn btn-danger btn-sm delete-btn">--}}
+                                                {{--<i class="fa fa-trash"></i>--}}
+                                            {{--</button>--}}
+                                        {{--</form>--}}
+
+
+
+                                        <button type="button"  class="btn btn-sm btn-danger delete-btn" value="{{ $product->id }}" ><i class="fas fa fa-trash"></i></button>
+                                        {{--<div class="modal  fade" id="productDelete" tabindex="-1" role="dialog">--}}
+                                            {{--<div class="modal-dialog modal-sm" role="document">--}}
+                                                {{--<div class="modal-content">--}}
+                                                    {{--<div class="modal-header">--}}
+                                                        {{--<h5 class="modal-title">Product Delete</h5>--}}
+                                                        {{--<button  class="btn-close" data-bs-dismiss="modal" aria-label="Close">--}}
+                                                            {{--<span aria-hidden="true">×</span>--}}
+                                                        {{--</button>--}}
+                                                    {{--</div>--}}
+                                                    {{--<div class="modal-body">--}}
+                                                        {{--<p>Are You sure to delete this product?</p>--}}
+                                                    {{--</div>--}}
+                                                    {{--<div class="modal-footer">--}}
+                                                        {{--<button  class="btn btn-success" data-bs-dismiss="modal">Close</button>--}}
+                                                        {{--<form action="{{ route('product.destroy',$product->id) }}" method="post" id="deleteForm{{ $product->id }}">--}}
+                                                            {{--@csrf--}}
+                                                            {{--@method('DELETE')--}}
+                                                            {{--<button type="submit" data-id="{{ $product->id }}" class="btn btn-danger delete-btn">Delete</button>--}}
+                                                        {{--</form>--}}
+                                                    {{--</div>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
                                     </td>
                                 </tr>
                             @endforeach

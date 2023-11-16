@@ -1195,11 +1195,22 @@
                 $.each(response, function (key, value) {
                     option += '<option value="'+value.id+'"> '+value.name+' </option>';
                 });
-                $('#subCategoryId').empty();
+                $('#subCategoryId').emptydocument();
                 $('#subCategoryId').append(option);
             }
         });
     }
+
+    $(document).ready(function(){
+        $(document).on('click', '.delete-btn', function () {
+            var id = $(this).val();
+            alert(id);
+
+            // var id = $(this).attr('data-id');
+            // $('#deleteForm'+id).submit();
+        })
+    })
+
 </script>
 </body>
 

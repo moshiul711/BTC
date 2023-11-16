@@ -8,6 +8,7 @@ use App\Models\Product;
 use App\Models\ProductOtherImage;
 use App\Models\SubCategory;
 use App\Models\Unit;
+use function Brick\Math\exactlyDividedBy;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -87,6 +88,10 @@ class ProductController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        echo $id;
+        exit();
+        Product::deleteProduct($id);
+        ProductOtherImage::deleteOtherImages($id);
+        return redirect('/product')->with('message', 'Product info delete successfully.');
     }
 }
