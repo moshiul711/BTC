@@ -23,10 +23,6 @@ class ProductController extends Controller
         return view('admin.product.index',['products'=>$this->products]);
     }
 
-    public function productDetail()
-    {
-        return view('website.product.detail');
-    }
     /**
      * Show the form for creating a new resource.
      */
@@ -64,7 +60,8 @@ class ProductController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $this->product = Product::find($id);
+        return view('admin.product.detail',['product'=>$this->product]);
     }
 
     /**
