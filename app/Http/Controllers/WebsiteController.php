@@ -15,6 +15,11 @@ class WebsiteController extends Controller
         return view('website.home.index',['categories'=>$this->categories]);
     }
 
+    public function productShow()
+    {
+        return view('website.product.show');
+    }
+
     public function contact()
     {
         return view('website.home.contact');

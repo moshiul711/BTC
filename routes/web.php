@@ -27,6 +27,7 @@ Route::get('/refer-earn',[WebsiteController::class,'referEarn'])->name('refer-ea
 Route::get('/faq',[WebsiteController::class,'faq'])->name('faq');
 
 Route::get('/product-details',[ProductController::class,'productDetail'])->name('product-details');
+Route::get('/product-show',[WebsiteController::class,'productShow'])->name('product.see');
 Route::get('/cart-show',[CartController::class,'cartShow'])->name('cart.show');
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {

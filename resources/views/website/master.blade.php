@@ -14,7 +14,7 @@
     <meta name="keywords" content="laravel admin template, bootstrap admin template, admin dashboard template, admin dashboard, admin template, admin, bootstrap 5, laravel admin, laravel admin dashboard template, laravel ui template, laravel admin panel, admin panel, laravel admin dashboard, laravel template, admin ui dashboard">
 
     <!-- TITLE -->
-    <title>Bangladesh Tech Company</title>
+    <title>Bangladesh Technology Company</title>
 
     <!-- FAVICON -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/') }}website/assets/images/brand/favicon.ico" />
@@ -323,7 +323,7 @@
                             <ul class="slide-menu">
                                 @foreach($category->subCategories as $subCategory)
                                     <li>
-                                        <a href="background.html" class="slide-item">{{ $subCategory->name }}</a>
+                                        <a href="{{ route('product.see') }}" class="slide-item">{{ $subCategory->name }}</a>
                                     </li>
                                 @endforeach
                             </ul>
@@ -606,7 +606,7 @@
                                     <footer class="main-footer ps-3 pe-3">
                                         <div class="row">
                                             <div class="col-xl-12 col-lg-12 col-md-12 footer1 text-center">
-                                                Copyright ©2023. All Rights Reserved By<a href="{{ route('home') }}"> Bangladesh Tech Company</a>
+                                                Copyright ©2023. All Rights Reserved By<a href="{{ route('home') }}"> Bangladesh Technology Company</a>
                                             </div>
 
                                         </div>

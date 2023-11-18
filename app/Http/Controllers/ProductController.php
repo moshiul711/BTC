@@ -23,6 +23,13 @@ class ProductController extends Controller
         return view('admin.product.index',['products'=>$this->products]);
     }
 
+    public function productDetail()
+    {
+        $this->products = Product::all();
+        return view('website.product.detail',['products'=>$this->products]);
+    }
+
+
     /**
      * Show the form for creating a new resource.
      */
