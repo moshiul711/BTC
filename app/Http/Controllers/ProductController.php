@@ -88,8 +88,6 @@ class ProductController extends Controller
      */
     public function destroy(string $id)
     {
-        echo $id;
-        exit();
         Product::deleteProduct($id);
         ProductOtherImage::deleteOtherImages($id);
         return redirect('/product')->with('message', 'Product info delete successfully.');

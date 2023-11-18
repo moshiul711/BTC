@@ -1201,14 +1201,14 @@
         });
     }
 
-    $(document).ready(function(){
-        $(document).on('click', '.delete-btn', function () {
-            var id = $(this).val();
-            alert(id);
-
-            // var id = $(this).attr('data-id');
-            // $('#deleteForm'+id).submit();
-        })
+    $(document).on('click', '.delete-btn', function () {
+        var check = confirm("Are you sure to delete this?");
+        if(check)
+        {
+            var id = $(this).attr('data-id');
+            $('#deleteForm'+id).submit();
+        }
+        return false;
     })
 
 </script>

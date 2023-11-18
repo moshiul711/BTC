@@ -34,7 +34,7 @@ class ProductOtherImage extends Model
 
     public static function deleteOtherImages($id)
     {
-        self::$productOtherImages = ProductOtherImage::where('product_is',$id)->get();
+        self::$productOtherImages = ProductOtherImage::where('product_id',$id)->get();
         foreach (self::$productOtherImages as $productOtherImage)
         {
             if (file_exists($productOtherImage->image))
