@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public $product,$products,$categories,$subCategories,$brands,$units;
+    public $product,$products,$categories,$subCategories,$brands,$units,$otherImages;
     /**
      * Display a listing of the resource.
      */
@@ -69,7 +69,21 @@ class ProductController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $this->product = Product::find($id);
+        $this->otherImages = ProductOtherImage::where('product_id',$this->product->id)->get();
+        $this->categories = Category::all();
+        $this->subCategories = SubCategory::all();
+        $this->brands = Brand::all();
+        $this->units = Unit::all();
+        return view('admin.product.edit',[
+            'product'=>$this->product,
+            'otherImages'=>$this->otherImages,
+            'categories' => $this->categories,
+            'subCategories' => $this->subCategories,
+            'brands' => $this->brands,
+            'units' => $this->units
+        ]);
+
     }
 
     /**
@@ -77,7 +91,12 @@ class ProductController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $this->product = Product::updateProduct($request,$id);
+        if ($request->file('other_image'))
+        {
+            ProductOtherImage::updateOtherImages($request->file('other_image'),$this->product->id);
+        }
+        return redirect('/product')->with('message', 'Product info updated successfully.');
     }
 
     /**

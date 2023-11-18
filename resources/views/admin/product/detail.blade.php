@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('main-content')
-    <div class="container-fluid">
+    <div class="container-fluid py-5">
         {{--<h1 class="py-5 text-center">Product Detail</h1>--}}
         <div class="row">
             <div class="col-md-12">
@@ -56,16 +56,14 @@
                                             <td>{{$product->stock}}</td>
                                         </tr>
                                         <tr>
-                                            <th>Product Short Description</th>
-                                            <td>{{$product->short_description}}</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Product Long Description</th>
-                                            <td>{!! $product->long_description !!}</td>
-                                        </tr>
-                                        <tr>
                                             <th>Product Status</th>
-                                            <td>{{$product->status}}</td>
+                                            <td>
+                                                @if($product->status==1)
+                                                    <button class="btn btn-success btn-sm">Active</button>
+                                                @else
+                                                    <button class="btn btn-danger btn-sm">InActive</button>
+                                                @endif
+                                            </td>
                                         </tr>
                                         <tr>
                                             <th>Product Sales Count</th>
@@ -74,6 +72,14 @@
                                         <tr>
                                             <th>Product Total View</th>
                                             <td>{{$product->hit_count}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Product Short Description</th>
+                                            <td>{{$product->short_description}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Product Long Description</th>
+                                            <td>{!! $product->long_description !!}</td>
                                         </tr>
 
                                     </table>

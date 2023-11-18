@@ -46,6 +46,25 @@ class Product extends Model
         return $product;
     }
 
+
+    public static function updateProduct($request,$id)
+    {
+        self::$product = Product::find($id);
+        if ($request->file('image'))
+        {
+            if (file_exists(self::$product->image))
+            {
+                unlink(self::$product->image);
+            }
+            self::$imageUrl = self::uploadProductImage($request);
+        }
+        else
+        {
+            self::$imageUrl = self::$product->image;
+        }
+        return self::saveProductInfo(self::$product,$request,self::$imageUrl);
+    }
+
     public static function deleteProduct($id)
     {
         self::$product = Product::find($id);

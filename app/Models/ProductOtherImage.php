@@ -32,6 +32,12 @@ class ProductOtherImage extends Model
         return self::$imageUrl;
     }
 
+    public static function updateOtherImages($otherImages,$id)
+    {
+        self::deleteOtherImages($id);
+        self::storeOtherImages($otherImages,$id);
+    }
+
     public static function deleteOtherImages($id)
     {
         self::$productOtherImages = ProductOtherImage::where('product_id',$id)->get();

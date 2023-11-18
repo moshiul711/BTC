@@ -403,7 +403,7 @@
                 <div class="d-flex">
                     <a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-bs-toggle="sidebar" href="#"></a>
                     <!-- sidebar-toggle-->
-                    <a class="logo-horizontal " href="index.html">
+                    <a class="logo-horizontal " href="{{ route('dashboard') }}">
                         <img src="https://www.bangladeshtechcom.com/assets/uploads/logos/header_logo-BTC.png" class="header-brand-img desktop-logo" style="height: 40px;" alt="logo">
                         <img src="https://www.bangladeshtechcom.com/assets/uploads/logos/header_logo-BTC.png" class="header-brand-img light-logo1"
                              style="height: 40px;" alt="logo">
@@ -1190,12 +1190,13 @@
             data: {id: categoryId},
             DataType: "jSON",
             success: function (response) {
+
                 var option= '';
                 option += '<option value=""> -- Select Sub Product Category -- </option>';
                 $.each(response, function (key, value) {
                     option += '<option value="'+value.id+'"> '+value.name+' </option>';
                 });
-                $('#subCategoryId').emptydocument();
+                $('#subCategoryId').empty();
                 $('#subCategoryId').append(option);
             }
         });

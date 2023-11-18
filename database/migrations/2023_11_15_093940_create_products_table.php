@@ -22,7 +22,7 @@ return new class extends Migration
             $table->integer('offer_price');
             $table->integer('regular_price');
             $table->integer('stock');
-            $table->string('short_description');
+            $table->text('short_description');
             $table->longText('long_description');
             $table->integer('sales_count')->default(0);
             $table->integer('hit_count')->default(0);

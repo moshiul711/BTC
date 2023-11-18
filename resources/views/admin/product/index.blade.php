@@ -47,7 +47,7 @@
                                     <td>{{ $product->sales_count }}</td>
 
                                     <td>
-                                        <a href="{{route('product.show',$product->id)}}" class="btn btn-info btn-sm">
+                                        <a href="{{route('product.show',$product->id)}}" target="_blank" class="btn btn-info btn-sm">
                                             <i class="fa fa-eye"></i>
                                         </a>
                                         <a href="{{route('product.edit',$product->id)}}" class="btn btn-success btn-sm">
