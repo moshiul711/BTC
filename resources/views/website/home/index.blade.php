@@ -80,6 +80,7 @@
 
 @section('main-content')
     @foreach($categories as $category)
+        @if(count($category->products) > 0)
     <div class="page-header">
         <div>
             <h1 class="page-title">{{ $category->name }}</h1>
@@ -95,7 +96,7 @@
                         <div class="product-grid6 card-body">
                             <div class="product-image6">
                                 <a href="{{ route('product-details') }}" class="img-container" target="_blank">
-                                    <img class="img-fluid" src="{{ asset($product->image) }}" style="height: 150px; width: 200px" alt="img">
+                                    <img class="img-fluid" src="{{ asset($product->image) }}" style="height: 150px" alt="img">
                                     <div class="top-left" style="position: absolute;top: 8px;left: 16px; color:red">BTC</div>
                                 </a>
                                 <div class="icon-container">
@@ -115,7 +116,7 @@
                             </div>
                             <div class="product-content w-100 p-3">
                                 <div class="mb-2">
-                                    <h4 class="mb-1 text-normal"><a href="{{ route('product-details') }}" target="_blank">{{ substr($product->name, 0,20) }}</a> </h4>
+                                    <h4 class="mb-1 text-normal"><a href="{{ route('product-details') }}" target="_blank" title="{{ $product->name }}">{{ substr($product->name, 0,25) }}  </a> </h4>
                                     <p class="mb-0 text-muted text-start">{{ $product->brand->name }}</p>
                                 </div>
                                 <p class="mb-2 text-warning">
@@ -152,6 +153,7 @@
             </div>
         </div><!-- COL-END -->
     </div>
+        @endif
     @endforeach
 
 @endsection
