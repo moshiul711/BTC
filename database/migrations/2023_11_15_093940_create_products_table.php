@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('code');
             $table->integer('offer_price');
             $table->integer('regular_price');
+            $table->integer('warranty');
+            $table->integer('replacement');
             $table->integer('stock');
             $table->text('short_description');
             $table->longText('long_description');
