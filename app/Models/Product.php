@@ -36,9 +36,12 @@ class Product extends Model
         $product->unit_id = $request->unit_id;
         $product->name = $request->name;
         $product->code = $request->code;
+        $product->replacement = $request->replacement;
+        $product->service = $request->service;
         $product->regular_price = $request->regular_price;
         $product->offer_price = $request->offer_price;
         $product->stock = $request->stock;
+        $product->status = $request->status;
         $product->short_description = $request->short_description;
         $product->long_description = $request->long_description;
         $product->image = $imageUrl;

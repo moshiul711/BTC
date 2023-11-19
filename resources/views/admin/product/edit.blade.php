@@ -75,6 +75,33 @@
                                 <input class="form-control" value="{{ $product->name }}" id="firstName" name="name" placeholder="Product Name" type="text">
                             </div>
                         </div>
+                        <div class="row mb-4">
+                            <label for="firstName" class="col-md-3 form-label">Replacement Warranty</label>
+                            <div class="col-md-9">
+                                <select name="replacement" id="" class="form-control">
+                                    <option value="">----Product Warranty Period----</option>
+                                    <option {{ $product->replacement == '6 Month' ?'selected':'' }} value="6 Month">6 Month</option>
+                                    <option {{ $product->replacement == '1 Year' ?'selected':'' }} value="1 Year">1 Year</option>
+                                    <option {{ $product->replacement == '1.5 Year' ?'selected':'' }} value="1.5 Year">1.5 Year</option>
+                                    <option {{ $product->replacement == '2 Year' ?'selected':'' }} value="2 Year">2 Year</option>
+                                    <option {{ $product->replacement == 'Warranty Not Available' ?'selected':'' }} value="Warranty Not Available">Warranty Not Available</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4">
+                            <label for="firstName" class="col-md-3 form-label">Service Warranty</label>
+                            <div class="col-md-9">
+                                <select name="service" id="" class="form-control">
+                                    <option value="">----Product Service Period----</option>
+                                    <option {{ $product->service == '6 Month' ?'selected':'' }} value="6 Month">6 Month</option>
+                                    <option {{ $product->service == '1 Year' ?'selected':'' }} value="1 Year">1 Year</option>
+                                    <option {{ $product->service == '1.5 Year' ?'selected':'' }} value="1.5 Year">1.5 Year</option>
+                                    <option {{ $product->service == '2 Year' ?'selected':'' }} value="2 Year">2 Year</option>
+                                    <option {{ $product->service == 'Warranty Not Available' ?'selected':'' }} value="Warranty Not Available">Warranty Not Available</option>
+                                </select>
+                            </div>
+                        </div>
 
                         <div class="row mb-4">
                             <label for="firstName" class="col-md-3 form-label">Product Status</label>

@@ -29,6 +29,7 @@
                                 <th class="wd-15p border-bottom-0">Offer</th>
                                 <th class="wd-15p border-bottom-0">Regular</th>
                                 <th class="wd-20p border-bottom-0">Stock</th>
+                                <th class="wd-20p border-bottom-0">Status</th>
                                 <th class="wd-20p border-bottom-0">Sales</th>
                                 <th class="wd-25p border-bottom-0">Action</th>
                             </tr>
@@ -44,6 +45,14 @@
                                     <td>{{ $product->offer_price }}</td>
                                     <td>{{ $product->regular_price }}</td>
                                     <td>{{ $product->stock }}</td>
+                                    <td>
+                                        @if($product->status == 1)
+                                            <button class="btn btn-sm btn-success">Active</button>
+                                        @else
+                                            <button class="btn btn-sm btn-danger">Disable</button>
+                                        @endif
+                                    </td>
+
                                     <td>{{ $product->sales_count }}</td>
 
                                     <td>

@@ -80,6 +80,34 @@
                                 <input class="form-control" id="" name="code" value="{{ uniqid() }}" placeholder="Product Code" type="text">
                             </div>
                         </div>
+
+                        <div class="row mb-4">
+                            <label for="firstName" class="col-md-3 form-label">Replacement Warranty</label>
+                            <div class="col-md-9">
+                                <select name="replacement" id="" class="form-control">
+                                    <option value="">----Product Warranty Period----</option>
+                                    <option value="6 Month">6 Month</option>
+                                    <option value="1 Year">1 Year</option>
+                                    <option value="1.5 Year">1.5 Year</option>
+                                    <option value="2 Year">2 Year</option>
+                                    <option value="Warranty Not Available">Warranty Not Available</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4">
+                            <label for="firstName" class="col-md-3 form-label">Service Warranty</label>
+                            <div class="col-md-9">
+                                <select name="service" id="" class="form-control">
+                                    <option value="">----Product Service Period----</option>
+                                    <option value="6 Month">6 Month</option>
+                                    <option value="1 Year">1 Year</option>
+                                    <option value="1.5 Year">1.5 Year</option>
+                                    <option value="2 Year">2 Year</option>
+                                    <option value="Warranty Not Available">Warranty Not Available</option>
+                                </select>
+                            </div>
+                        </div>
                         <div class="row mb-4">
                             <label  class="col-md-3 form-label">Product Price</label>
                             <div class="col-md-9">
@@ -95,6 +123,18 @@
                                 <input class="form-control" id="" name="stock" placeholder="Stock Amount" type="number">
                             </div>
                         </div>
+
+                        <div class="row mb-4">
+                            <label for="firstName" class="col-md-3 form-label">Product Status</label>
+                            <div class="col-md-9">
+                                <select name="status" class="form-control">
+                                    <option> -- Select Product Status -- </option>
+                                    <option value="1">Active</option>
+                                    <option value="0">Disable</option>
+                                </select>
+                            </div>
+                        </div>
+
                         <div class="row mb-4">
                             <label for="lastName" class="col-md-3 form-label">Short Description</label>
                             <div class="col-md-9">
