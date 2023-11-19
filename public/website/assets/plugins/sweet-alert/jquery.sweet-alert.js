@@ -85,9 +85,9 @@ $(function(e) {
 	$('#swal-timer').click(function () {
 		$('body').removeClass('timer-alert');
 		swal({
-			title: 'Auto close alert!',
-			text: 'I will close in 1 seconds.',
-			timer: 1000
+			title: 'Sorry!',
+			text: 'This Product is Out of Stock.',
+			timer: 3000
 		})?.then(
 			function () {
 			},

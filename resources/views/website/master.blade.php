@@ -661,6 +661,12 @@
 <!-- SWITCHER JS -->
 <script src="{{ asset('/') }}website/assets/switcher/js/switcher.js"></script>
 
+
+<script src="{{ asset('/') }}website/assets/plugins/sweet-alert/sweetalert.min.js"></script>
+<script src="{{ asset('/') }}website/assets/plugins/sweet-alert/jquery.sweet-alert.js"></script>
+
+
+
 </body>
 
 
