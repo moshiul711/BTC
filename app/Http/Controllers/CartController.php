@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
-    public function cartShow()
+    private $product;
+    public function cartAdd($id)
     {
-        return view('website.cart.show');
+        return $this->product = Product::find($id);
     }
 }

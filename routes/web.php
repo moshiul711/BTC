@@ -26,9 +26,15 @@ Route::get('/contact-us',[WebsiteController::class,'contact'])->name('contact-us
 Route::get('/refer-earn',[WebsiteController::class,'referEarn'])->name('refer-earn');
 Route::get('/faq',[WebsiteController::class,'faq'])->name('faq');
 
-Route::get('/product-details',[ProductController::class,'productDetail'])->name('product-details');
-Route::get('/product-show',[WebsiteController::class,'productShow'])->name('product.see');
-Route::get('/cart-show',[CartController::class,'cartShow'])->name('cart.show');
+//Product on Home Page
+Route::get('/product-detail/{id}',[WebsiteController::class,'productDetail'])->name('product.detail');
+Route::post('/product-review/{id}',[WebsiteController::class,'productReview'])->name('product.review');
+
+
+
+
+//Cart Module
+Route::post('/cart-add/{id}',[CartController::class,'cartAdd'])->name('cart.add');
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {
     Route::get('/dashboard',[AdminController::class,'index'])->name('dashboard');

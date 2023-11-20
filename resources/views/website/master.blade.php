@@ -35,6 +35,9 @@
     <link href="{{ asset('/') }}website/assets/switcher/css/switcher.css" rel="stylesheet">
     <link href="{{ asset('/') }}website/assets/switcher/demo.css" rel="stylesheet">
 
+    {{--image Zoom--}}
+    <link type="text/css" rel="stylesheet" href="{{ asset('/') }}website/jQuery-mooZoom-1.0.0.css"/>
+
 </head>
 
 <body class="ltr app sidebar-mini">
@@ -323,7 +326,7 @@
                             <ul class="slide-menu">
                                 @foreach($category->subCategories as $subCategory)
                                     <li>
-                                        <a href="{{ route('product.see') }}" class="slide-item">{{ $subCategory->name }}</a>
+                                        <a href="#" class="slide-item">{{ $subCategory->name }}</a>
                                     </li>
                                 @endforeach
                             </ul>
@@ -664,7 +667,6 @@
 
 <script src="{{ asset('/') }}website/assets/plugins/sweet-alert/sweetalert.min.js"></script>
 <script src="{{ asset('/') }}website/assets/plugins/sweet-alert/jquery.sweet-alert.js"></script>
-
 
 
 </body>
