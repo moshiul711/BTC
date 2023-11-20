@@ -4,12 +4,26 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
-
+use Cart;
 class CartController extends Controller
 {
-    private $product;
-    public function cartAdd($id)
+    private $product,$cart;
+    public function cartAdd(Request $request, $id)
     {
-        return $this->product = Product::find($id);
+        $this->product = Product::find($id);
+        Cart::add(
+            [
+                'id' => $this->product->id,
+                'name' => $this->product->name,
+                'qty' => $request->qty,
+                'price' => $this->product->offer_price,
+                'options' =>
+                    [
+                        'image' => $this->product->image
+                    ]
+            ]);
+
+
+        return back()->with('message','Product Successfully Added to Cart.');
     }
 }

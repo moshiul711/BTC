@@ -35,8 +35,41 @@
     <link href="{{ asset('/') }}website/assets/switcher/css/switcher.css" rel="stylesheet">
     <link href="{{ asset('/') }}website/assets/switcher/demo.css" rel="stylesheet">
 
-    {{--image Zoom--}}
-    <link type="text/css" rel="stylesheet" href="{{ asset('/') }}website/jQuery-mooZoom-1.0.0.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        .colored-toast.swal2-icon-success {
+            background-color: #a5dc86 !important;
+        }
+
+        .colored-toast.swal2-icon-error {
+            background-color: #f27474 !important;
+        }
+
+        .colored-toast.swal2-icon-warning {
+            background-color: #f8bb86 !important;
+        }
+
+        .colored-toast.swal2-icon-info {
+            background-color: #3fc3ee !important;
+        }
+
+        .colored-toast.swal2-icon-question {
+            background-color: #87adbd !important;
+        }
+
+        .colored-toast .swal2-title {
+            color: white;
+        }
+
+        .colored-toast .swal2-close {
+            color: white;
+        }
+
+        .colored-toast .swal2-html-container {
+            color: white;
+        }
+
+    </style>
 
 </head>
 
@@ -96,7 +129,7 @@
                             <a href="javascript:void(0);" class="nav-link icon text-center"  data-bs-toggle="dropdown" aria-expanded="false">
                                 <img src="{{ asset('/') }}website/assets/icons/cart.png" alt="">
                                 {{--<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24"><path d="M9,18c-1.1045532,0-2,0.8954468-2,2s0.8954468,2,2,2c1.1040039-0.0014038,1.9985962-0.8959961,2-2C11,18.8954468,10.1045532,18,9,18z M9,21c-0.5523071,0-1-0.4476929-1-1s0.4476929-1,1-1c0.552124,0.0003662,0.9996338,0.447876,1,1C10,20.5523071,9.5523071,21,9,21z M17,18c-1.1045532,0-2,0.8954468-2,2s0.8954468,2,2,2c1.1040039-0.0014038,1.9985962-0.8959961,2-2C19,18.8954468,18.1045532,18,17,18z M17,21c-0.5523071,0-1-0.4476929-1-1s0.4476929-1,1-1c0.552124,0.0003662,0.9996338,0.447876,1,1C18,20.5523071,17.5523071,21,17,21z M19.4985352,12.0502319l1.9848633-7.4213257c0.0111694-0.0419312,0.0167847-0.085083,0.0167847-0.128479C21.5002441,4.2241211,21.2763062,4.000061,21,4H5.9198608L5.4835205,2.371582C5.4249268,2.1530151,5.2268677,2.0009766,5.0005493,2.0009766H3.5048218C3.5031128,2.0009766,3.501709,2,3.5,2C3.223877,2,3,2.223877,3,2.5S3.223877,3,3.5,3v0.0009766L4.6162109,3l2.579834,9.6288452C7.2546387,12.8477783,7.453064,13,7.6796875,13H11h6.8603516H19c0.8284302,0,1.5,0.6715698,1.5,1.5S19.8284302,16,19,16H5c-0.276123,0-0.5,0.223877-0.5,0.5S4.723877,17,5,17h14c1.3807373,0,2.5-1.1192627,2.5-2.5C21.5,13.2900391,20.6403809,12.2813721,19.4985352,12.0502319z M18.4761963,12h-0.6158447H11H8.0634766L6.1878052,5h14.1608276L18.4761963,12z"/></svg>--}}
-                                <span class="badge bg-info header-badge bg-red" >4</span>
+                                <span class="badge bg-info header-badge bg-red" >{{ Cart::count() }}</span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                                 <div class="drop-heading border-bottom">
@@ -107,76 +140,37 @@
                                         </div>
                                     </div>
                                 </div>
+                                @foreach(Cart::content() as $item)
                                 <div class="header-dropdown-list cart-menu ps4 overflow-hidden">
                                     <a class="dropdown-item d-flex p-4" href="cart.html">
-                                        <span class="avatar avatar-lg br-5 me-3 align-self-center cover-image" data-bs-image-src="{{ asset('/') }}website/assets/images/ecommerce/1.jpg"></span>
+                                        <span class="avatar avatar-lg br-5 me-3 align-self-center cover-image" data-bs-image-src="{{ asset($item->options->image) }}"></span>
                                         <div class="wp-60 cart-desc mt-1">
-                                            <p class="fs-13 mb-0 lh-1 mb-1 text-dark fw-500">TrueBasket Metal Single Pot</p>
-                                            <p class="fs-12 fw-300 lh-1 mb-0">Status: <span class="text-green">In Stock</span></p>
-                                            <span class="fs-12 fw-300 lh-1 mb-0">Quantity: 01</span>
+                                            <p class="fs-13 mb-0 lh-1 mb-1 text-dark fw-500">{{ $item->name }}</p>
+                                            <p class="fs-12 fw-300 lh-1 mb-0">Price: <span class="text-green">{{ $item->price }}</span></p>
+                                            <span class="fs-12 fw-300 lh-1 mb-0">Quantity: {{ $item->qty }}</span>
                                         </div>
                                         <div class="ms-auto text-end d-flex fs-16">
-                                                            <span class="fs-16 text-dark d-none d-sm-block fw-semibold">
-                                                                $129
-                                                            </span>
-                                        </div>
-                                    </a>
-                                    <a class="dropdown-item d-flex p-4" href="cart.html">
-                                        <span class="avatar avatar-lg br-5 me-3 align-self-center cover-image" data-bs-image-src="{{ asset('/') }}website/assets/images/ecommerce/2.jpg"></span>
-                                        <div class="wp-60 cart-desc mt-1">
-                                            <p class="fs-13 mb-0 lh-1 mb-1 text-dark fw-500">Authentic chair with Canopy</p>
-                                            <p class="fs-12 fw-300 lh-1 mb-0">Status: <span class="text-green">In Stock</span></p>
-                                            <span class="fs-12 fw-300 lh-1 mb-0">Quantity: 03</span>
-                                        </div>
-                                        <div class="ms-auto text-end d-flex fs-16">
-                                                            <span class="fs-16 text-dark d-none d-sm-block fw-semibold">
-                                                                $99
-                                                            </span>
-                                        </div>
-                                    </a>
-                                    <a class="dropdown-item d-flex p-4" href="cart.html">
-                                        <span class="avatar avatar-lg br-5 me-3 align-self-center cover-image" data-bs-image-src="{{ asset('/') }}website/assets/images/ecommerce/3.jpg"></span>
-                                        <div class="wp-60 cart-desc mt-1">
-                                            <p class="fs-13 mb-0 lh-1 mb-1 text-dark fw-500">Casual Sneakers Canvas</p>
-                                            <p class="fs-12 fw-300 lh-1 mb-0">Status: <span class="text-green">In Stock</span></p>
-                                            <span class="fs-12 fw-300 lh-1 mb-0">Quantity: 03</span>
-                                        </div>
-                                        <div class="ms-auto text-end d-flex fs-16">
-                                                            <span class="fs-16 text-dark d-none d-sm-block fw-semibold">
-                                                                $299
-                                                            </span>
-                                        </div>
-                                    </a>
-                                    <a class="dropdown-item d-flex p-4" href="cart.html">
-                                        <span class="avatar avatar-lg br-5 me-3 align-self-center cover-image" data-bs-image-src="{{ asset('/') }}website/assets/images/ecommerce/4.jpg"></span>
-                                        <div class="wp-60 cart-desc mt-1">
-                                            <p class="fs-13 mb-0 lh-1 mb-1 text-dark fw-500">Branded Head Phones</p>
-                                            <p class="fs-12 fw-300 lh-1 mb-0">Status: <span class="text-danger">No Stock</span></p>
-                                            <span class="fs-12 fw-300 lh-1 mb-0">Quantity: 01</span>
-                                        </div>
-                                        <div class="ms-auto text-end d-flex fs-16">
-                                                            <span class="fs-16 text-dark d-none d-sm-block fw-semibold">
-                                                                $249
-                                                            </span>
-                                        </div>
-                                    </a>
-                                    <a class="dropdown-item d-flex p-4" href="cart.html">
-                                        <span class="avatar avatar-lg br-5 me-3 align-self-center cover-image" data-bs-image-src="{{ asset('/') }}website/assets/images/ecommerce/5.jpg"></span>
-                                        <div class="wp-60 cart-desc mt-1">
-                                            <p class="fs-13 mb-0 lh-1 mb-1 text-dark fw-500">camera lens (16mm f/1.4)</p>
-                                            <p class="fs-12 fw-300 lh-1 mb-0">Status: <span class="text-green">In Stock</span></p>
-                                            <span class="fs-12 fw-300 lh-1 mb-0">Quantity: 02</span>
-                                        </div>
-                                        <div class="ms-auto text-end d-flex fs-16">
-                                                            <span class="fs-16 text-dark d-none d-sm-block fw-semibold">
-                                                                $1,279
-                                                            </span>
+                                            <span class="fs-16 text-dark d-none d-sm-block fw-semibold">
+                                                {{ round($item->price*$item->qty) }}
+                                            </span>
                                         </div>
                                     </a>
                                 </div>
+                                @endforeach
+                                <div class="dropdown-divider m-0"></div>
+                                <a class="dropdown-item d-flex p-4" href="cart.html">
+                                    <div class="wp-60 cart-desc mt-1">
+                                        <p class="fs-13 mb-0 lh-1 mb-1 text-dark fw-500">Total</p>
+                                    </div>
+                                    <div class="ms-auto text-end d-flex fs-16">
+                                            <span class="fs-16 text-dark d-none d-sm-block fw-semibold">
+                                                {{ round(Cart::subtotal()) }}
+                                            </span>
+                                    </div>
+                                </a>
                                 <div class="dropdown-divider m-0"></div>
                                 <div class="text-center p-3">
-                                    <a href="#" class="btn btn-primary">
+                                    <a href="{{ route('cart.show') }}" class="btn btn-primary">
                                         <img src="{{ asset('/') }}website/assets/icons/cart.png" alt="">
                                         View Cart
                                     </a>
@@ -503,7 +497,25 @@
                 <!-- CONTAINER -->
                 <div class="main-container container">
                     <!--slider-->
-
+                    @if (session('message'))
+                        <script>
+                            const Toast = Swal.mixin({
+                                toast: true,
+                                position: 'top-right',
+                                iconColor: 'white',
+                                customClass: {
+                                    popup: 'colored-toast'
+                                },
+                                showConfirmButton: false,
+                                timer: 10000,
+                                timerProgressBar: true
+                            })
+                            Toast.fire({
+                                icon: 'success',
+                                title: "{{ session('message') }}"
+                            })
+                        </script>
+                @endif
                     @yield('slider')
 
 
@@ -657,7 +669,11 @@
 <script src="{{ asset('/') }}website/assets/plugins/sweet-alert/sweetalert.min.js"></script>
 <script src="{{ asset('/') }}website/assets/plugins/sweet-alert/jquery.sweet-alert.js"></script>
 
-
+<script>
+    $(window).load(function(){
+        setTimeout(function(){ $('.alert-success').fadeOut() }, 5000);
+    });
+</script>
 </body>
 
 
