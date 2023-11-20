@@ -4,16 +4,14 @@
 @section('main-content')
     <!-- PAGE-HEADER -->
     <div class="page-header">
-        <div>
-            <h1 class="page-title">Cart</h1>
-        </div>
-        <div class="ms-auto pageheader-btn">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item">Apps</li>
-                <li class="breadcrumb-item"><a href="javascript:void(0);">E-commerce</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Cart</li>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-style">
+                <li class="breadcrumb-item">
+                    <a href="{{ route('home') }}">Home</a>
+                </li>
+                <li class="breadcrumb-item active">Cart Products</li>
             </ol>
-        </div>
+        </nav>
     </div>
     <!-- PAGE-HEADER END -->
 
@@ -28,122 +26,39 @@
                     <div class="table-responsive">
                         <table class="table table-bordered table-vcenter text-nowrap mb-0">
                             <thead>
-                            <tr class="border-top">
-                                <th class="text-center">S.No.</th>
-                                <th class="w-10">Preview</th>
-                                <th>Title</th>
-                                <th>Price</th>
-                                <th class="w-15">Quantity</th>
-                                <th>Actions</th>
-                            </tr>
-                            </thead>
+                                <tr>
+                                    <th>Preview</th>
+                                    <th>Title</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Total</th>
+                                    <th>Actions</th>
+                                </tr>
+                                </thead>
                             <tbody>
-                            <tr>
-                                <td class="text-center">1</td>
-                                <td>
-                                    <img src="{{ asset('/') }}website/assets/images/pngs/1.png" alt="" class="cart-img">
-                                </td>
-                                <td>Digital Camera Pro 30.2MP With Lens</td>
-                                <td>$3,950</td>
-                                <td>
-                                    <input type="number"  name="quantity" class="form-control text-center" value="1" >
-                                </td>
-                                <td>
-                                    <a href="javascript:void(0)" class="btn btn-square btn-danger-light me-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Save for Wishlist"><i class="icon icon-heart  fs-13"></i></a>
-                                    <a href="javascript:void(0)" class="btn btn-square btn-info-light me-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove"><i class="icon icon-trash  fs-13"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-center">2</td>
-                                <td>
-                                    <img src="{{ asset('/') }}website/assets/images/pngs/4.png" alt="" class="cart-img">
-                                </td>
-                                <td>Attractive Multi Color Flower Pot - Combo Of 3</td>
-                                <td>$105</td>
-                                <td >
-                                    <input type="number"  name="quantity" class="form-control text-center" value="3" >
-                                </td>
-                                <td>
-                                    <a href="javascript:void(0)" class="btn btn-square btn-danger-light me-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Save for Wishlist"><i class="icon icon-heart  fs-13"></i></a>
-                                    <a href="javascript:void(0)" class="btn btn-square btn-info-light me-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove"><i class="icon icon-trash  fs-13"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-center">3</td>
-                                <td>
-                                    <img src="{{ asset('/') }}website/assets/images/pngs/2.png" alt="" class="cart-img">
-                                </td>
-                                <td>Wireless Bluetooth Game Controller Joystick</td>
-                                <td>$945</td>
-                                <td >
-                                    <input type="number"  name="quantity" class="form-control text-center" value="3" >
-                                </td>
-                                <td>
-                                    <a href="javascript:void(0)" class="btn btn-square btn-danger-light me-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Save for Wishlist"><i class="icon icon-heart  fs-13"></i></a>
-                                    <a href="javascript:void(0)" class="btn btn-square btn-info-light me-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove"><i class="icon icon-trash  fs-13"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-center">4</td>
-                                <td>
-                                    <img src="{{ asset('/') }}website/assets/images/pngs/5.png" alt="" class="cart-img">
-                                </td>
-                                <td>Long Arm Rechargeable Study Desk Lamp</td>
-                                <td>$105</td>
-                                <td >
-                                    <input type="number"  name="quantity" class="form-control text-center" value="2" >
-                                </td>
-                                <td>
-                                    <a href="javascript:void(0)" class="btn btn-square btn-danger-light me-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Save for Wishlist"><i class="icon icon-heart  fs-13"></i></a>
-                                    <a href="javascript:void(0)" class="btn btn-square btn-info-light me-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove"><i class="icon icon-trash  fs-13"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-center">5</td>
-                                <td>
-                                    <img src="{{ asset('/') }}website/assets/images/pngs/6.png" alt="" class="cart-img">
-                                </td>
-                                <td>Wood Photo Frame(M) With Wall Decorators</td>
-                                <td>$106</td>
-                                <td >
-                                    <input type="number"  name="quantity" class="form-control text-center" value="5" >
-                                </td>
-                                <td>
-                                    <a href="javascript:void(0)" class="btn btn-square btn-danger-light me-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Save for Wishlist"><i class="icon icon-heart  fs-13"></i></a>
-                                    <a href="javascript:void(0)" class="btn btn-square btn-info-light me-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove"><i class="icon icon-trash  fs-13"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-center">6</td>
-                                <td>
-                                    <img src="{{ asset('/') }}website/assets/images/pngs/9.png" alt="" class="cart-img">
-                                </td>
-                                <td>Rounded Shape Digital Watch For Men</td>
-                                <td>$230</td>
-                                <td >
-                                    <input type="number"  name="quantity" class="form-control text-center" value="1" >
-                                </td>
-                                <td>
-                                    <a href="javascript:void(0)" class="btn btn-square btn-danger-light me-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Save for Wishlist"><i class="icon icon-heart  fs-13"></i></a>
-                                    <a href="javascript:void(0)" class="btn btn-square btn-info-light me-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove"><i class="icon icon-trash  fs-13"></i></a>
-                                </td>
-                            </tr>
-                            <tr class="border-bottom">
-                                <td class="text-center">7</td>
-                                <td>
-                                    <img src="{{ asset('/') }}website/assets/images/pngs/8.png" alt="" class="cart-img">
-                                </td>
-                                <td>Analog Wall Clock - 30cm × 30cm</td>
-                                <td>$110</td>
-                                <td >
-                                    <input type="number"  name="quantity" class="form-control text-center" value="1" >
-                                </td>
-                                <td>
-                                    <a href="javascript:void(0)" class="btn btn-square btn-danger-light me-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Save for Wishlist"><i class="icon icon-heart  fs-13"></i></a>
-                                    <a href="javascript:void(0)" class="btn btn-square btn-info-light me-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove"><i class="icon icon-trash  fs-13"></i></a>
-                                </td>
-                            </tr>
-                            </tbody>
+                                @foreach(Cart::content() as $item)
+                                    <form action="{{ route('cart.update',$item->rowId) }}" method="post">
+                                    @csrf
+                                    <tr>
+                                        <td>
+                                            <img src="{{ asset($item->options->image) }}" alt="" class="cart-img">
+                                        </td>
+                                        <td>{{ substr($item->name,0,30) }}</td>
+                                        <td>{{ $item->price }}</td>
+                                        <td>
+                                            <input type="number"  name="quantity" class="form-control text-center" value="{{ $item->qty }}" >
+                                        </td>
+                                        <td>
+                                            {{ round($item->qty * $item->price) }}
+                                        </td>
+                                        <td>
+                                            <button type="submit" class="btn btn-square btn-success-light me-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Update"><i class="fa fa-edit fs-13"></i></button>
+                                            <a href="{{ route('cart.delete',$item->rowId) }}" class="btn btn-square btn-danger-light me-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove From Cart"><i class="icon icon-trash fs-13"></i></a>
+                                        </td>
+                                    </tr>
+                                    </form>
+                                @endforeach
+                                </tbody>
                         </table>
                     </div>
                 </div>

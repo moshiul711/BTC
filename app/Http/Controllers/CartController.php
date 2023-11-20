@@ -8,6 +8,7 @@ use Cart;
 class CartController extends Controller
 {
     private $product,$cart;
+
     public function cartAdd(Request $request, $id)
     {
         $this->product = Product::find($id);
@@ -22,8 +23,23 @@ class CartController extends Controller
                         'image' => $this->product->image
                     ]
             ]);
-
-
         return back()->with('message','Product Successfully Added to Cart.');
+    }
+
+    public function cartShow()
+    {
+        return view('website.cart.show');
+    }
+
+    public function cartDelete($rowId)
+    {
+        Cart::remove($rowId);
+        return back()->with('message','Product Info Deleted From Cart.');
+    }
+
+    public function cartUpdate(Request $request, $rowId)
+    {
+        Cart::update($rowId, $request->quantity);
+        return back()->with('message','Product Info Updated To Cart.');
     }
 }

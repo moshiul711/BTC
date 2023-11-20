@@ -35,6 +35,9 @@ Route::post('/product-review/{id}',[WebsiteController::class,'productReview'])->
 
 //Cart Module
 Route::post('/cart-add/{id}',[CartController::class,'cartAdd'])->name('cart.add');
+Route::get('/cart-show',[CartController::class,'cartShow'])->name('cart.show');
+Route::get('/cart-delete/{rowId}',[CartController::class,'cartDelete'])->name('cart.delete');
+Route::post('/cart-update/{rowId}',[CartController::class,'cartUpdate'])->name('cart.update');
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {
     Route::get('/dashboard',[AdminController::class,'index'])->name('dashboard');
