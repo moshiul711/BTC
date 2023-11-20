@@ -253,7 +253,7 @@
                     </div>
                 </div>
             </div>
-
+            @if(!Session::get('customer_id'))
             <div class="row mt-5">
                 <div class="col-md-12">
                     <div class="card">
@@ -274,7 +274,7 @@
                     </div>
                 </div>
             </div>
-
+            @endif
         </div><!-- COL-END -->
 
     </div>
