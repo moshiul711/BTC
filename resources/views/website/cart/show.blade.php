@@ -2,6 +2,7 @@
 
 
 @section('main-content')
+
     <!-- PAGE-HEADER -->
     <div class="page-header">
         <nav aria-label="breadcrumb">
@@ -14,7 +15,7 @@
         </nav>
     </div>
     <!-- PAGE-HEADER END -->
-
+    @if(Cart::Count()>0)
     <!-- ROW-1 OPEN -->
     <div class="row">
         <div class="col-xl-8 col-md-12">
@@ -64,6 +65,7 @@
                 </div>
             </div>
         </div>
+
         <div class="col-xl-4 col-md-12">
             <div class="card">
                 <div class="card-header border-bottom">
@@ -85,19 +87,20 @@
                     <table class="table border-top-0">
                         <tr>
                             <td class="border-top-0">Sub Total</td>
-                            <td class="text-end border-top-0">$4,360</td>
+                            <td class="text-end border-top-0">Tk. {{ $subTotal = round(Cart::subtotal()) }}</td>
                         </tr>
                         <tr>
                             <td class="border-top-0">Discount</td>
-                            <td class="text-end border-top-0">5%</td>
+                            <td class="text-end border-top-0">{{ $discount = 5 }}%</td>
                         </tr>
                         <tr>
                             <td class="border-top-0">Shipping</td>
-                            <td class="text-end border-top-0">Free</td>
+                            <td class="text-end border-top-0">Tk. {{ $shipping = 110 }}</td>
                         </tr>
                         <tr>
                             <td class="fs-20 border-top-0">Total</td>
-                            <td class="text-end fs-20 border-top-0">$3,976</td>
+                            @php($total = ($subTotal+$shipping))
+                            <td class="text-end fs-20 border-top-0">{{ round($payable = $total - ($total*$discount)/100) }}</td>
                         </tr>
                     </table>
                 </div>
@@ -117,4 +120,22 @@
         </div>
     </div><!-- COL-END -->
     <!-- ROW-1 CLOSED -->
+    @else
+    <div class="row">
+        <div class="col-md-12 col-xl-12">
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-title text-center text-success-darkest">There is no product found in the cart</p>
+                    <span>
+                        <p class="text-center text-success-darkest text-bold">Add Some product first</p>
+                    </span>
+                    <div class="text-center">
+                        <a href="{{ route('home') }}" class="btn btn-outline-success">Go Back To Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @endif
 @endsection
