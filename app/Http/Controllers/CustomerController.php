@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Customer;
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
@@ -20,9 +21,10 @@ class CustomerController extends Controller
         return view('customer.auth.login');
     }
 
-    public function customerRegistration(Request $request)
+    public function customerRegister(Request $request)
     {
-
+        Customer::register($request);
+        return back()->with('message','Your Credentials are Successfully Registered');
     }
 
 }

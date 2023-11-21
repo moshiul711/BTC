@@ -284,7 +284,114 @@
                 </div>
             </div>
         </div>
+        <div class="modal fade"  id="smallmodal">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Customer Login</h5>
+                        <button  class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <form action="{{ route('customer.login') }}" method="post">
+                        @csrf
+                        <div class="modal-body">
+                    <span class="login100-form-title">
+                            <a href="index.html" class="text-center">
+                                <img src="https://www.bangladeshtechcom.com/assets/uploads/logos/header_logo-BTC.png" class="header-brand-img" alt="">
+                            </a>
+                        </span>
+                            <div class="wrap-input100 validate-input" data-bs-validate = "Valid email is required: ex@abc.xyz">
+                                <input class="input100" type="email" name="email" placeholder="Email">
+                                <span class="focus-input100"></span>
+                                <span class="symbol-input100">
+                                <i class="zmdi zmdi-email" aria-hidden="true"></i>
+                            </span>
+                            </div>
+                            <div class="wrap-input100 validate-input" data-bs-validate = "Password is required">
+                                <input class="input100" type="password" name="password" placeholder="Password">
+                                <span class="focus-input100"></span>
+                                <span class="symbol-input100">
+                                <i class="zmdi zmdi-lock" aria-hidden="true"></i>
+                            </span>
+                            </div>
+                            <div class="text-end pt-1">
+                                <p class="mb-0"><a href="" class="text-primary ms-1">Forgot Password?</a></p>
+                            </div>
 
+                            <div class="text-center pt-3">
+                                <p class="text-dark mb-0">Not a member?<a href="register.html" data-bs-target="#registration" data-bs-toggle="modal" class="text-primary ms-1">Create an Account</a></p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button  class="btn btn-primary" type="submit" style="display: block; width: 100%">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade"  id="registration">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Customer Registration</h5>
+                        <button  class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <form action="{{ route('customer.register') }}" method="post">
+                        @csrf
+                        <div class="modal-body">
+                    <span class="login100-form-title">
+                            <a href="index.html" class="text-center">
+                                <img src="https://www.bangladeshtechcom.com/assets/uploads/logos/header_logo-BTC.png" class="header-brand-img" alt="">
+                            </a>
+                        </span>
+                            <div class="wrap-input100 validate-input" data-bs-validate = "First Name Required">
+                                <input class="input100" type="text" name="first_name" placeholder="First Name">
+                                <span class="focus-input100"></span>
+                                <span class="symbol-input100"><i class="zmdi zmdi-email" aria-hidden="true"></i></span>
+                            </div>
+
+                            <div class="wrap-input100 validate-input" data-bs-validate = "Last Name Required">
+                                <input class="input100" type="text" name="last_name" placeholder="Last Name">
+                                <span class="focus-input100"></span>
+                                <span class="symbol-input100"><i class="zmdi zmdi-email" aria-hidden="true"></i></span>
+                            </div>
+
+                            <div class="wrap-input100 validate-input" data-bs-validate = "Valid email is required: ex@abc.xyz">
+                                <input class="input100" type="email" name="email" placeholder="Email">
+                                <span class="focus-input100"></span>
+                                <span class="symbol-input100"><i class="zmdi zmdi-email" aria-hidden="true"></i></span>
+                            </div>
+
+
+                            <div class="wrap-input100 validate-input" data-bs-validate = "Phone Number is required: 01700123456">
+                                <input class="input100" type="tel" name="phone" placeholder="Phone">
+                                <span class="focus-input100"></span>
+                                <span class="symbol-input100"><i class="zmdi zmdi-email" aria-hidden="true"></i></span>
+                            </div>
+
+                            <div class="wrap-input100 validate-input" data-bs-validate = "Password is required">
+                                <input class="input100" type="password" name="password" placeholder="Password">
+                                <span class="focus-input100"></span>
+                                <span class="symbol-input100">
+                                <i class="zmdi zmdi-lock" aria-hidden="true"></i>
+                            </span>
+                            </div>
+
+                            <div class="text-center pt-3">
+                                <p class="text-dark mb-0">Have an account?<a href=""data-bs-target="#smallmodal" data-bs-toggle="modal" class="text-primary ms-1">Login</a></p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button  class="btn btn-primary" type="submit" style="display: block; width: 100%">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
 
         <div class="sticky" >
             <div class="app-sidebar__overlay" data-bs-toggle="sidebar"></div>
@@ -640,52 +747,6 @@
 </div>
 <!-- page -->
 
-<div class="modal fade"  id="smallmodal">
-    <div class="modal-dialog modal-sm" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Customer Login</h5>
-                <button  class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <form action="{{ route('customer.login') }}" method="post">
-                @csrf
-                <div class="modal-body">
-                    <span class="login100-form-title">
-                            <a href="index.html" class="text-center">
-                                <img src="https://www.bangladeshtechcom.com/assets/uploads/logos/header_logo-BTC.png" class="header-brand-img" alt="">
-                            </a>
-                        </span>
-                    <div class="wrap-input100 validate-input" data-bs-validate = "Valid email is required: ex@abc.xyz">
-                        <input class="input100" type="email" name="email" placeholder="Email">
-                        <span class="focus-input100"></span>
-                        <span class="symbol-input100">
-                                <i class="zmdi zmdi-email" aria-hidden="true"></i>
-                            </span>
-                    </div>
-                    <div class="wrap-input100 validate-input" data-bs-validate = "Password is required">
-                        <input class="input100" type="password" name="password" placeholder="Password">
-                        <span class="focus-input100"></span>
-                        <span class="symbol-input100">
-                                <i class="zmdi zmdi-lock" aria-hidden="true"></i>
-                            </span>
-                    </div>
-                    <div class="text-end pt-1">
-                        <p class="mb-0"><a href="" class="text-primary ms-1">Forgot Password?</a></p>
-                    </div>
-
-                    <div class="text-center pt-3">
-                        <p class="text-dark mb-0">Not a member?<a href="register.html" class="text-primary ms-1">Create an Account</a></p>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button  class="btn btn-primary" type="submit" style="display: block; width: 100%">Login</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
 <!-- BACK-TO-TOP -->
 <a href="#top" id="back-to-top"><i class="fa fa-long-arrow-up"></i></a>
 
