@@ -502,7 +502,7 @@
 
 
                 <!-- CONTAINER -->
-                <div class="main-container container">
+                <div class="main-container container-fluid">
                     <!--slider-->
                     @if (session('message'))
                         <script>

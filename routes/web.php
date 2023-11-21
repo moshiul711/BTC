@@ -10,6 +10,7 @@ use App\Http\Controllers\UnitController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CourierController;
+use App\Http\Controllers\CustomerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,8 +31,9 @@ Route::get('/faq',[WebsiteController::class,'faq'])->name('faq');
 Route::get('/product-detail/{id}',[WebsiteController::class,'productDetail'])->name('product.detail');
 Route::post('/product-review/{id}',[WebsiteController::class,'productReview'])->name('product.review');
 
-
-
+//Customer Module
+Route::get('/customer',[CustomerController::class,'index'])->name('customer');
+Route::post('/customer-login',[CustomerController::class,'customerLogin'])->name('customer.login');
 
 //Cart Module
 Route::post('/cart-add/{id}',[CartController::class,'cartAdd'])->name('cart.add');

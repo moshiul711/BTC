@@ -230,6 +230,16 @@
                                         </a>
                                     </div>
 
+                                    @if(!Session::get('customer_id'))
+                                    <div class="dropdown d-md-flex profile-1" >
+                                        <a href="#" data-bs-target="#smallmodal" data-bs-toggle="modal">
+                                            <span>
+                                                <img src="{{ asset('/') }}website/assets/icons/account.png" alt="profile-user" class="avatar  profile-user brround cover-image">
+                                            </span>
+                                        </a>
+                                    </div>
+                                    @else
+                                    {{--with login--}}
                                     <div class="dropdown d-md-flex profile-1" >
                                         <a href="#" data-bs-toggle="dropdown" class="nav-link pe-2 leading-none d-flex animate">
 												<span>
@@ -265,6 +275,7 @@
                                         </div>
                                     </div>
                                     <!-- Profile -->
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -629,6 +640,52 @@
 </div>
 <!-- page -->
 
+<div class="modal fade"  id="smallmodal">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Customer Login</h5>
+                <button  class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <form action="{{ route('customer.login') }}" method="post">
+                @csrf
+                <div class="modal-body">
+                    <span class="login100-form-title">
+                            <a href="index.html" class="text-center">
+                                <img src="https://www.bangladeshtechcom.com/assets/uploads/logos/header_logo-BTC.png" class="header-brand-img" alt="">
+                            </a>
+                        </span>
+                    <div class="wrap-input100 validate-input" data-bs-validate = "Valid email is required: ex@abc.xyz">
+                        <input class="input100" type="email" name="email" placeholder="Email">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                                <i class="zmdi zmdi-email" aria-hidden="true"></i>
+                            </span>
+                    </div>
+                    <div class="wrap-input100 validate-input" data-bs-validate = "Password is required">
+                        <input class="input100" type="password" name="password" placeholder="Password">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                                <i class="zmdi zmdi-lock" aria-hidden="true"></i>
+                            </span>
+                    </div>
+                    <div class="text-end pt-1">
+                        <p class="mb-0"><a href="" class="text-primary ms-1">Forgot Password?</a></p>
+                    </div>
+
+                    <div class="text-center pt-3">
+                        <p class="text-dark mb-0">Not a member?<a href="register.html" class="text-primary ms-1">Create an Account</a></p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button  class="btn btn-primary" type="submit" style="display: block; width: 100%">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 <!-- BACK-TO-TOP -->
 <a href="#top" id="back-to-top"><i class="fa fa-long-arrow-up"></i></a>
 
@@ -668,14 +725,14 @@
 <script src="{{ asset('/') }}website/assets/switcher/js/switcher.js"></script>
 
 
-<script src="{{ asset('/') }}website/assets/plugins/sweet-alert/sweetalert.min.js"></script>
-<script src="{{ asset('/') }}website/assets/plugins/sweet-alert/jquery.sweet-alert.js"></script>
+{{--<script src="{{ asset('/') }}website/assets/plugins/sweet-alert/sweetalert.min.js"></script>--}}
+{{--<script src="{{ asset('/') }}website/assets/plugins/sweet-alert/jquery.sweet-alert.js"></script>--}}
 
-<script>
-    $(window).load(function(){
-        setTimeout(function(){ $('.alert-success').fadeOut() }, 5000);
-    });
-</script>
+{{--<script>--}}
+    {{--$(window).load(function(){--}}
+        {{--setTimeout(function(){ $('.alert-success').fadeOut() }, 5000);--}}
+    {{--});--}}
+{{--</script>--}}
 </body>
 
 
