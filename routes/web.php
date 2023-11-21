@@ -34,6 +34,7 @@ Route::post('/product-review/{id}',[WebsiteController::class,'productReview'])->
 //Customer Module
 Route::get('/customer',[CustomerController::class,'index'])->name('customer');
 Route::post('/customer-login',[CustomerController::class,'customerLogin'])->name('customer.login');
+Route::get('/customer-logout',[CustomerController::class,'customerLogout'])->name('customer.logout');
 Route::post('/customer-register',[CustomerController::class,'customerRegister'])->name('customer.register');
 
 //Cart Module
