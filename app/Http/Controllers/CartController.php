@@ -37,6 +37,12 @@ class CartController extends Controller
         return back()->with('message','Product Info Deleted From Cart.');
     }
 
+    public function cartDestroy()
+    {
+        Cart::destroy();
+        return back()->with('message','All Products Deleted From Cart.');
+    }
+
     public function cartUpdate(Request $request, $rowId)
     {
         Cart::update($rowId, $request->quantity);

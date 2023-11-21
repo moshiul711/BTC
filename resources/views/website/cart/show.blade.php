@@ -107,17 +107,24 @@
                         </tr>
                         <tr>
                             <td class="fs-20 border-top-0">Total</td>
-                            @php($total = ($subTotal+$shipping))
-                            <td class="text-end fs-20 border-top-0">{{ round($payable = $total - ($total*$discount)/100) }}</td>
+                            @php($total = ($subTotal))
+                            <td class="text-end fs-20 border-top-0">Tk. {{ round($payable = $subTotal+$shipping - ($total*$discount)/100) }}</td>
                         </tr>
                     </table>
                 </div>
                 <div class="card-footer">
                     <div class="step-footer text-end right">
-                        <a href="checkout.html" class="btn btn-info my-1">
+                        @if(Session::get('customer_id'))
+                        <a href="{{ route('checkout') }}" class="btn btn-info my-1">
                             Proceed To Check Out
                             <svg xmlns="http://www.w3.org/2000/svg" class=" w-inner-icn" enable-background="new 0 0 24 24" viewBox="0 0 24 24"><path d="M17.8536377,11.6466064c-0.000061-0.000061-0.0001221-0.000061-0.0001221-0.0001221l-5.5-5.5c-0.1986084-0.1918335-0.5151367-0.1863403-0.7069702,0.0122681c-0.1871338,0.1937866-0.1871338,0.5009766,0,0.6947021L16.2930298,11.5H6.5C6.223877,11.5,6,11.723877,6,12s0.223877,0.5,0.5,0.5h9.7930298l-4.6465454,4.6464844c-0.1986084,0.1918335-0.2041016,0.5083618-0.0122681,0.7069702c0.1918335,0.1986694,0.5084229,0.2041626,0.7070312,0.0123291c0.0041504-0.0040283,0.0082397-0.0081177,0.0122681-0.0123291l5.5-5.5C18.0487671,12.1583252,18.0487671,11.8418579,17.8536377,11.6466064z"/></svg>
                         </a>
+                        @else
+                            <a href="" data-bs-target="#smallmodal" data-bs-toggle="modal" class="btn btn-info my-1">
+                                Proceed To Check Out
+                                <svg xmlns="http://www.w3.org/2000/svg" class=" w-inner-icn" enable-background="new 0 0 24 24" viewBox="0 0 24 24"><path d="M17.8536377,11.6466064c-0.000061-0.000061-0.0001221-0.000061-0.0001221-0.0001221l-5.5-5.5c-0.1986084-0.1918335-0.5151367-0.1863403-0.7069702,0.0122681c-0.1871338,0.1937866-0.1871338,0.5009766,0,0.6947021L16.2930298,11.5H6.5C6.223877,11.5,6,11.723877,6,12s0.223877,0.5,0.5,0.5h9.7930298l-4.6465454,4.6464844c-0.1986084,0.1918335-0.2041016,0.5083618-0.0122681,0.7069702c0.1918335,0.1986694,0.5084229,0.2041626,0.7070312,0.0123291c0.0041504-0.0040283,0.0082397-0.0081177,0.0122681-0.0123291l5.5-5.5C18.0487671,12.1583252,18.0487671,11.8418579,17.8536377,11.6466064z"/></svg>
+                            </a>
+                        @endif
                     </div>
                 </div>
             </div>

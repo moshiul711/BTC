@@ -11,6 +11,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CourierController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\CheckoutController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,9 +38,15 @@ Route::post('/customer-login',[CustomerController::class,'customerLogin'])->name
 Route::get('/customer-logout',[CustomerController::class,'customerLogout'])->name('customer.logout');
 Route::post('/customer-register',[CustomerController::class,'customerRegister'])->name('customer.register');
 
+
+//Checkout Module
+Route::get('/checkout',[CheckoutController::class,'index'])->name('checkout');
+
+
 //Cart Module
 Route::post('/cart-add/{id}',[CartController::class,'cartAdd'])->name('cart.add');
 Route::get('/cart-show',[CartController::class,'cartShow'])->name('cart.show');
+Route::get('/cart-destroy',[CartController::class,'cartDestroy'])->name('cart.destroy');
 Route::get('/cart-delete/{rowId}',[CartController::class,'cartDelete'])->name('cart.delete');
 Route::post('/cart-update/{rowId}',[CartController::class,'cartUpdate'])->name('cart.update');
 

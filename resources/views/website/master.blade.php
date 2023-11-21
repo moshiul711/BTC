@@ -137,13 +137,13 @@
                                     <div class="d-flex">
                                         <h6 class="mt-1 mb-0 fs-15 text-dark">Shopping Cart</h6>
                                         <div class="ms-auto">
-                                            <span class="xm-title badge bg-secondary text-white fw-normal fs-12 badge-pill"> <a href="javascript:void(0);" class="showall-text text-white">Remove All</a> </span>
+                                            <span class="xm-title badge bg-secondary text-white fw-normal fs-12 badge-pill"> <a href="{{ route('cart.destroy') }}" class="showall-text text-white">Remove All</a> </span>
                                         </div>
                                     </div>
                                 </div>
                                 @foreach(Cart::content() as $item)
                                 <div class="header-dropdown-list cart-menu ps4 overflow-hidden">
-                                    <a class="dropdown-item d-flex p-4" href="cart.html">
+                                    <a class="dropdown-item d-flex p-4" href="">
                                         <span class="avatar avatar-lg br-5 me-3 align-self-center cover-image" data-bs-image-src="{{ asset($item->options->image) }}"></span>
                                         <div class="wp-60 cart-desc mt-1">
                                             <p class="fs-13 mb-0 lh-1 mb-1 text-dark fw-500">{{ $item->name }}</p>
@@ -175,11 +175,12 @@
                                         <img src="{{ asset('/') }}website/assets/icons/cart.png" alt="">
                                         View Cart
                                     </a>
-
-                                    <a href="#" class="btn btn-danger right">
+                                    @if(Session::get('customer_id'))
+                                    <a href="{{ route('checkout') }}" class="btn btn-danger right">
                                         <img src="{{ asset('/') }}website/assets/icons/checkout.png" alt="">
                                         Checkout
                                     </a>
+                                        @endif
                                 </div>
                             </div>
                             @endif
