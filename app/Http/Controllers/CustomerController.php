@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Customer;
+use App\Models\ProductReview;
 use Illuminate\Http\Request;
 use Session;
 
 class CustomerController extends Controller
 {
-    public $email, $password,$customer;
+    public $email, $password,$customer,$reviews;
     public function index()
     {
         return view('customer.home.index');
@@ -62,6 +63,18 @@ class CustomerController extends Controller
         Session::forget('customer_image');
 
         return back()->with('message','Your are logged out.');;
+    }
+
+    public function review(Request $request,$product_id)
+    {
+        ProductReview::storeReview($request,$product_id);
+        return back()->with('message','Thanks For Your Review...');
+    }
+
+    public function allReview()
+    {
+        $this->reviews = ProductReview::where('customer_id',Session::get('customer_id'))->get();
+        return view('customer.review.index',['reviews'=>$this->reviews]);
     }
 
 }

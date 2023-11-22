@@ -168,82 +168,29 @@
                                         </div>
                                         <div class="tab-pane" id="tab3">
                                             <ul class="comment-section-main">
+                                                @foreach($product->reviews as $review)
                                                 <li>
                                                     <div class="media mb-5 cnsl">
                                                         <div class=" me-3">
-                                                            <a href="#"><img alt="64x64" class="media-object rounded-circle thumb-sm" src="assets/images/users/5.jpg"></a>
+                                                            <a href="javascript:void(0)">
+                                                                <img alt="64x64" class="media-object rounded-circle thumb-sm" src="{{ asset($review->customer->image) }}">
+                                                            </a>
                                                         </div>
                                                         <div class="media-body">
                                                             <div class="name-time-container d-flex">
-                                                                <h5 class="mt-0 mb-0 me-2">David Neilson</h5><svg class="mx-2 me-1" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                                                    <path d="M11.999939,6.5c-0.276123,0-0.5,0.223877-0.5,0.5v4.6914062l-2.7059937,1.3623047c-0.168457,0.0848999-0.2747803,0.2573853-0.2749634,0.4460449C8.5187988,13.7758789,8.7424927,13.9998169,9.0185547,14c0.078064,0.0003662,0.1550903-0.0180664,0.2245483-0.0537109l2.9814453-1.5C12.3933105,12.3615112,12.4998169,12.1888428,12.499939,12V7C12.499939,6.723877,12.276123,6.5,11.999939,6.5z M12,2C6.4771729,2,2,6.4771729,2,12s4.4771729,10,10,10c5.5201416-0.0064697,9.9935303-4.4798584,10-10C22,6.4771729,17.5228271,2,12,2z M12,21c-4.9705811,0-9-4.0294189-9-9s4.0294189-9,9-9c4.9683228,0.0054321,8.9945679,4.0316772,9,9C21,16.9705811,16.9705811,21,12,21z"></path></svg> <span class="time-main text-muted">2h ago</span>
+                                                                <h5 class="mt-0 mb-0 me-2">{{ $review->customer->first_name.' '.$review->customer->last_name }}</h5><svg class="mx-2 me-1" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path d="M11.999939,6.5c-0.276123,0-0.5,0.223877-0.5,0.5v4.6914062l-2.7059937,1.3623047c-0.168457,0.0848999-0.2747803,0.2573853-0.2749634,0.4460449C8.5187988,13.7758789,8.7424927,13.9998169,9.0185547,14c0.078064,0.0003662,0.1550903-0.0180664,0.2245483-0.0537109l2.9814453-1.5C12.3933105,12.3615112,12.4998169,12.1888428,12.499939,12V7C12.499939,6.723877,12.276123,6.5,11.999939,6.5z M12,2C6.4771729,2,2,6.4771729,2,12s4.4771729,10,10,10c5.5201416-0.0064697,9.9935303-4.4798584,10-10C22,6.4771729,17.5228271,2,12,2z M12,21c-4.9705811,0-9-4.0294189-9-9s4.0294189-9,9-9c4.9683228,0.0054321,8.9945679,4.0316772,9,9C21,16.9705811,16.9705811,21,12,21z"></path></svg> <span class="time-main text-muted">{{ $review->updated_at }}</span>
                                                             </div>
                                                             <div class="text-warning mb-0">
                                                                 <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i>
                                                             </div>
                                                             <div class="comment-main-action d-flex">
-                                                                <p class="font-13 text-muted mb-0 comment-main">Weh du dann die vom von und ergötzt denkst sanken..</p>
-                                                            </div><a href="#"><span class="badge btn-custom rounded-pill">Reply</span></a>
+                                                                <p class="font-13 text-muted mb-0 comment-main">{{ $review->review }}</p>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </li>
-                                                <li>
-                                                    <div class="media mb-5">
-                                                        <div class=" me-3">
-                                                            <a href="#"><img alt="64x64" class="media-object rounded-circle thumb-sm" src="assets/images/users/5.jpg"></a>
-                                                        </div>
-                                                        <div class="media-body">
-                                                            <div class="name-time-container d-flex">
-                                                                <h5 class="mt-0 mb-0 me-2">Nikki Taylor</h5><svg class="mx-2 me-1" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                                                    <path d="M11.999939,6.5c-0.276123,0-0.5,0.223877-0.5,0.5v4.6914062l-2.7059937,1.3623047c-0.168457,0.0848999-0.2747803,0.2573853-0.2749634,0.4460449C8.5187988,13.7758789,8.7424927,13.9998169,9.0185547,14c0.078064,0.0003662,0.1550903-0.0180664,0.2245483-0.0537109l2.9814453-1.5C12.3933105,12.3615112,12.4998169,12.1888428,12.499939,12V7C12.499939,6.723877,12.276123,6.5,11.999939,6.5z M12,2C6.4771729,2,2,6.4771729,2,12s4.4771729,10,10,10c5.5201416-0.0064697,9.9935303-4.4798584,10-10C22,6.4771729,17.5228271,2,12,2z M12,21c-4.9705811,0-9-4.0294189-9-9s4.0294189-9,9-9c4.9683228,0.0054321,8.9945679,4.0316772,9,9C21,16.9705811,16.9705811,21,12,21z"></path></svg> <span class="time-main text-muted">1h ago</span>
-                                                            </div>
-                                                            <div class="text-warning mb-0">
-                                                                <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i>
-                                                            </div>
-                                                            <div class="comment-main-action d-flex">
-                                                                <p class="font-13 text-muted mb-0 comment-main"><span class="text-teritary">@David  Neilson</span> De tout plus o amer coups un eau. Confiture impassibles un de bords fumant poissons.</p>
-                                                            </div><a href="javascript:void(0)"><span class="badge btn-custom rounded-pill">Reply</span></a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="media mb-5">
-                                                        <div class=" me-3">
-                                                            <a href="#"><img alt="64x64" class="media-object rounded-circle thumb-sm" src="assets/images/users/5.jpg"></a>
-                                                        </div>
-                                                        <div class="media-body">
-                                                            <div class="name-time-container d-flex">
-                                                                <h5 class="mt-0 mb-0 me-2">Halsey Glenn</h5><svg class="mx-2 me-1" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                                                    <path d="M11.999939,6.5c-0.276123,0-0.5,0.223877-0.5,0.5v4.6914062l-2.7059937,1.3623047c-0.168457,0.0848999-0.2747803,0.2573853-0.2749634,0.4460449C8.5187988,13.7758789,8.7424927,13.9998169,9.0185547,14c0.078064,0.0003662,0.1550903-0.0180664,0.2245483-0.0537109l2.9814453-1.5C12.3933105,12.3615112,12.4998169,12.1888428,12.499939,12V7C12.499939,6.723877,12.276123,6.5,11.999939,6.5z M12,2C6.4771729,2,2,6.4771729,2,12s4.4771729,10,10,10c5.5201416-0.0064697,9.9935303-4.4798584,10-10C22,6.4771729,17.5228271,2,12,2z M12,21c-4.9705811,0-9-4.0294189-9-9s4.0294189-9,9-9c4.9683228,0.0054321,8.9945679,4.0316772,9,9C21,16.9705811,16.9705811,21,12,21z"></path></svg> <span class="time-main text-muted">30min ago</span>
-                                                            </div>
-                                                            <div class="text-warning mb-0">
-                                                                <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i>
-                                                            </div>
-                                                            <div class="comment-main-action d-flex">
-                                                                <p class="font-13 text-muted mb-0 comment-main"><span class="text-teritary">@Nikki  Taylor</span> Condemned reverie shun friends yet he domestic bade, the aye longed fondly.</p>
-                                                            </div><a href="javascript:void(0)"><span class="badge btn-custom rounded-pill">Reply</span></a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="mb-0">
-                                                    <div class="media mb-0">
-                                                        <div class=" me-3">
-                                                            <a href="#"><img alt="64x64" class="media-object rounded-circle thumb-sm" src="assets/images/users/15.jpg"></a>
-                                                        </div>
-                                                        <div class="media-body">
-                                                            <div class="name-time-container d-flex">
-                                                                <h5 class="mt-0 mb-0 me-2">Jon Fincher</h5><svg class="mx-2 me-1" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                                                    <path d="M11.999939,6.5c-0.276123,0-0.5,0.223877-0.5,0.5v4.6914062l-2.7059937,1.3623047c-0.168457,0.0848999-0.2747803,0.2573853-0.2749634,0.4460449C8.5187988,13.7758789,8.7424927,13.9998169,9.0185547,14c0.078064,0.0003662,0.1550903-0.0180664,0.2245483-0.0537109l2.9814453-1.5C12.3933105,12.3615112,12.4998169,12.1888428,12.499939,12V7C12.499939,6.723877,12.276123,6.5,11.999939,6.5z M12,2C6.4771729,2,2,6.4771729,2,12s4.4771729,10,10,10c5.5201416-0.0064697,9.9935303-4.4798584,10-10C22,6.4771729,17.5228271,2,12,2z M12,21c-4.9705811,0-9-4.0294189-9-9s4.0294189-9,9-9c4.9683228,0.0054321,8.9945679,4.0316772,9,9C21,16.9705811,16.9705811,21,12,21z"></path></svg> <span class="time-main text-muted">3h ago</span>
-                                                            </div>
-                                                            <div class="text-warning mb-0">
-                                                                <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
-                                                            </div>
-                                                            <div class="comment-main-action d-flex">
-                                                                <p class="font-13 text-muted mb-0 comment-main">Labore tempor vero stet tempor et dolores ipsum.</p>
-                                                            </div><a href="javascript:void(0)"><span class="badge btn-custom rounded-pill">Reply</span></a>
-                                                        </div>
-                                                    </div>
-                                                </li>
+                                                @endforeach
                                             </ul>
                                         </div>
                                     </div>
@@ -253,7 +200,7 @@
                     </div>
                 </div>
             </div>
-            @if(!Session::get('customer_id'))
+            @if(Session::get('customer_id'))
             <div class="row mt-5">
                 <div class="col-md-12">
                     <div class="card">
@@ -263,7 +210,7 @@
                                 @csrf
                                 <div class="form-group">
                                     <div class="col-xs-12">
-                                        <textarea class="form-control" rows="5" name="review">Your Review*</textarea>
+                                        <textarea class="form-control" rows="5" name="review" placeholder="Write Your Review..."></textarea>
                                     </div>
                                 </div>
                                 <div>

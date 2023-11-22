@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Customer;
 use App\Models\ProductReview;
 use Illuminate\Http\Request;
 use App\Models\Product;
@@ -10,7 +11,7 @@ use Session;
 
 class WebsiteController extends Controller
 {
-    public $categories, $product,$customer;
+    public $categories, $product,$customer,$reviews;
 
     public function index()
     {
@@ -24,7 +25,13 @@ class WebsiteController extends Controller
         if (!$this->product){
             return view('website.home.error');
         }
-        return view('website.product.detail',['product'=>$this->product]);
+        else
+        {
+//            $this->reviews = ProductReview::where('product_id',$id)->get();
+            return view('website.product.detail',[
+                'product' => $this->product,
+            ]);
+        }
     }
 
     public function productReview(Request $request, $id)

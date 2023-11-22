@@ -42,7 +42,8 @@ Route::post('/customer-update',[CustomerController::class,'update'])->name('cust
 Route::get('/customer-dashboard',[CustomerController::class,'dashboard'])->name('customer.dashboard');
 Route::get('/customer-order',[CustomerController::class,'order'])->name('customer.order');
 Route::get('/customer-payment',[CustomerController::class,'payment'])->name('customer.payment');
-Route::get('/customer-review',[CustomerController::class,'review'])->name('customer.review');
+Route::get('/customer-review/{id}',[CustomerController::class,'review'])->name('customer.review');
+Route::get('/customer-allReview/',[CustomerController::class,'allReview'])->name('customer.allReview');
 Route::get('/customer-change-password',[CustomerController::class,'changePassword'])->name('customer.change.password');
 
 
