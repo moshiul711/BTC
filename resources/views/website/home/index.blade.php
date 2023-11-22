@@ -1,7 +1,7 @@
 @extends('website.master')
 
 @section('slider')
-    <div class="row">
+    <div class="row mt-2">
         <div id="carousel-controls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">

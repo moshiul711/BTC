@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\ProductReview;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use Session;
 
 class WebsiteController extends Controller
 {

@@ -14,7 +14,7 @@ class CustomerController extends Controller
         return view('customer.home.index');
     }
 
-    public function customerLogin(Request $request)
+    public function login(Request $request)
     {
         $this->customer = Customer::where('email',$request->email)->first();
         if ($this->customer)
@@ -22,7 +22,7 @@ class CustomerController extends Controller
             if (password_verify($request->password,$this->customer->password))
             {
                 Session::put('customer_id', $this->customer->id);
-                Session::put('customer_name', $this->customer->name);
+                Session::put('customer_name', $this->customer->first_name);
                 Session::put('customer_image', $this->customer->image);
                 return back()->with('message','You Successfully Login..');
             }
@@ -37,13 +37,19 @@ class CustomerController extends Controller
         }
     }
 
-    public function customerRegister(Request $request)
+    public function register(Request $request)
     {
         Customer::register($request);
         return back()->with('message','Your Credentials are Successfully Registered');
     }
 
-    public function customerLogout()
+    public function profile()
+    {
+        $this->customer = Customer::find(Session::get('customer_id'));
+        return view('customer.home.profile',['customer'=>$this->customer]);
+    }
+
+    public function logout()
     {
         Session::forget('customer_id');
         Session::forget('customer_name');

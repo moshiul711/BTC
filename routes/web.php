@@ -34,9 +34,15 @@ Route::post('/product-review/{id}',[WebsiteController::class,'productReview'])->
 
 //Customer Module
 Route::get('/customer',[CustomerController::class,'index'])->name('customer');
-Route::post('/customer-login',[CustomerController::class,'customerLogin'])->name('customer.login');
-Route::get('/customer-logout',[CustomerController::class,'customerLogout'])->name('customer.logout');
-Route::post('/customer-register',[CustomerController::class,'customerRegister'])->name('customer.register');
+Route::post('/customer-login',[CustomerController::class,'login'])->name('customer.login');
+Route::get('/customer-logout',[CustomerController::class,'logout'])->name('customer.logout');
+Route::post('/customer-register',[CustomerController::class,'register'])->name('customer.register');
+Route::get('/customer-profile',[CustomerController::class,'profile'])->name('customer.profile');
+Route::get('/customer-dashboard',[CustomerController::class,'dashboard'])->name('customer.dashboard');
+Route::get('/customer-order',[CustomerController::class,'order'])->name('customer.order');
+Route::get('/customer-payment',[CustomerController::class,'payment'])->name('customer.payment');
+Route::get('/customer-review',[CustomerController::class,'review'])->name('customer.review');
+Route::get('/customer-change-password',[CustomerController::class,'changePassword'])->name('customer.change.password');
 
 
 //Checkout Module
