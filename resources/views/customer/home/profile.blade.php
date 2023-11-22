@@ -19,7 +19,7 @@
     <div class="row">
         <div class="col-xl-12 col-md-12">
             <div class="card">
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="{{ route('customer.update') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="card-body">
                         <div class="row">
@@ -46,7 +46,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label class="form-label">Phone <span class="text-red">*</span></label>
-                                    <input type="tel" value="{{ $customer->phone }}" class="form-control" placeholder="Phone">
+                                    <input type="tel" value="{{ $customer->phone }}" name="phone" class="form-control" placeholder="Phone">
                                 </div>
                             </div>
 
@@ -65,7 +65,14 @@
                             <div class="col-sm-6 col-md-6">
                                 <div class="form-group">
                                     <label class="form-label">Postal Code <span class="text-red">*</span></label>
-                                    <input type="number" value="{{ $customer->postal_code }}" name="postal_code" class="form-control" placeholder="ZIP Code">
+                                    <input type="number" value="{{ $customer->postal_code }}" name="postal_code" class="form-control" placeholder="Post Code">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Profile Photo<span class="text-red">*</span></label>
+                                    <input type="file"  name="image" class="form-control" >
+                                    <img src="{{ asset($customer->image) }}" class="img img-thumbnail mt-3" alt="Upload Your Image Please..." height="60" width="80">
                                 </div>
                             </div>
                         </div>

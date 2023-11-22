@@ -38,6 +38,7 @@ Route::post('/customer-login',[CustomerController::class,'login'])->name('custom
 Route::get('/customer-logout',[CustomerController::class,'logout'])->name('customer.logout');
 Route::post('/customer-register',[CustomerController::class,'register'])->name('customer.register');
 Route::get('/customer-profile',[CustomerController::class,'profile'])->name('customer.profile');
+Route::post('/customer-update',[CustomerController::class,'update'])->name('customer.update');
 Route::get('/customer-dashboard',[CustomerController::class,'dashboard'])->name('customer.dashboard');
 Route::get('/customer-order',[CustomerController::class,'order'])->name('customer.order');
 Route::get('/customer-payment',[CustomerController::class,'payment'])->name('customer.payment');

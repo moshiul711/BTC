@@ -49,7 +49,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label class="form-label">Phone <span class="text-red">*</span></label>
-                                    <input type="tel" value="{{ $customer->phone }}" class="form-control" placeholder="Phone">
+                                    <input type="tel" value="{{ $customer->phone }}" name="phone" class="form-control" placeholder="Phone">
                                 </div>
                             </div>
 

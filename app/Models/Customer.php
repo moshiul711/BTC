@@ -4,11 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Session;
 
 class Customer extends Model
 {
     use HasFactory;
-    public static $customer;
+    public static $customer,$imageUrl,$image,$imageName,$imageExt,$imageFullName,$imagePath;
     public static function register($request)
     {
         self::$customer = new Customer();
@@ -19,4 +20,43 @@ class Customer extends Model
         self::$customer->password = bcrypt($request->password);
         self::$customer->save();
     }
+
+    public static function updateProfile($request)
+    {
+        self::$customer = Customer::find(Session::get('customer_id'));
+        if ($request->file('image'))
+        {
+            if (file_exists(self::$customer->image))
+            {
+                unlink(self::$customer->image);
+            }
+            self::$imageUrl = self::uploadCustomerImage($request);
+        }
+        else
+        {
+            self::$imageUrl = self::$customer->image;
+        }
+        self::$customer->first_name = $request->first_name;
+        self::$customer->last_name = $request->last_name;
+        self::$customer->email = $request->email;
+        self::$customer->phone = $request->phone;
+        self::$customer->address = $request->address;
+        self::$customer->city = $request->city;
+        self::$customer->postal_code = $request->postal_code;
+        self::$customer->image = self::$imageUrl;
+        self::$customer->save();
+        return self::$customer;
+    }
+
+    public static function uploadCustomerImage($request)
+    {
+        self::$image = $request->file('image');
+        self::$imageName = substr(md5(time()),0,8);
+        self::$imageExt = self::$image->getClientOriginalExtension();
+        self::$imageFullName = self::$imageName.'.'.self::$imageExt;
+        self::$imagePath = 'uploads/customer-image/';
+        self::$image->move(self::$imagePath,self::$imageFullName);
+        return self::$imageUrl = self::$imagePath.self::$imageFullName;
+    }
 }
+

@@ -49,6 +49,12 @@ class CustomerController extends Controller
         return view('customer.home.profile',['customer'=>$this->customer]);
     }
 
+    public function update(Request $request)
+    {
+        Customer::updateProfile($request);
+        return back()->with('message','Thanks For Updating Your Profile...');
+    }
+
     public function logout()
     {
         Session::forget('customer_id');
