@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('brand_id');
             $table->integer('unit_id');
             $table->string('name');
+            $table->string('model');
             $table->string('code');
             $table->integer('offer_price');
             $table->integer('regular_price');

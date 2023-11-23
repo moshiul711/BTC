@@ -20,6 +20,8 @@ class CartController extends Controller
                 'price' => $this->product->offer_price,
                 'options' =>
                     [
+                        'min' => 1,
+                        'max' => $this->product->stock,
                         'image' => $this->product->image
                     ]
             ]);

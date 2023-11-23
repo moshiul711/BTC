@@ -83,7 +83,7 @@
                             <p class="mb-0 text-18 mt-5">Price</p>
                             <p class="mb-1">
                                 <span class="text-dark text-22">Tk. {{ $product->offer_price }}</span>
-                                <span class="mx-2 text-muted text-decoration-line-through">Tk. {{ $product->regular_price }}</span>
+                                <span class="mx-2 text-muted text-decoration-line-through text-18">Tk. {{ $product->regular_price }}</span>
                                 <span class="badge bg-red ms-2">({{ round($offer = (($product->regular_price - $product->offer_price )/$product->regular_price)*100) }}% Off)</span>
                             </p>
 
@@ -95,7 +95,7 @@
                                             <input type="number" class="form-control" value="1" min="1" max="{{ $product->stock }}"  name="qty">
                                         </div>
                                         <div class="col-md-6 form-group">
-                                            <input type="submit" class="form-control btn btn-success" value="ADD TO CART"  name="submit">
+                                            <input type="submit" class="form-control btn btn-success text-bold" value="ADD TO CART"  name="submit">
                                         </div>
                                     </div>
                                 </form>
@@ -164,7 +164,7 @@
                                                         Model Number
                                                     </div>
                                                     <div class="col-sm-3">
-                                                        IDLYHNY1116
+                                                        {{ $product->model }}
                                                     </div>
                                                 </li>
                                                 <li class="p-b-20 row">
