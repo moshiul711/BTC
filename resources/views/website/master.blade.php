@@ -17,7 +17,7 @@
     <title>Bangladesh Technology Company</title>
 
     <!-- FAVICON -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/') }}website/assets/images/brand/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/') }}website/assets/icons/icon.png" />
 
     <!-- BOOTSTRAP CSS -->
     <link id="style" href="{{ asset('/') }}website/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
@@ -67,6 +67,23 @@
 
         .colored-toast .swal2-html-container {
             color: white;
+        }
+
+        [type=radio] {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        /* IMAGE STYLES */
+        [type=radio] + img {
+            cursor: pointer;
+        }
+
+        /* CHECKED STYLES */
+        [type=radio]:checked + img {
+            outline: 2px solid #f00;
         }
 
     </style>

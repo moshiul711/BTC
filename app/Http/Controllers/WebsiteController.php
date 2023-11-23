@@ -28,6 +28,8 @@ class WebsiteController extends Controller
         else
         {
 //            $this->reviews = ProductReview::where('product_id',$id)->get();
+            $this->product->hit_count = $this->product->hit_count+1;
+            $this->product->save();
             return view('website.product.detail',[
                 'product' => $this->product,
             ]);

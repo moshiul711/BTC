@@ -31,11 +31,11 @@
                                         <div class="carousel slide h-100" data-bs-interval="t" id="thumbcarousel">
                                             <div class="carousel-inner h-100">
                                                 <ul class="carousel-item active d-flex h-100">
-                                                    <li class="thumb my-2 active" data-bs-slide-to="0" data-bs-target="#Slider">
+                                                    <li class="thumb active" data-bs-slide-to="0" data-bs-target="#Slider">
                                                         <img alt="img" src="{{ asset($product->image) }}">
                                                     </li>
                                                     @foreach($product->otherImages as $otherImage)
-                                                    <li class="thumb my-2" data-bs-slide-to="{{ $loop->iteration }}" data-bs-target="#Slider">
+                                                    <li class="thumb" data-bs-slide-to="{{ $loop->iteration }}" data-bs-target="#Slider">
                                                         <img alt="img" src="{{ asset($otherImage->image) }}">
                                                     </li>
                                                     @endforeach
@@ -74,8 +74,8 @@
                             <div class="text-warning rating-container d-sm-flex">
                                 <div class="ms-2">
                                     <span>
-                                        <a style="color: #00cc00; font-size: 18px"><i class="fa fa-signal"></i> {{ $product->sales_count }} View</a>
-                                        <a class="px-5" style="color: darkred; font-size: 18px"><i class=" fa fa-wifi"></i> {{ count($product->reviews) }} Review(s)</a>
+                                        <a style="color: #00cc00; font-size: 18px"><i class="fa fa-line-chart"></i> {{ $product->hit_count }} View(s)</a>
+                                        <a class="px-5" style="color: darkred; font-size: 18px"><i class="fa fa-bar-chart-o"></i> {{ count($product->reviews) }} Review(s)</a>
                                         <a class="px-1" style="color: #008069; font-size: 18px"><i class=" fa fa-cubes"></i> {{ $product->stock }} Available</a>
                                     </span>
                                 </div>
@@ -133,15 +133,15 @@
                                 <div class="tab-menu-heading border-bottom-0">
                                     <div class="tabs-menu">
                                         <!-- Tabs -->
-                                        <ul class="nav panel-tabs">
+                                        <ul class="nav panel-tabs ">
                                             <li>
-                                                <a class="active me-2 my-sm-0 my-1 text-body" data-bs-toggle="tab" href="#tab1">Specifications</a>
+                                                <a class="btn active me-2 my-sm-0 my-1 text-body text-bold" data-bs-toggle="tab" href="#tab1">Specifications</a>
                                             </li>
                                             <li>
-                                                <a class="me-2 my-sm-0 my-1 text-body" data-bs-toggle="tab" href="#tab2">Description</a>
+                                                <a class="btn me-2 my-sm-0 my-1 text-body text-bold" data-bs-toggle="tab" href="#tab2">Description</a>
                                             </li>
                                             <li>
-                                                <a class="text-body my-sm-0 my-1" data-bs-toggle="tab" href="#tab3">Reviews</a>
+                                                <a class="btn text-body my-sm-0 my-1 text-bold" data-bs-toggle="tab" href="#tab3">Reviews</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -173,6 +173,23 @@
                                                     </div>
                                                     <div class="col-sm-3">
                                                         {{ $product->code }}
+                                                    </div>
+                                                </li>
+                                                <li class="p-b-20 row">
+                                                    <div class="col-sm-3 text-muted">
+                                                        Replacement
+                                                    </div>
+                                                    <div class="col-sm-3">
+                                                        {{ $product->replacement }} Replace Guarantee
+                                                    </div>
+                                                </li>
+
+                                                <li class="p-b-20 row">
+                                                    <div class="col-sm-3 text-muted">
+                                                        Service
+                                                    </div>
+                                                    <div class="col-sm-3">
+                                                        {{ $product->service }} Service Warranty
                                                     </div>
                                                 </li>
 

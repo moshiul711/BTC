@@ -308,7 +308,8 @@
                         </li>
 
                         <li class="slide">
-                            <a class="side-menu__item"  href="{{ route('customer.order') }}" title="Orders">
+                            <a class="side-menu__item"  href="" title="Orders">
+                                {{--{{ route('customer.order') }}--}}
                                 <img src="{{ asset('/')}}website/assets/icons/order.png " alt="">
                                 <span class="side-menu__label px-2">Orders</span>
                             </a>

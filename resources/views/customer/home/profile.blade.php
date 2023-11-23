@@ -36,14 +36,14 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-12">
+                            <div class="col-sm-6 col-md-6">
                                 <div class="form-group">
                                     <label class="form-label">Email address <span class="text-red">*</span></label>
                                     <input type="email" class="form-control" placeholder="Email" name="email" value="{{ $customer->email }}">
                                 </div>
                             </div>
 
-                            <div class="col-md-12">
+                            <div class="col-sm-6 col-md-6">
                                 <div class="form-group">
                                     <label class="form-label">Phone <span class="text-red">*</span></label>
                                     <input type="tel" value="{{ $customer->phone }}" name="phone" class="form-control" placeholder="Phone">
@@ -78,7 +78,7 @@
                         </div>
                     </div>
                     <div class="card-footer text-end">
-                        <button type="submit" class="btn btn-outline-success btn-block" style="display: block;width: 100%"><h5>Update Profile</h5></button>
+                        <button type="submit" class="btn btn-outline-success" style="display: block;width: 100%"><h5>Update Profile</h5></button>
                     </div>
                 </form>
             </div>

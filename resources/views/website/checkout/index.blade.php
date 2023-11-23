@@ -74,6 +74,8 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="col-xl-4 col-md-12">
                 <div class="card">
                     <div class="card-header border-bottom">
                         <h3 class="card-title">Payment Information</h3>
@@ -81,18 +83,21 @@
                     <div class="card-body">
                         <div class="card-pay">
                             <div class="row">
-                                <div class="col-lg-4">
-                                    <label class="rdiobox" for="rdio-unchecked"><input name="payment" required type="radio" value="cod" id="rdio-unchecked"> <span>Cash On Delivery</span></label>
-                                </div>
-                                <div class="col-lg-4">
-                                    <label class="rdiobox" for="rdio-checked"><input name="payment" required type="radio" value="online" id="rdio-checked"> <span>Online Payment</span></label>
+                                <div class="col-lg-12 col-sm-12" >
+                                    <label>
+                                        <input name="payment" required type="radio" value="cod" checked>
+                                        <img src="{{ asset('/') }}website/assets/icons/cod_icon.webp" alt="">
+                                    </label>
+                                    <label>
+                                        <input name="payment" required type="radio" value="online">
+                                        <img src="{{ asset('/') }}website/assets/icons/cards_icon.webp" alt="">
+                                    </label>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xl-4 col-md-12">
+
                 <div class="card cart">
                     <div class="card-header border-bottom">
                         <h3 class="card-title">Your Order(s)</h3>
@@ -100,7 +105,7 @@
                     <div class="card-body">
                         @foreach(Cart::content() as $item)
                         <div class="d-md-flex">
-                            <div class="d-flex">
+                            <div class="d-flex py-2">
                                 <img class="img-fluid avatar-xl border p-0 br-7" src="{{ asset($item->options->image) }}" alt="img">
                                 <div class="ms-3 mt-2">
                                     <h4 class="mb-1 fw-semibold fs-14"><a href="{{ route('product.detail',$item->id) }}">{{ $item->name }}</a></h4>
@@ -135,7 +140,7 @@
                         </table>
                     </div>
                     <div class="card-footer text-end">
-                        <button type="submit" class="btn btn-outline-success" style="display: block;width: 100%">Place Order</button>
+                        <button type="submit" class="btn btn-success" style="display: block;width: 100%">Place Order</button>
                     </div>
                 </div>
             </div>
