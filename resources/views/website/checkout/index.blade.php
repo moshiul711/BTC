@@ -71,6 +71,13 @@
                                     <input type="number" value="{{ $customer->postal_code }}" name="postal_code" class="form-control" placeholder="ZIP Code">
                                 </div>
                             </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label">Additional Information<span class="text-red">*</span></label>
+                                    <textarea class="form-control" rows="5" placeholder="Any Other Additional Information" name="additional_info"></textarea>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

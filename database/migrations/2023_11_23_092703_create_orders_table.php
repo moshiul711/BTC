@@ -13,6 +13,22 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->integer('customer_id');
+            $table->integer('delivery_id');
+            $table->string('order_date');
+            $table->string('order_timestamp');
+            $table->string('order_total');
+            $table->string('delivery_charge');
+            $table->string('discount');
+            $table->string('payment_amount');
+            $table->string('payment_method');
+
+            $table->string('order_status')->default('pending');
+            $table->string('payment_status')->default('pending');
+            $table->string('delivery_status')->default('pending');
+            $table->integer('courier_id')->default(0);
+            $table->string('currency')->default('BDT');
+            $table->string('transaction_id')->nullable();
             $table->timestamps();
         });
     }
