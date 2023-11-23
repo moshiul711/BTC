@@ -31,9 +31,13 @@
                                         <div class="carousel slide h-100" data-bs-interval="t" id="thumbcarousel">
                                             <div class="carousel-inner h-100">
                                                 <ul class="carousel-item active d-flex h-100">
-                                                    <li class="thumb my-2 active" data-bs-slide-to="0" data-bs-target="#Slider"><img alt="img" src="{{ asset($product->image) }}"></li>
+                                                    <li class="thumb my-2 active" data-bs-slide-to="0" data-bs-target="#Slider">
+                                                        <img alt="img" src="{{ asset($product->image) }}">
+                                                    </li>
                                                     @foreach($product->otherImages as $otherImage)
-                                                    <li class="thumb my-2" data-bs-slide-to="{{ $loop->iteration }}" data-bs-target="#Slider"><img alt="img" src="{{ asset($otherImage->image) }}"></li>
+                                                    <li class="thumb my-2" data-bs-slide-to="{{ $loop->iteration }}" data-bs-target="#Slider">
+                                                        <img alt="img" src="{{ asset($otherImage->image) }}">
+                                                    </li>
                                                     @endforeach
                                                 </ul>
                                             </div>
@@ -45,14 +49,14 @@
                                         <div class="carousel slide h-100" data-bs-ride="false" id="Slider">
                                             <div class="carousel-inner h-100">
                                                 <div class="carousel-item active">
-                                                    <img alt="img" class="img-fluid w-100 d-block " src="{{ asset($product->image) }}" style="height: 300px; width: 811px">
+                                                    <img alt="img" class="img img-thumbnail w-100 d-block " src="{{ asset($product->image) }}" style="height: 300px; width: 811px">
                                                     <div class="top-left" style="position: absolute;top: 6px;left: 6px; color:red">
                                                         <img src="{{ asset('/')}}website/assets/icons/icon.png " alt="">
                                                     </div>
                                                 </div>
                                                 @foreach($product->otherImages as $otherImage)
                                                 <div class="carousel-item">
-                                                    <img alt="img" class="img-fluid w-100 d-block " src="{{ asset($otherImage->image) }}" style="height: 300px; width: 811px">
+                                                    <img alt="img" class="img img-thumbnail w-100 d-block " src="{{ asset($otherImage->image) }}" style="height: 300px; width: 811px">
                                                     <div class="top-left" style="position: absolute;top: 6px;left: 6px; color:red">
                                                         <img src="{{ asset('/')}}website/assets/icons/icon.png " alt="">
                                                     </div>
@@ -64,46 +68,57 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-6 col-lg-12 col-md-12">
 
+                        <div class="col-xl-6 col-lg-12 col-md-12">
                             <h3 class="mb-2 mt-xl-0 mt-4">{{ $product->name }}</h3>
                             <div class="text-warning rating-container d-sm-flex">
                                 <div class="ms-2">
-                                    <a class="text-info" href="#">
-                                       <i class="fa fa-edit"></i> 37 Reviews
-                                    </a>
+                                    <span>
+                                        <a style="color: #00cc00; font-size: 18px"><i class="fa fa-signal"></i> {{ $product->sales_count }} View</a>
+                                        <a class="px-5" style="color: darkred; font-size: 18px"><i class=" fa fa-wifi"></i> {{ count($product->reviews) }} Review(s)</a>
+                                        <a class="px-1" style="color: #008069; font-size: 18px"><i class=" fa fa-cubes"></i> {{ $product->stock }} Available</a>
+                                    </span>
                                 </div>
                             </div>
                             <p class="mb-0 text-18 mt-5">Price</p>
                             <p class="mb-1">
                                 <span class="text-dark text-22">Tk. {{ $product->offer_price }}</span>
                                 <span class="mx-2 text-muted text-decoration-line-through">Tk. {{ $product->regular_price }}</span>
-                                <span class="text-dark">({{ round($offer = (($product->regular_price - $product->offer_price )/$product->regular_price)*100) }}% Off)</span>
+                                <span class="badge bg-red ms-2">({{ round($offer = (($product->regular_price - $product->offer_price )/$product->regular_price)*100) }}% Off)</span>
                             </p>
 
                             <div class="mt-5">
                                 <form action="{{ route('cart.add',$product->id) }}" method="post">
                                     @csrf
                                     <div class="row">
-                                        <div class="col-auto input-group">
-                                            <input type="number" class="form-control" value="1" name="qty">
-                                            <button class="btn btn-outline-success">Add To Cart</button>
+                                        <div class="col-md-6 form-group">
+                                            <input type="number" class="form-control" value="1" min="1" max="{{ $product->stock }}"  name="qty">
+                                        </div>
+                                        <div class="col-md-6 form-group">
+                                            <input type="submit" class="form-control btn btn-success" value="ADD TO CART"  name="submit">
                                         </div>
                                     </div>
                                 </form>
                             </div>
-                            <div class="mt-5">
-                                <div class="row">
-                                    <div class="col-md-2 text-center border br-7 py-3 px-4 m-1">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-icn" enable-background="new 0 0 24 24" viewBox="0 0 24 24"><path d="M21.5,5h-4C17.223877,5,17,5.223877,17,5.5S17.223877,6,17.5,6H21v12H10.7069702l1.6464844-1.6464844c0.1871948-0.1937866,0.1871948-0.5009766,0-0.6947021c-0.1918335-0.1986694-0.5083618-0.2041626-0.7069702-0.0122681l-2.5,2.5c-0.000061,0-0.0001221,0.000061-0.0001221,0.0001221c-0.1951904,0.1951904-0.1951294,0.5117188,0.0001221,0.7068481l2.5,2.5C11.7401123,21.4474487,11.8673706,21.5001831,12,21.5c0.1325684,0,0.2597046-0.0526733,0.3533936-0.1464233c0.1953125-0.1952515,0.1953125-0.5118408,0.0001221-0.7070923L10.7069702,19h10.7936401C21.7765503,18.9998169,22.0001831,18.776001,22,18.5V5.4993896C21.9998169,5.2234497,21.776001,4.9998169,21.5,5z M5.5,18H3V6h10.2930298l-1.6465454,1.6464844c-0.09375,0.09375-0.1464233,0.2208862-0.1464233,0.3534546C11.5,8.276062,11.723877,8.499939,12,8.5c0.1326294,0.0001221,0.2598267-0.0525513,0.3534546-0.1464844l2.5-2.5c0.000061-0.000061,0.0001221-0.000061,0.0001831-0.0001221c0.1951294-0.1952515,0.1950684-0.5117188-0.0001831-0.7068481l-2.5-2.5c-0.1937256-0.1871338-0.5009155-0.1871338-0.6947021,0c-0.1986084,0.1918335-0.2041016,0.5083618-0.0122681,0.7069702L13.2930298,5H2.4993896C2.2234497,5.0001831,1.9998169,5.223999,2,5.5v13.0005493C2.0001831,18.7765503,2.223999,19.0001831,2.5,19h3C5.776123,19,6,18.776123,6,18.5S5.776123,18,5.5,18z"/></svg>
-                                        <p class="mb-0 mt-2">{{ $product->replacement }} <br> Replacement</p>
-                                    </div>
-                                    <div class="col-md-2 text-center border br-7 py-3 px-4 m-1">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-icn" enable-background="new 0 0 24 24" viewBox="0 0 24 24"><path d="M14.5,11.5h-2v-2C12.5,9.2,12.3,9,12,9s-0.5,0.2-0.5,0.5v2h-2C9.2,11.5,9,11.7,9,12s0.2,0.5,0.5,0.5h2v2c0,0,0,0,0,0c0,0.3,0.2,0.5,0.5,0.5c0,0,0,0,0,0c0.3,0,0.5-0.2,0.5-0.5v-2h2c0.3,0,0.5-0.2,0.5-0.5S14.8,11.5,14.5,11.5z M20,3.8c-0.1-0.3-0.3-0.4-0.6-0.4c-2.5,0.5-5,0-7.1-1.5c-0.2-0.1-0.4-0.1-0.6,0c-2.1,1.4-4.6,2-7.1,1.5c0,0-0.1,0-0.1,0C4.2,3.4,4,3.6,4,3.9v8c0,2.9,1.4,5.7,3.8,7.4l3.9,2.8c0.1,0.1,0.2,0.1,0.3,0.1c0.1,0,0.2,0,0.3-0.1l3.9-2.8c2.4-1.7,3.8-4.5,3.8-7.4v-8C20,3.8,20,3.8,20,3.8z M19,11.9c0,2.6-1.3,5.1-3.4,6.6L12,21.1l-3.6-2.6c-2.1-1.5-3.4-4-3.4-6.6V4.5c2.4,0.4,4.9-0.2,7-1.5c2.1,1.3,4.6,1.9,7,1.5V11.9z"/></svg>
-                                        <p class="mb-0 mt-2">{{ $product->service }} <br> Warranty</p>
-                                    </div>
-                                </div>
-                            </div>
+
+                            {{--<div class="card">--}}
+                                {{--<div class="card-header border-bottom">--}}
+                                    {{--<h5 class="card-title">Additional Offers</h5>--}}
+                                {{--</div>--}}
+                                {{--<div class="card-body">--}}
+                                    {{--<div class="row">--}}
+                                        {{--<div class="col-md-2 text-center border br-7 px-4 m-1">--}}
+                                            {{--<svg xmlns="http://www.w3.org/2000/svg" class="w-icn" enable-background="new 0 0 24 24" viewBox="0 0 24 24"><path d="M21.5,5h-4C17.223877,5,17,5.223877,17,5.5S17.223877,6,17.5,6H21v12H10.7069702l1.6464844-1.6464844c0.1871948-0.1937866,0.1871948-0.5009766,0-0.6947021c-0.1918335-0.1986694-0.5083618-0.2041626-0.7069702-0.0122681l-2.5,2.5c-0.000061,0-0.0001221,0.000061-0.0001221,0.0001221c-0.1951904,0.1951904-0.1951294,0.5117188,0.0001221,0.7068481l2.5,2.5C11.7401123,21.4474487,11.8673706,21.5001831,12,21.5c0.1325684,0,0.2597046-0.0526733,0.3533936-0.1464233c0.1953125-0.1952515,0.1953125-0.5118408,0.0001221-0.7070923L10.7069702,19h10.7936401C21.7765503,18.9998169,22.0001831,18.776001,22,18.5V5.4993896C21.9998169,5.2234497,21.776001,4.9998169,21.5,5z M5.5,18H3V6h10.2930298l-1.6465454,1.6464844c-0.09375,0.09375-0.1464233,0.2208862-0.1464233,0.3534546C11.5,8.276062,11.723877,8.499939,12,8.5c0.1326294,0.0001221,0.2598267-0.0525513,0.3534546-0.1464844l2.5-2.5c0.000061-0.000061,0.0001221-0.000061,0.0001831-0.0001221c0.1951294-0.1952515,0.1950684-0.5117188-0.0001831-0.7068481l-2.5-2.5c-0.1937256-0.1871338-0.5009155-0.1871338-0.6947021,0c-0.1986084,0.1918335-0.2041016,0.5083618-0.0122681,0.7069702L13.2930298,5H2.4993896C2.2234497,5.0001831,1.9998169,5.223999,2,5.5v13.0005493C2.0001831,18.7765503,2.223999,19.0001831,2.5,19h3C5.776123,19,6,18.776123,6,18.5S5.776123,18,5.5,18z"/></svg>--}}
+                                            {{--<p class="mb-0 mt-2">{{ $product->replacement }} <br> Replacement</p>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="col-md-2 text-center border br-7 px-4 m-1">--}}
+                                            {{--<svg xmlns="http://www.w3.org/2000/svg" class="w-icn" enable-background="new 0 0 24 24" viewBox="0 0 24 24"><path d="M14.5,11.5h-2v-2C12.5,9.2,12.3,9,12,9s-0.5,0.2-0.5,0.5v2h-2C9.2,11.5,9,11.7,9,12s0.2,0.5,0.5,0.5h2v2c0,0,0,0,0,0c0,0.3,0.2,0.5,0.5,0.5c0,0,0,0,0,0c0.3,0,0.5-0.2,0.5-0.5v-2h2c0.3,0,0.5-0.2,0.5-0.5S14.8,11.5,14.5,11.5z M20,3.8c-0.1-0.3-0.3-0.4-0.6-0.4c-2.5,0.5-5,0-7.1-1.5c-0.2-0.1-0.4-0.1-0.6,0c-2.1,1.4-4.6,2-7.1,1.5c0,0-0.1,0-0.1,0C4.2,3.4,4,3.6,4,3.9v8c0,2.9,1.4,5.7,3.8,7.4l3.9,2.8c0.1,0.1,0.2,0.1,0.3,0.1c0.1,0,0.2,0,0.3-0.1l3.9-2.8c2.4-1.7,3.8-4.5,3.8-7.4v-8C20,3.8,20,3.8,20,3.8z M19,11.9c0,2.6-1.3,5.1-3.4,6.6L12,21.1l-3.6-2.6c-2.1-1.5-3.4-4-3.4-6.6V4.5c2.4,0.4,4.9-0.2,7-1.5c2.1,1.3,4.6,1.9,7,1.5V11.9z"/></svg>--}}
+                                            {{--<p class="mb-0 mt-2">{{ $product->service }} <br> Warranty</p>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+
 
                         </div>
                     </div>
@@ -111,7 +126,7 @@
                     <div class="row mt-5">
                         <div class="col-md-12">
                             <div class="mt-4 mb-4">
-                                <h3><u>{{ $product->name }}</u></h3>
+                                <h3 class="py-2"><u>{{ $product->name }}</u></h3>
                                 <h4 class="mt-2">{{ $product->short_description }}</h4>
                             </div>
                             <div class="panel panel-primary">
@@ -204,8 +219,10 @@
             <div class="row mt-5">
                 <div class="col-md-12">
                     <div class="card">
+                        <div class="card-header border-bottom">
+                            <h5 class="card-title mb-3">Review</h5>
+                        </div>
                         <div class="card-body">
-                            <h5 class="mb-3">Add Review</h5>
                             <form action="{{ route('product.review',$product->id) }}" class="form-horizontal m-t-20" method="post">
                                 @csrf
                                 <div class="form-group">
