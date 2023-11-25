@@ -22,9 +22,9 @@ class CustomerController extends Controller
         {
             if (password_verify($request->password,$this->customer->password))
             {
-                Session::put('customer_id', $this->customer->id);
-                Session::put('customer_name', $this->customer->first_name);
-                Session::put('customer_image', $this->customer->image);
+                echo Session::put('customer_id', $this->customer->id);
+                echo Session::put('customer_name', $this->customer->first_name);
+                echo Session::put('customer_image', $this->customer->image);
                 return back()->with('message','You Successfully Login..');
             }
             else

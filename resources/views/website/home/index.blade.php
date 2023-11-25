@@ -131,7 +131,7 @@
                                         <span class="text-22 text-bold">Tk. {{ $product->offer_price }}</span>
                                     </p>
                                     @if($product->stock > 0)
-                                    <p class="mb-0 text-success-darkest">{{ $product->stock }} Available</p>
+                                    <p class="mb-0 text-success-darkest">Available</p>
                                     @else
                                     <p class="mb-0 text-secondary">Out of Stock</p>
                                     @endif
@@ -140,7 +140,7 @@
                             </div>
                         </div>
                         @if($product->stock > 0)
-                            <form action="{{ route('cart.add',$product->id) }}" method="post">
+                            <form id="cartAdd" action="{{ route('cart.add',$product->id) }}" method="post">
                                 @csrf
                                 <input type="hidden" name="qty" value="1">
                                 <button class="btn btn-outline-success text-bold btn-block">Add To Cart</button>

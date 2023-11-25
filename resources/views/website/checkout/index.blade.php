@@ -16,7 +16,8 @@
     </div>
     <!-- PAGE-HEADER END -->
     @if(Cart::Count()>0)
-        <form action="" >
+        <form action="{{ route('order-place') }}" method="post">
+            @csrf
         <!-- ROW-1 OPEN -->
         <div class="row">
             <div class="col-xl-8 col-md-12">
@@ -133,7 +134,7 @@
                             </tr>
                             <tr>
                                 <td class="border-top-0">Discount</td>
-                                <td class="text-end border-top-0">{{ $discount = 5 }}%</td>
+                                <td class="text-end border-top-0">{{ $discount = 500 }}</td>
                             </tr>
                             <tr>
                                 <td class="border-top-0">Shipping</td>
@@ -142,12 +143,18 @@
                             <tr>
                                 <td class="fs-20 border-top-0">Total</td>
                                 @php($total = ($subTotal))
-                                <td class="text-end fs-20 border-top-0">Tk. {{ round($payable = $subTotal+$shipping - ($total*$discount)/100) }}</td>
+                                <td class="text-end fs-20 border-top-0">Tk. {{ $payable = round($subTotal+$shipping - $discount) }}</td>
                             </tr>
                         </table>
                     </div>
+                    <?php
+                    Session::put('order_total',$subTotal);
+                    Session::put('delivery_charge',$shipping);
+                    Session::put('payment_amount',$payable);
+                    Session::put('discount',$discount);
+                    ?>
                     <div class="card-footer text-end">
-                        <button type="submit" class="btn btn-success" style="display: block;width: 100%">Place Order</button>
+                        <button type="submit" name="place_order" value="place_order" class="btn btn-success" style="display: block;width: 100%">Place Order</button>
                     </div>
                 </div>
             </div>

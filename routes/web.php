@@ -49,6 +49,7 @@ Route::get('/customer-change-password',[CustomerController::class,'changePasswor
 
 //Checkout Module
 Route::get('/checkout',[CheckoutController::class,'index'])->name('checkout');
+Route::post('/checkout/order-place',[CheckoutController::class,'placeOrder'])->name('order-place');
 
 
 //Cart Module
