@@ -644,7 +644,7 @@
                                     popup: 'colored-toast'
                                 },
                                 showConfirmButton: false,
-                                timer: 5000,
+                                timer: 2000,
                                 timerProgressBar: true
                             })
                             Toast.fire({

@@ -137,13 +137,13 @@
                                         <div class="d-flex">
                                             <h6 class="mt-1 mb-0 fs-15 text-dark">Shopping Cart</h6>
                                             <div class="ms-auto">
-                                                <span class="xm-title badge bg-secondary text-white fw-normal fs-12 badge-pill"> <a href="javascript:void(0);" class="showall-text text-white">Remove All</a> </span>
+                                                <span class="xm-title badge bg-secondary text-white fw-normal fs-12 badge-pill"> <a href="{{ route('cart.destroy') }}" class="showall-text text-white">Remove All</a> </span>
                                             </div>
                                         </div>
                                     </div>
                                     @foreach(Cart::content() as $item)
                                         <div class="header-dropdown-list cart-menu ps4 overflow-hidden">
-                                            <a class="dropdown-item d-flex p-4" href="cart.html">
+                                            <a class="dropdown-item d-flex p-4" href="">
                                                 <span class="avatar avatar-lg br-5 me-3 align-self-center cover-image" data-bs-image-src="{{ asset($item->options->image) }}"></span>
                                                 <div class="wp-60 cart-desc mt-1">
                                                     <p class="fs-13 mb-0 lh-1 mb-1 text-dark fw-500">{{ $item->name }}</p>
@@ -159,27 +159,28 @@
                                         </div>
                                     @endforeach
                                     <div class="dropdown-divider m-0"></div>
-                                    <a class="dropdown-item d-flex p-4" href="cart.html">
-                                        <div class="wp-60 cart-desc mt-1">
-                                            <p class="fs-13 mb-0 lh-1 mb-1 text-dark fw-500">Total</p>
-                                        </div>
-                                        <div class="ms-auto text-end d-flex fs-16">
-                                            <span class="fs-16 text-dark d-none d-sm-block fw-semibold">
-                                                {{ round(Cart::subtotal()) }}
-                                            </span>
-                                        </div>
-                                    </a>
+                                    {{--<a class="dropdown-item d-flex p-4" href="cart.html">--}}
+                                    {{--<div class="wp-60 cart-desc mt-1">--}}
+                                    {{--<p class="fs-13 mb-0 lh-1 mb-1 text-dark fw-500">Total</p>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="ms-auto text-end d-flex fs-16">--}}
+                                    {{--<span class="fs-16 text-dark d-none d-sm-block fw-semibold">--}}
+                                    {{--{{ round(Cart::subtotal()) }}--}}
+                                    {{--</span>--}}
+                                    {{--</div>--}}
+                                    {{--</a>--}}
                                     <div class="dropdown-divider m-0"></div>
                                     <div class="text-center p-3">
                                         <a href="{{ route('cart.show') }}" class="btn btn-primary">
                                             <img src="{{ asset('/') }}website/assets/icons/cart.png" alt="">
                                             View Cart
                                         </a>
-
-                                        <a href="#" class="btn btn-danger right">
-                                            <img src="{{ asset('/') }}website/assets/icons/checkout.png" alt="">
-                                            Checkout
-                                        </a>
+                                        @if(Session::get('customer_id'))
+                                            <a href="{{ route('checkout') }}" class="btn btn-danger right">
+                                                <img src="{{ asset('/') }}website/assets/icons/checkout.png" alt="">
+                                                Checkout
+                                            </a>
+                                        @endif
                                     </div>
                                 </div>
                             @endif
@@ -308,7 +309,7 @@
                         </li>
 
                         <li class="slide">
-                            <a class="side-menu__item"  href="" title="Orders">
+                            <a class="side-menu__item"  href="{{ route('customer.order') }}" title="Orders">
                                 {{--{{ route('customer.order') }}--}}
                                 <img src="{{ asset('/')}}website/assets/icons/order.png " alt="">
                                 <span class="side-menu__label px-2">Orders</span>

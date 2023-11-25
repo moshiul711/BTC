@@ -22,13 +22,14 @@ class OrderDetails extends Model
             self::$orderDetails->product_price = $item->price;
             self::$orderDetails->product_quantity = $item->qty;
             self::$orderDetails->save();
-            Cart::remove($item->rowId);
+//            Cart::remove($item->rowId);
 
             $data[$key]['id'] = self::$orderDetails->id;
             $data[$key]['product_id'] = $item->id;
             $data[$key]['product_name'] = $item->name;
             $data[$key]['product_price'] = $item->price;
             $data[$key]['product_quantity'] = $item->qty;
+            $data[$key]['product_image'] = $item->options->image;
         }
         return $data;
     }

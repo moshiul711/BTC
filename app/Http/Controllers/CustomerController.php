@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Customer;
+use App\Models\Order;
 use App\Models\ProductReview;
 use Illuminate\Http\Request;
 use Session;
 
 class CustomerController extends Controller
 {
-    public $email, $password,$customer,$reviews;
+    public $email, $password,$customer,$reviews,$orders;
     public function index()
     {
         return view('customer.home.index');
@@ -74,7 +75,13 @@ class CustomerController extends Controller
     public function allReview()
     {
         $this->reviews = ProductReview::where('customer_id',Session::get('customer_id'))->get();
-        return view('customer.review.index',['reviews'=>$this->reviews]);
+        return view('customer.home.review',['reviews'=>$this->reviews]);
+    }
+
+    public function order()
+    {
+        $this->orders = Order::where('customer_id',Session::get('customer_id'))->get();
+        return view('customer.home.orders',['orders'=>$this->orders]);
     }
 
 }
