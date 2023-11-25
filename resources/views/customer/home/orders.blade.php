@@ -19,9 +19,6 @@
     <div class="row row-sm">
         <div class="col-lg-12">
             <div class="card">
-                <div class="card-header border-bottom">
-                    <h3 class="card-title">Orders Lists</h3>
-                </div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered text-nowrap border-bottom" id="basic-datatable">
@@ -44,7 +41,13 @@
                                     <td>{{ $order->order_date }}</td>
                                     <td>{{ $order->order_status }}</td>
                                     <td>{{ $order->payment_amount }}</td>
-                                    <td>{{ $order->payment_method }}</td>
+                                    <td>
+                                        @if($order->payment_method=='cod')
+                                        {{ 'Cash On Delivery' }}
+                                        @else
+                                        {{ 'Online Payment' }}
+                                            @endif
+                                    </td>
                                     <td>{{ $order->payment_status }}</td>
                                 </tr>
                             @endforeach

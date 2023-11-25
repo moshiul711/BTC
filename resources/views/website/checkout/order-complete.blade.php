@@ -38,7 +38,7 @@
                 <div class="row">
                     <div class="col-md-10"><h4 class="text-center">To track the delivery of your order, go to My Account > My Order</h4></div>
                     <div class="col-md-2">
-                        <a href="customer.order" class="btn btn-info">View Order</a>
+                        <a href="{{ route('customer.order') }}" class="btn btn-success">View Order</a>
                     </div>
                 </div>
             </div>

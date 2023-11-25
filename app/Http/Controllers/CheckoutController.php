@@ -33,7 +33,7 @@ class CheckoutController extends Controller
             $this->deliveryInfo = Delivery::storeDeliveryInfo($request);
             $this->orderInfo = Order::storeOrderInfo($request,$this->deliveryInfo->id);
             $this->orderDetailsInfo = OrderDetails::storeOrderDetails($this->orderInfo->id);
-            $this->orderDetailsInfo = OrderDetails::storeOrderDetails($this->orderInfo->id);
+
             return view('website.checkout.order-complete',[
                 'orderNumber' => $this->orderInfo->order_number,
                 'orderDetails' => $this->orderDetailsInfo
