@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Coupon;
 use App\Models\Customer;
 use App\Models\ProductReview;
 use Illuminate\Http\Request;
@@ -11,10 +12,11 @@ use Session;
 
 class WebsiteController extends Controller
 {
-    public $categories, $product,$customer,$reviews;
+    public $categories, $product,$customer,$reviews,$coupons;
 
     public function index()
     {
+        $this->coupons = Coupon::where('status',1)->get();
         $this->categories = Category::all();
         return view('website.home.index',['categories'=>$this->categories]);
     }

@@ -12,6 +12,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CourierController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\CouponController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -101,6 +102,15 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::get('/courier/edit/{id}',[CourierController::class,'edit'])->name('courier.edit');
     Route::post('/courier/update/{id}',[CourierController::class,'update'])->name('courier.update');
     Route::get('/courier/delete/{id}',[CourierController::class,'delete'])->name('courier.delete');
+
+//    Coupon Module
+    Route::get('/coupon/create',[CouponController::class,'create'])->name('coupon.create');
+    Route::post('/coupon/store',[CouponController::class,'store'])->name('coupon.store');
+    Route::get('/coupon/index',[CouponController::class,'index'])->name('coupon.index');
+    Route::get('/coupon/edit/{id}',[CouponController::class,'edit'])->name('coupon.edit');
+    Route::post('/coupon/update/{id}',[CouponController::class,'update'])->name('coupon.update');
+    Route::get('/coupon/delete/{id}',[CouponController::class,'delete'])->name('coupon.delete');
+
 
     Route::resource('product',ProductController::class);
     Route::get('/get-sub-category-by-category', [ProductController::class, 'getCategoryBySubCategory'])->name('get-sub-category-by-category');
