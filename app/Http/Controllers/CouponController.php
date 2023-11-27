@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Coupon;
 use Illuminate\Http\Request;
+use Session;
 
 class CouponController extends Controller
 {
@@ -41,6 +42,28 @@ class CouponController extends Controller
     {
         $this->coupon = Coupon::find($id);
         return back()->with('message','Coupon Info Deleted Successfully..');
+    }
+
+    public function apply(Request $request)
+    {
+        $this->coupon = Coupon::where('code',$request->coupon)->first();
+        if ($this->coupon)
+        {
+            if (Session::get('customer_id'))
+            {
+                Session::put('coupon',$this->coupon->amount);
+                return response()->json(['message'=>'Coupon Applied Successfully']);
+            }
+            else{
+                return response()->json(['error'=>'Login First To Apply Coupon']);
+            }
+        }
+
+        else
+        {
+            return response()->json(['error'=>'Coupon You Have Applied Not Found']);
+        }
+
     }
 
 }

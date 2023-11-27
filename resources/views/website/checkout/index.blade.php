@@ -134,7 +134,11 @@
                             </tr>
                             <tr>
                                 <td class="border-top-0">Discount</td>
-                                <td class="text-end border-top-0">{{ $discount = 500 }}</td>
+                                @if(Session::get('coupon'))
+                                    <td class="text-end border-top-0">{{ $discount = Session::get('coupon') }}</td>
+                                @else
+                                    <td class="text-end border-top-0">{{ $discount = 0 }}%</td>
+                                @endif
                             </tr>
                             <tr>
                                 <td class="border-top-0">Shipping</td>

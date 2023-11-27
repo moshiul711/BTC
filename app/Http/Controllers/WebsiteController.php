@@ -18,7 +18,7 @@ class WebsiteController extends Controller
     {
         $this->coupons = Coupon::where('status',1)->get();
         $this->categories = Category::all();
-        return view('website.home.index',['categories'=>$this->categories]);
+        return view('website.home.index',['categories'=>$this->categories,'coupons'=>$this->coupons]);
     }
 
     public function productDetail($id)

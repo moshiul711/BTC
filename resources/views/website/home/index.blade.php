@@ -37,8 +37,13 @@
 
     <div class="row mt-2">
         <div class="col-lg-12 col-sm-12 col-md-12 col-xl-12">
-            <div class="marquee btn btn-success btn-block">
-                <h4 class=" content">Use Code <b>BTC500</b> To Get Taka 500 Discount On Your First Order</h4>
+            <div class="btn btn-success btn-block">
+                <marquee direction="left">
+                @foreach($coupons as $coupon)
+                        <span class="px-10">Apply Code <b>{{ $coupon->code }}</b> To Get Taka {{ $coupon->amount }} Discount.</span>
+                    @endforeach
+                </marquee>
+
             </div>
         </div>
     </div>

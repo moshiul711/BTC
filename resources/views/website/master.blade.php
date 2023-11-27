@@ -467,49 +467,6 @@
         <!--app-content open-->
         <div class="app-content main-content mt-0">
             <div class="side-app">
-                <style>
-                    .marquee {
-                        padding: 5px;
-                    }
-                    .marquee h4 {
-                        -moz-animation: marquee 20s linear infinite;
-                        -webkit-animation: marquee 20s linear infinite;
-                        animation: marquee 20s linear infinite;
-                    }
-                    .content:hover {
-                        animation-play-state: paused;
-                    }
-
-                    @-moz-keyframes marquee {
-                        0% {
-                            transform: translateX(100%);
-                        }
-                        100% {
-                            transform: translateX(-100%);
-                        }
-                    }
-                    @-webkit-keyframes marquee {
-                        0% {
-                            transform: translateX(100%);
-                        }
-                        100% {
-                            transform: translateX(-100%);
-                        }
-                    }
-                    @keyframes marquee {
-                        0% {
-                            -moz-transform: translateX(100%);
-                            -webkit-transform: translateX(100%);
-                            transform: translateX(100%)
-                        }
-                        100% {
-                            -moz-transform: translateX(-100%);
-                            -webkit-transform: translateX(-100%);
-                            transform: translateX(-100%);
-                        }
-                    }
-                </style>
-
                 <!-- CONTAINER -->
                 <div class="main-container container">
                     <!--slider-->
@@ -686,20 +643,54 @@
 <script src="{{ asset('/') }}website/assets/plugins/sweet-alert/sweetalert.min.js"></script>
 <script src="{{ asset('/') }}website/assets/plugins/sweet-alert/jquery.sweet-alert.js"></script>
 
-{{--<script>--}}
-    {{--$(window).load(function(){--}}
-        {{--setTimeout(function(){ $('.alert-success').fadeOut() }, 5000);--}}
-    {{--});--}}
-{{--</script>--}}
+<script>
+    $(document).ready(function () {
+        $("#formCoupon").submit(function (event) {
+            event.preventDefault();
 
-{{--<script>--}}
-    {{--Swal.fire({--}}
-        {{--icon: 'error',--}}
-        {{--title: 'Oops...',--}}
-        {{--text: 'Something went wrong!',--}}
-        {{--footer: '<a href="">Why do I have this issue?</a>'--}}
-    {{--})--}}
-{{--</script>--}}
+            var form = $("#formCoupon")[0];
+            var data = new FormData(form);
+            $("#btnCoupon").text("Applying Coupon");
+
+            $.ajax({
+                type: "POST",
+                url : "{{ route('coupon.apply') }}",
+                data: data,
+                dataType: "JSON",
+                processData: false,
+                contentType : false,
+                success: function (response) {
+                    if (response.message)
+                    {
+                        const Toast = Swal.mixin({
+                            toast: true,
+                            position: 'top-right',
+                            iconColor: 'white',
+                            customClass: {
+                                popup: 'colored-toast'
+                            },
+                            showConfirmButton: false,
+                            timer: 5000,
+                            timerProgressBar: true
+                        })
+                        Toast.fire({
+                            icon: 'success',
+                            title: response.message
+                        })
+                        $("#btnCoupon").text("Coupon Applied")
+                        document.getElementById('formCoupon').reset();
+                    }
+                    else if(response.error)
+                    {
+                        $("#output").text(response.error);
+                        $("#btnCoupon").text("Apply Coupon")
+                        $("#formCoupon")[0].reset();
+                    }
+                }
+            })
+        })
+    })
+</script>
 
 </body>
 
