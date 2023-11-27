@@ -452,168 +452,6 @@
                             </ul>
                         </li>
                         @endforeach
-                        {{--<li class="slide">--}}
-                            {{--<a class="side-menu__item" data-bs-toggle="slide" href="#">--}}
-                                {{--<img src="{{ asset('/') }}website/assets/icons/icons8-overlock-machine-32.png" alt="">--}}
-                                {{--<span class="side-menu__label px-2">Fiber Optics</span><i class="angle fa fa-angle-right"></i></a>--}}
-                            {{--<ul class="slide-menu">--}}
-                                {{--<li class="side-menu-label1"><a href="javascript:void(0)">Utilities</a></li>--}}
-                                {{--<li><a href="background.html" class="slide-item">Background</a></li>--}}
-                                {{--<li><a href="border.html" class="slide-item">Border</a></li>--}}
-                            {{--</ul>--}}
-                            {{--</a>--}}
-                        {{--</li>--}}
-                        {{--<li class="slide">--}}
-                            {{--<a class="side-menu__item" data-bs-toggle="slide" href="landing.html" target="_blank">--}}
-                                {{--<img src="{{ asset('/') }}website/assets/icons/icons8-maserati-32.png" alt="">--}}
-                                {{--<span class="side-menu__label px-2">Server Spare Parts</span><i class="angle fa fa-angle-right"></i></a>--}}
-                            {{--<ul class="slide-menu">--}}
-                                {{--<li class="side-menu-label1"><a href="javascript:void(0)">Utilities</a></li>--}}
-                                {{--<li><a href="background.html" class="slide-item">Background</a></li>--}}
-                                {{--<li><a href="border.html" class="slide-item">Border</a></li>--}}
-                            {{--</ul>--}}
-                            {{--</a>--}}
-                        {{--</li>--}}
-                        {{--<li class="slide">--}}
-                            {{--<a class="side-menu__item" data-bs-toggle="slide" href="#">--}}
-                                {{--<img src="{{ asset('/') }}website/assets/icons/switch.png" alt="">--}}
-                                {{--<span class="side-menu__label px-2">Network Switches</span><i class="angle fa fa-angle-right"></i></a>--}}
-                            {{--<ul class="slide-menu">--}}
-                                {{--<li class="side-menu-label1"><a href="javascript:void(0)">Utilities</a></li>--}}
-                                {{--<li><a href="background.html" class="slide-item">Background</a></li>--}}
-                                {{--<li><a href="border.html" class="slide-item">Border</a></li>--}}
-                            {{--</ul>--}}
-                            {{--</a>--}}
-                        {{--</li>--}}
-
-                        {{--<li class="slide">--}}
-                            {{--<a class="side-menu__item" data-bs-toggle="slide" href="#">--}}
-                                {{--<img src="{{ asset('/') }}website/assets/icons/transveier.png" alt="">--}}
-                                {{--<span class="side-menu__label px-2">SFP Transceiver</span><i class="angle fa fa-angle-right"></i></a>--}}
-                            {{--<ul class="slide-menu">--}}
-                                {{--<li class="side-menu-label1"><a href="javascript:void(0)">Utilities</a></li>--}}
-                                {{--<li><a href="background.html" class="slide-item">Background</a></li>--}}
-                                {{--<li><a href="border.html" class="slide-item">Border</a></li>--}}
-                            {{--</ul>--}}
-                            {{--</a>--}}
-                        {{--</li>--}}
-
-                        {{--<li class="slide">--}}
-                            {{--<a class="side-menu__item" data-bs-toggle="slide" href="#">--}}
-                                {{--<img src="{{ asset('/') }}website/assets/icons/server.png" alt="">--}}
-                                {{--<span class="side-menu__label px-2">Rackmount Server</span><i class="angle fa fa-angle-right"></i></a>--}}
-                            {{--<ul class="slide-menu">--}}
-                                {{--<li class="side-menu-label1"><a href="javascript:void(0)">Utilities</a></li>--}}
-                                {{--<li><a href="background.html" class="slide-item">Background</a></li>--}}
-                                {{--<li><a href="border.html" class="slide-item">Border</a></li>--}}
-                            {{--</ul>--}}
-                            {{--</a>--}}
-                        {{--</li>--}}
-                        {{--<li class="slide">--}}
-                            {{--<a class="side-menu__item" data-bs-toggle="slide" href="#">--}}
-                                {{--<img src="{{ asset('/') }}website/assets/icons/camera.png" alt="">--}}
-                                {{--<span class="side-menu__label px-2">Camera & Accessories</span><i class="angle fa fa-angle-right"></i></a>--}}
-                            {{--<ul class="slide-menu">--}}
-                                {{--<li class="side-menu-label1"><a href="javascript:void(0)">Utilities</a></li>--}}
-                                {{--<li><a href="background.html" class="slide-item">Background</a></li>--}}
-                                {{--<li><a href="border.html" class="slide-item">Border</a></li>--}}
-                            {{--</ul>--}}
-                            {{--</a>--}}
-                        {{--</li>--}}
-
-                        {{--<li class="slide">--}}
-                            {{--<a class="side-menu__item" data-bs-toggle="slide" href="#">--}}
-                                {{--<img src="{{ asset('/') }}website/assets/icons/circuit.png" alt="">--}}
-                                {{--<span class="side-menu__label px-2">FTTX Product</span><i class="angle fa fa-angle-right"></i></a>--}}
-                            {{--<ul class="slide-menu">--}}
-                                {{--<li class="side-menu-label1"><a href="javascript:void(0)">Utilities</a></li>--}}
-                                {{--<li><a href="background.html" class="slide-item">Background</a></li>--}}
-                                {{--<li><a href="border.html" class="slide-item">Border</a></li>--}}
-                            {{--</ul>--}}
-                            {{--</a>--}}
-                        {{--</li>--}}
-                        {{--<li class="slide">--}}
-                            {{--<a class="side-menu__item" data-bs-toggle="slide" href="#">--}}
-                                {{--<img src="{{ asset('/') }}website/assets/icons/livestream.png" alt="">--}}
-                                {{--<span class="side-menu__label px-2">Live Streaming Hardware</span><i class="angle fa fa-angle-right"></i></a>--}}
-                            {{--<ul class="slide-menu">--}}
-                                {{--<li class="side-menu-label1"><a href="javascript:void(0)">Utilities</a></li>--}}
-                                {{--<li><a href="background.html" class="slide-item">Background</a></li>--}}
-                                {{--<li><a href="border.html" class="slide-item">Border</a></li>--}}
-                            {{--</ul>--}}
-                            {{--</a>--}}
-                        {{--</li>--}}
-                        <!--<li>-->
-                        <!--<h3>Pages</h3>-->
-                        <!--</li>-->
-                        <!--<li class="slide">-->
-                        <!--<a class="side-menu__item" data-bs-toggle="slide" href="#">-->
-                        <!--<svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon"  enable-background="new 0 0 24 24" viewBox="0 0 24 24"><path d="M19.8535156,8.1464844l-6-6C13.7597656,2.0526733,13.6326294,2,13.5,2H7C5.3438721,2.0018311,4.0018311,3.3438721,4,5v14c0.0018311,1.6561279,1.3438721,2.9981689,3,3h10c1.6561279-0.0018311,2.9981689-1.3438721,3-3V8.5C20,8.3673706,19.9473267,8.2402344,19.8535156,8.1464844z M14,3.7069702L18.2930298,8H14V3.7069702z M19,19c-0.0014038,1.1040039-0.8959961,1.9985962-2,2H7c-1.1040039-0.0014038-1.9985962-0.8959961-2-2V5c0.0014038-1.1040039,0.8959961-1.9985962,2-2h6v5.5c0,0.0001831,0,0.0003662,0,0.0005493C13.0001831,8.7765503,13.223999,9.0001831,13.5,9H19V19z"/></svg>-->
-                        <!--<span class="side-menu__label">Pages</span><i class="angle fa fa-angle-right"></i>-->
-                        <!--</a>-->
-                        <!--<ul class="slide-menu">-->
-                        <!--<li class="side-menu-label1"><a href="javascript:void(0)">Pages</a></li>-->
-                        <!--<li class="sub-slide">-->
-                        <!--<a class="sub-side-menu__item" data-bs-toggle="sub-slide" href="#"><span-->
-                        <!--class="sub-side-menu__label">Authentication</span><i-->
-                        <!--class="sub-angle fa fa-angle-right"></i></a>-->
-                        <!--<ul class="sub-slide-menu">-->
-                        <!--<li><a class="sub-slide-item" href="login.html">Sign In</a></li>-->
-                        <!--<li><a class="sub-slide-item" href="register.html">Sign Up</a></li>-->
-                        <!--<li><a class="sub-slide-item" href="forgot-password.html">Forgot Password</a></li>-->
-                        <!--<li><a class="sub-slide-item" href="lockscreen.html">Lockscreen</a></li>-->
-                        <!--<li><a class="sub-slide-item" href="construction.html">UnderConstruction</a></li>-->
-                        <!--</ul>-->
-                        <!--</li>-->
-                        <!--<li class="sub-slide">-->
-                        <!--<a class="sub-side-menu__item" data-bs-toggle="sub-slide" href="#"><span-->
-                        <!--class="sub-side-menu__label">Error Pages</span><i-->
-                        <!--class="sub-angle fa fa-angle-right"></i></a>-->
-                        <!--<ul class="sub-slide-menu">-->
-                        <!--<li><a class="sub-slide-item" href="error404.html">404 Error</a></li>-->
-                        <!--<li><a class="sub-slide-item" href="error500.html">500 Error</a></li>-->
-                        <!--<li><a class="sub-slide-item" href="error501.html">501 Error</a></li>-->
-                        <!--</ul>-->
-                        <!--</li>-->
-                        <!--<li><a href="settings.html" class="slide-item">Settings</a></li>-->
-                        <!--<li><a href="profile.html" class="slide-item">Profile</a></li>-->
-                        <!--<li><a href="about.html" class="slide-item">About Company</a></li>-->
-                        <!--<li><a href="services.html" class="slide-item">Services</a></li>-->
-                        <!--<li><a href="switcher.html" class="slide-item">Switcher</a></li>-->
-                        <!--<li><a href="terms.html" class="slide-item">Terms</a></li>-->
-                        <!--<li><a href="faq.html" class="slide-item">Faq's</a></li>-->
-                        <!--<li><a href="pricing.html" class="slide-item">Pricing</a></li>-->
-                        <!--<li class="sub-slide">-->
-                        <!--<a class="sub-side-menu__item" data-bs-toggle="sub-slide" href="#"><span-->
-                        <!--class="sub-side-menu__label">Blog</span><i-->
-                        <!--class="sub-angle fa fa-angle-right"></i></a>-->
-                        <!--<ul class="sub-slide-menu">-->
-                        <!--<li><a class="sub-slide-item" href="blog.html">Blog</a></li>-->
-                        <!--<li><a class="sub-slide-item" href="blog-details.html">Blog Details</a></li>-->
-                        <!--<li><a class="sub-slide-item" href="blog-edit.html">Edit Post</a></li>-->
-                        <!--</ul>-->
-                        <!--</li>-->
-                        <!--</ul>-->
-                        <!--</li>-->
-                        <!--<li class="slide">-->
-                        <!--<a class="side-menu__item" data-bs-toggle="slide" href="#">-->
-                        <!--<svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" enable-background="new 0 0 24 24" viewBox="0 0 24 24"><path d="M2.25,8.4521484l9.5,5.4804688C11.8259277,13.9767456,11.9121704,14,12,14s0.1740723-0.0232544,0.25-0.0673828l9.5-5.4804688c0.0759888-0.0438843,0.1390381-0.1069946,0.1829224-0.1829224C22.071106,8.0300293,21.9891968,7.7241211,21.75,7.5859375l-9.5-5.4755859c-0.1550903-0.0878906-0.3449097-0.0878906-0.5,0l-9.5,5.4755859C2.1740112,7.6298218,2.1109619,7.6929321,2.0670776,7.7688599C1.928894,8.0080566,2.0108032,8.3139648,2.25,8.4521484z M12,3.1210938l8.4990234,4.8984375L12,12.9228516L3.5009766,8.0195312L12,3.1210938z M21.2479858,15.5263672L12,20.9208984l-9.2481079-5.3945312c-0.2384033-0.1391602-0.5444336-0.0587158-0.6835938,0.1796875s-0.0587158,0.5444336,0.1796875,0.6835938l9.5,5.5419922C11.8244019,21.9765015,11.911377,22.0001221,12,22c0.088562,0.0001221,0.1755371-0.0234985,0.2518921-0.0683594l9.5-5.5419922c0.2384033-0.1391602,0.3188477-0.4451904,0.1796875-0.6835938S21.4863892,15.387207,21.2479858,15.5263672z M21.2479858,11.5263672L12,16.9208984l-9.2481079-5.3945312c-0.2384033-0.1391602-0.5444336-0.0587158-0.6835938,0.1796875s-0.0587158,0.5444336,0.1796875,0.6835938l9.5,5.5419922C11.8244019,17.9765015,11.911377,18.0001221,12,18c0.088562,0.0001221,0.1755371-0.0234985,0.2518921-0.0683594l9.5-5.5419922c0.2384033-0.1391602,0.3188477-0.4451904,0.1796875-0.6835938S21.4863892,11.387207,21.2479858,11.5263672z"/></svg>-->
-                        <!--<span class="side-menu__label">Utilities</span><i class="angle fa fa-angle-right"></i></a>-->
-                        <!--<ul class="slide-menu">-->
-                        <!--<li class="side-menu-label1"><a href="javascript:void(0)">Utilities</a></li>-->
-                        <!--<li><a href="background.html" class="slide-item">Background</a></li>-->
-                        <!--<li><a href="border.html" class="slide-item">Border</a></li>-->
-                        <!--<li><a href="display.html" class="slide-item">Display</a></li>-->
-                        <!--<li><a href="flex.html" class="slide-item">Flex</a></li>-->
-                        <!--<li><a href="height.html" class="slide-item">Height</a></li>-->
-                        <!--<li><a href="margin.html" class="slide-item">Margin</a></li>-->
-                        <!--<li><a href="padding.html" class="slide-item">Padding</a></li>-->
-                        <!--<li><a href="position.html" class="slide-item">Position</a></li>-->
-                        <!--<li><a href="width.html" class="slide-item">Width</a></li>-->
-                        <!--<li><a href="opacity.html" class="slide-item">Opacity</a></li>-->
-                        <!--<li><a href="emptypage.html" class="slide-item">Empty Page</a></li>-->
-                        <!--</ul>-->
-                        <!--</li>-->
                     </ul>
                     <div class="slide-right" id="slide-right"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191"
                                                                    width="24" height="24" viewBox="0 0 24 24">
@@ -629,7 +467,48 @@
         <!--app-content open-->
         <div class="app-content main-content mt-0">
             <div class="side-app">
+                <style>
+                    .marquee {
+                        padding: 5px;
+                    }
+                    .marquee h4 {
+                        -moz-animation: marquee 20s linear infinite;
+                        -webkit-animation: marquee 20s linear infinite;
+                        animation: marquee 20s linear infinite;
+                    }
+                    .content:hover {
+                        animation-play-state: paused;
+                    }
 
+                    @-moz-keyframes marquee {
+                        0% {
+                            transform: translateX(100%);
+                        }
+                        100% {
+                            transform: translateX(-100%);
+                        }
+                    }
+                    @-webkit-keyframes marquee {
+                        0% {
+                            transform: translateX(100%);
+                        }
+                        100% {
+                            transform: translateX(-100%);
+                        }
+                    }
+                    @keyframes marquee {
+                        0% {
+                            -moz-transform: translateX(100%);
+                            -webkit-transform: translateX(100%);
+                            transform: translateX(100%)
+                        }
+                        100% {
+                            -moz-transform: translateX(-100%);
+                            -webkit-transform: translateX(-100%);
+                            transform: translateX(-100%);
+                        }
+                    }
+                </style>
 
                 <!-- CONTAINER -->
                 <div class="main-container container">
@@ -655,6 +534,7 @@
                 @endif
                     @yield('slider')
 
+                    @yield('discount')
 
                     @yield('after-slider')
                     <!--After Slider-->
