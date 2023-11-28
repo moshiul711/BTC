@@ -63,9 +63,40 @@
                             <div class="col-sm-6 col-md-6">
                                 <div class="form-group">
                                     <label class="form-label">City <span class="text-red">*</span></label>
-                                    <input type="text" value="{{ $customer->city }}" name="city" class="form-control" placeholder="City">
+                                    {{--<label for="divisions">Select Division</label>--}}
+                                    <select class="form-control" name="divisions" id="divisions" onchange="divisionsList();">
+                                        <option disabled selected>Select Division</option>
+                                        <option value="Barishal">Barishal</option>
+                                        <option value="Chattogram">Chattogram</option>
+                                        <option value="Dhaka">Dhaka</option>
+                                        <option value="Khulna">Khulna</option>
+                                        <option value="Mymensingh">Mymensingh</option>
+                                        <option value="Rajshahi">Rajshahi</option>
+                                        <option value="Rangpur">Rangpur</option>
+                                        <option value="Sylhet">Sylhet</option>
+                                    </select>
+                                    {{--<input type="text" value="{{ $customer->city }}" name="city" class="form-control" placeholder="City">--}}
                                 </div>
                             </div>
+                            <div class="col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="distr">Select District<span class="text-red">*</span></label>
+                                    <select name="" class="form-control" id="distr" onchange="thanaList();"></select>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="polic_sta">Select Police Station<span class="text-red">*</span></label>
+                                    <select class="form-control" name="" id="polic_sta"></select>
+                                </div>
+                            </div>
+
+
+
+
+
+
                             <div class="col-sm-6 col-md-6">
                                 <div class="form-group">
                                     <label class="form-label">Postal Code <span class="text-red">*</span></label>

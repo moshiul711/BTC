@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Coupon;
 use Illuminate\Http\Request;
 use Session;
+use Cart;
 
 class CouponController extends Controller
 {
@@ -55,7 +56,8 @@ class CouponController extends Controller
                 return response()->json(
                     [
                         'message'=>'Coupon Applied Successfully',
-                        'coupon'=> Session::get('coupon')
+                        'coupon'=> Session::get('coupon'),
+                        'total' => round(Cart::subtotal())
                     ]
                 );
             }

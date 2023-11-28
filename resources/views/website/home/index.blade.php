@@ -40,7 +40,7 @@
             <div class="btn btn-success btn-block">
                 <marquee direction="left">
                 @foreach($coupons as $coupon)
-                        <span class="px-10">Apply Code <b>{{ $coupon->code }}</b> To Get Taka {{ $coupon->amount }} Discount.</span>
+                        <span class="mx-6">Apply Code <b>{{ $coupon->code }}</b> To Get Taka {{ $coupon->amount }} Discount.</span>
                     @endforeach
                 </marquee>
 

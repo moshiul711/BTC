@@ -115,5 +115,17 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
 
 
     Route::resource('product',ProductController::class);
+
+//    Order Module
+    Route::get('/admin/order',[AdminController::class,'allOrder'])->name('order.manage');
+    Route::get('admin/order-detail/{id}',[AdminController::class,'orderDetail'])->name('admin.order-detail');
+    Route::get('admin/order-edit/{id}',[AdminController::class,'orderEdit'])->name('admin.order-edit');
+    Route::post('/admin/order-update/{id}', [AdminController::class, 'orderUpdate'])->name('admin.update-order');
+    Route::get('admin/order-invoice/{id}',[AdminController::class,'orderInvoice'])->name('admin.order-invoice');
+    Route::get('admin/order-download-order-invoice/{id}',[AdminController::class,'orderDownload'])->name('admin.order-download-order-invoice');
+    Route::get('admin/order-delete/{id}',[AdminController::class,'orderDelete'])->name('admin.order-delete');
+
+
+
     Route::get('/get-sub-category-by-category', [ProductController::class, 'getCategoryBySubCategory'])->name('get-sub-category-by-category');
 });

@@ -86,7 +86,7 @@
                 <div class="card-body">
                     @if(!Session::get('coupon'))
                         <form id="formCoupon">
-                    {{--<form action="{{ route('coupon.apply') }}" method="post">--}}
+{{--                    <form action="{{ route('coupon.apply') }}" method="post">--}}
                         @csrf
                         <div class="form-group">
                             <div class="input-group">
@@ -136,10 +136,10 @@
                             {{--<td class="border-top-0">Shipping</td>--}}
                             {{--<td class="text-end border-top-0">Tk. {{ $shipping = 110 }}</td>--}}
                         {{--</tr>--}}
-                        <tr>
+                        <tr id="total">
                             <td class="fs-20 border-top-0">Total</td>
 
-                            <td class="text-end fs-20 border-top-0">Tk. {{ $subTotal = round(Cart::subtotal()) }}</td>
+                            <td class="text-end fs-20 border-top-0">Tk.{{ $subTotal = round(Cart::subtotal())-$discount }}</td>
                         </tr>
                     </table>
                 </div>
