@@ -168,7 +168,7 @@
                                 @if(Session::get('coupon'))
                                     <td class="text-end border-top-0">{{ $discount = Session::get('coupon') }}</td>
                                 @else
-                                    <td class="text-end border-top-0">{{ $discount = 0 }}%</td>
+                                    <td class="text-end border-top-0">{{ $discount = 0 }}</td>
                                 @endif
                             </tr>
                             <tr>

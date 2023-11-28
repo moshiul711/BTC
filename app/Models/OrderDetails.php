@@ -18,6 +18,7 @@ class OrderDetails extends Model
             self::$orderDetails = new OrderDetails();
             self::$orderDetails->order_id = $orderId;
             self::$orderDetails->product_id = $item->id;
+            self::$orderDetails->product_image = $item->options->image;
             self::$orderDetails->product_name = $item->name;
             self::$orderDetails->product_price = $item->price;
             self::$orderDetails->product_quantity = $item->qty;

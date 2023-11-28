@@ -21,12 +21,11 @@
                             <thead>
                             <tr>
                                 <th class="wd-15p border-bottom-0">Order Number</th>
-                                <th class="wd-15p border-bottom-0">Order Total</th>
-                                <th class="wd-15p border-bottom-0">Order Date</th>
+                                <th class="wd-20p border-bottom-0">Date</th>
+                                <th class="wd-15p border-bottom-0">Customer</th>
                                 <th class="wd-20p border-bottom-0">Status</th>
+
                                 <th class="wd-20p border-bottom-0">Payment</th>
-                                <th class="wd-20p border-bottom-0">Method</th>
-                                <th class="wd-20p border-bottom-0">Status</th>
                                 <th class="wd-20p border-bottom-0">Action</th>
                             </tr>
                             </thead>
@@ -34,10 +33,9 @@
                             @foreach($orders as $order)
                                 <tr>
                                     <td>{{ $order->order_number }}</td>
-                                    <td>{{ $order->order_total }}</td>
                                     <td>{{ $order->order_date }}</td>
+                                    <td>{{ $order->customer->first_name.'('. $order->customer->phone.')'}}</td>
                                     <td>{{ $order->order_status }}</td>
-                                    <td>{{ $order->payment_amount }}</td>
                                     <td>
                                         @if($order->payment_method=='cod')
                                             {{ 'Cash On Delivery' }}
@@ -45,7 +43,6 @@
                                             {{ 'Online Payment' }}
                                         @endif
                                     </td>
-                                    <td>{{ $order->payment_status }}</td>
                                     <td>
                                         <a href="{{route('admin.order-detail', ['id' => $order->id])}}" class="btn btn-success btn-sm" title="Order Detail Info">
                                             <i class="fa fa-eye"></i>
