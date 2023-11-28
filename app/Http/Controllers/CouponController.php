@@ -8,7 +8,7 @@ use Session;
 
 class CouponController extends Controller
 {
-    public $coupons, $coupon;
+    public $coupons, $coupon,$test;
     public function index()
     {
         $this->coupons = Coupon::all();
@@ -51,8 +51,13 @@ class CouponController extends Controller
         {
             if (Session::get('customer_id'))
             {
-                Session::put('coupon',$this->coupon->amount);
-                return response()->json(['message'=>'Coupon Applied Successfully']);
+                $this->test = Session::put('coupon',$this->coupon->amount);
+                return response()->json(
+                    [
+                        'message'=>'Coupon Applied Successfully',
+                        'coupon'=> Session::get('coupon')
+                    ]
+                );
             }
             else{
                 return response()->json(['error'=>'Login First To Apply Coupon']);

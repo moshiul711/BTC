@@ -84,7 +84,8 @@
                     <h3 class="card-title">Have coupon?</h3>
                 </div>
                 <div class="card-body">
-                    <form id="formCoupon">
+                    @if(!Session::get('coupon'))
+                        <form id="formCoupon">
                     {{--<form action="{{ route('coupon.apply') }}" method="post">--}}
                         @csrf
                         <div class="form-group">
@@ -96,7 +97,21 @@
                             </div>
                         </div>
                     </form>
-                    <p id="output" class="text-center text-danger"></p>
+                        <p id="output" class="text-center text-danger"></p>
+                    @else
+                        <form action="#">
+                            {{--<form action="{{ route('coupon.apply') }}" method="post">--}}
+                            @csrf
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="text" id="myInput" readonly name="coupon" class="form-control coupon" placeholder="Coupon code" required>
+                                    <span class="input-group-btn">
+                                    <button class="btn btn-success btn-apply coupon disabled">Coupon Applied</button>
+                                </span>
+                                </div>
+                            </div>
+                        </form>
+                        @endif
                 </div>
             </div>
             <div class="card">
@@ -109,14 +124,14 @@
                             <td class="border-top-0">Sub Total</td>
                             <td class="text-end border-top-0">Tk. {{ $subTotal = round(Cart::subtotal()) }}</td>
                         </tr>
-                        {{--<tr>--}}
-                            {{--<td class="border-top-0">Discount</td>--}}
-                            {{--@if(Session::get('coupon'))--}}
-                            {{--<td class="text-end border-top-0">{{ $discount = Session::get('coupon') }}</td>--}}
-                            {{--@else--}}
-                                {{--<td class="text-end border-top-0">{{ $discount = 5 }}%</td>--}}
-                            {{--@endif--}}
-                        {{--</tr>--}}
+                        <tr id="couponTest">
+                            <td class="border-top-0">Discount</td>
+                            @if(Session::get('coupon'))
+                            <td class="text-end border-top-0">Tk. {{ $discount = Session::get('coupon') }}</td>
+                            @else
+                                <td class="text-end border-top-0">Tk. {{ $discount = 0 }}</td>
+                            @endif
+                        </tr>
                         {{--<tr>--}}
                             {{--<td class="border-top-0">Shipping</td>--}}
                             {{--<td class="text-end border-top-0">Tk. {{ $shipping = 110 }}</td>--}}

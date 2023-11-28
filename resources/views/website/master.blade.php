@@ -662,6 +662,12 @@
                 success: function (response) {
                     if (response.message)
                     {
+                        var option = '';
+                        option = '<td class="border-top-0">Discount</td>';
+                        option += '<td class="text-end border-top-0">'+ 'Tk. '+ response.coupon + '</td>';
+                        console.log(option);
+                        $('#couponTest').empty();
+                        $('#couponTest').append(option);
                         const Toast = Swal.mixin({
                             toast: true,
                             position: 'top-right',

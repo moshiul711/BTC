@@ -21,8 +21,10 @@ class Order extends Model
         self::$order->order_timestamp = strtotime(date('Y-m-d'));
         self::$order->order_total = Session::get('order_total');
         self::$order->discount = Session::get('discount');
+        Session::forget('coupon');
         self::$order->payment_amount = Session::get('payment_amount');
         self::$order->payment_method = $request->payment;
+
         self::$order->save();
         return self::$order;
     }
