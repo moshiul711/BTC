@@ -21,9 +21,14 @@ class WebsiteController extends Controller
         return view('website.home.index',['categories'=>$this->categories,'coupons'=>$this->coupons]);
     }
 
-    public function productDetail($id)
+    public function productDetail($id,$name)
     {
-        $this->product = Product::find($id);
+        $this->product = Product::where(
+            [
+                'id' =>$id,
+                'name' => $name
+            ]
+        )->first();
         if (!$this->product){
             return view('website.home.error');
         }

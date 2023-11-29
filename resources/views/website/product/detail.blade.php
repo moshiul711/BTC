@@ -1,5 +1,8 @@
 @extends('website.master')
 
+@section('title')
+    {{ $product->name }}
+@endsection
 
 @section('main-content')
     <!-- PAGE-HEADER -->

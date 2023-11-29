@@ -25,4 +25,15 @@ class Delivery extends Model
         self::$delivery->save();
         return self::$delivery;
     }
+
+    public static function updateDeliveryInfo($request,$id)
+    {
+        self::$delivery = Delivery::find($id);
+        self::$delivery->phone = $request->phone;
+        self::$delivery->city = $request->city;
+        self::$delivery->address = $request->address;
+        self::$delivery->additional_info = $request->additional_info;
+        self::$delivery->save();
+        return self::$delivery;
+    }
 }

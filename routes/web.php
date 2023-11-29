@@ -30,7 +30,7 @@ Route::get('/refer-earn',[WebsiteController::class,'referEarn'])->name('refer-ea
 Route::get('/faq',[WebsiteController::class,'faq'])->name('faq');
 
 //Product on Home Page
-Route::get('/product-detail/{id}',[WebsiteController::class,'productDetail'])->name('product.detail');
+Route::get('/product-detail/{id}/{name}',[WebsiteController::class,'productDetail'])->name('product.detail');
 Route::post('/product-review/{id}',[WebsiteController::class,'productReview'])->name('product.review');
 
 //Customer Module

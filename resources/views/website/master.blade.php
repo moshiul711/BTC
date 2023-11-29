@@ -14,7 +14,7 @@
     <meta name="keywords" content="laravel admin template, bootstrap admin template, admin dashboard template, admin dashboard, admin template, admin, bootstrap 5, laravel admin, laravel admin dashboard template, laravel ui template, laravel admin panel, admin panel, laravel admin dashboard, laravel template, admin ui dashboard">
 
     <!-- TITLE -->
-    <title>Bangladesh Technology Company</title>
+    <title>@yield('title')</title>
 
     <!-- FAVICON -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/') }}website/assets/icons/icon.png" />
@@ -361,7 +361,7 @@
                         @csrf
                         <div class="modal-body">
                     <span class="login100-form-title">
-                            <a href="index.html" class="text-center">
+                            <a href="#" class="text-center">
                                 <img src="https://www.bangladeshtechcom.com/assets/uploads/logos/header_logo-BTC.png" class="header-brand-img" alt="">
                             </a>
                         </span>

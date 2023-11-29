@@ -63,19 +63,17 @@
                             <div class="col-sm-6 col-md-6">
                                 <div class="form-group">
                                     <label class="form-label">City <span class="text-red">*</span></label>
-                                    {{--<label for="divisions">Select Division</label>--}}
-                                    <select class="form-control" name="divisions" id="divisions" onchange="divisionsList();">
-                                        <option disabled selected>Select Division</option>
-                                        <option value="Barishal">Barishal</option>
-                                        <option value="Chattogram">Chattogram</option>
-                                        <option value="Dhaka">Dhaka</option>
-                                        <option value="Khulna">Khulna</option>
-                                        <option value="Mymensingh">Mymensingh</option>
-                                        <option value="Rajshahi">Rajshahi</option>
-                                        <option value="Rangpur">Rangpur</option>
-                                        <option value="Sylhet">Sylhet</option>
+                                    <select name="city" class="form-control">
+                                        <option value="">---Select City---</option>
+                                        <option value="dhaka">Dhaka</option>
+                                        <option value="chittagong">Chittagong</option>
+                                        <option value="rajshahi">Rajshahi</option>
+                                        <option value="khulna">Khulna</option>
+                                        <option value="barishal">Barishal</option>
+                                        <option value="mymensingh">Mymensingh</option>
+                                        <option value="rongpur">Rongpur</option>
+                                        <option value="sylhet">Sylhet</option>
                                     </select>
-                                    {{--<input type="text" value="{{ $customer->city }}" name="city" class="form-control" placeholder="City">--}}
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-6">
@@ -91,9 +89,6 @@
                                     <select class="form-control" name="" id="polic_sta"></select>
                                 </div>
                             </div>
-
-
-
 
 
 
@@ -147,7 +142,7 @@
                             <div class="d-flex py-2">
                                 <img class="img-fluid avatar-xl border p-0 br-7" src="{{ asset($item->options->image) }}" alt="img">
                                 <div class="ms-3 mt-2">
-                                    <h4 class="mb-1 fw-semibold fs-14"><a href="{{ route('product.detail',$item->id) }}">{{ $item->name }}</a></h4>
+                                    <h4 class="mb-1 fw-semibold fs-14"><a href="{{ route('product.detail',[$item->id,$item->name]) }}">{{ $item->name }}</a></h4>
                                     <p class="fs-12 fw-300 lh-1 mb-0">Price: <span class="text-green">{{ $item->price }}</span></p>
                                     <span class="fs-12 fw-300 lh-1 mb-0">Quantity: {{ $item->qty }}</span>
                                     {{--<h6 class="text-success">({{ $item->qty.'*'.$item->price }})</h6>--}}

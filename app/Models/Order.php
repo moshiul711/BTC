@@ -25,9 +25,52 @@ class Order extends Model
         Session::forget('coupon');
         self::$order->payment_amount = Session::get('payment_amount');
         self::$order->payment_method = $request->payment;
-
         self::$order->save();
         return self::$order;
+    }
+
+    public static function updateOrder($request,$id)
+    {
+        self::$order = Order::find($id);
+        if ($request->order_status == 'pending')
+        {
+            self::$order->order_status = $request->order_status;
+        }
+        elseif ($request->order_status == 'processing')
+        {
+            self::$order->order_status = $request->order_status;
+            self::$order->payment_status = $request->order_status;
+            self::$order->delivery_status = $request->order_status;
+            self::$order->delivery_charge = $request->delivery_charge;
+            self::$order->discount = $request->discount;
+            self::$order->payment_amount = ($request->delivery_charge+$request->order_total) - $request->discount;
+            self::$order->courier_id = $request->courier_id;
+        }
+        elseif ($request->order_status == 'complete')
+        {
+            self::$order->order_status = $request->order_status;
+            self::$order->payment_status = $request->order_status;
+            self::$order->delivery_status = $request->order_status;
+            self::$order->delivery_charge = $request->delivery_charge;
+            self::$order->discount = $request->discount;
+            self::$order->payment_amount = ($request->delivery_charge+$request->order_total) - $request->discount;
+            self::$order->courier_id = $request->courier_id;
+        }
+        elseif ($request->order_status == 'cancel')
+        {
+            self::$order->order_status = $request->order_status;
+            self::$order->payment_status = $request->order_status;
+            self::$order->delivery_status = $request->order_status;
+        }
+        self::$order->save();
+        return self::$order;
+
+    }
+
+    public static function deleteOrder($id)
+    {
+        self::$order = Order::find($id);
+        self::$order->delete();
     }
 
     public function customer()
