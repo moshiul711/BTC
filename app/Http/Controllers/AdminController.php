@@ -7,10 +7,11 @@ use App\Models\Order;
 use App\Models\OrderDetails;
 use Illuminate\Http\Request;
 use App\Models\Courier;
+use PDF;
 
 class AdminController extends Controller
 {
-    public $orders, $order;
+    public $orders, $order,$orderDetails,$product,$stock_amount;
     public function index()
     {
         return view('admin.home.index');
@@ -39,6 +40,10 @@ class AdminController extends Controller
     {
         $this->order = Order::updateOrder($request,$id);
         Delivery::updateDeliveryInfo($request,$this->order->delivery_id);
+        if ($request->order_status == 'cancel')
+        {
+            OrderDetails::updateProductStock($this->order->id);
+        }
         return redirect('/admin/order')->with('message','Order Updated Successfully...');
     }
 
@@ -52,8 +57,7 @@ class AdminController extends Controller
     {
         $this->order = Order::where('order_number',$id)->first();
         $pdf = PDF::loadView('admin.order.orderDownload',['order'=>$this->order]);
-        return $pdf->stream('invoice-'.$id.'.pdf');
-        //$this->order = Order::find($id);
+        return $pdf->stream('BTC-'.$this->order->order_number.'.pdf');
     }
     public function orderDelete($id)
     {

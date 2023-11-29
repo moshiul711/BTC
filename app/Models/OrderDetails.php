@@ -9,7 +9,7 @@ use Cart;
 class OrderDetails extends Model
 {
     use HasFactory;
-    private static $orderDetails;
+    private static $orderDetails, $product,$stock_amount;
     public static function storeOrderDetails($orderId)
     {
         $data = [];
@@ -25,6 +25,11 @@ class OrderDetails extends Model
             self::$orderDetails->save();
             Cart::remove($item->rowId);
 
+            self::$product = Product::find($item->id);
+            self::$stock_amount = self::$product->stock - $item->qty;
+            self::$product->stock = self::$stock_amount;
+            self::$product->save();
+
             $data[$key]['id'] = self::$orderDetails->id;
             $data[$key]['product_id'] = $item->id;
             $data[$key]['product_name'] = $item->name;
@@ -33,6 +38,18 @@ class OrderDetails extends Model
             $data[$key]['product_image'] = $item->options->image;
         }
         return $data;
+    }
+
+    public static function updateProductStock($id)
+    {
+        self::$orderDetails = OrderDetails::where('order_id',$id)->get();
+        foreach (self::$orderDetails as $detail)
+        {
+            self::$product = Product::find($detail->product_id);
+            self::$stock_amount = self::$product->stock + $detail->product_quantity;
+            self::$product->stock = self::$stock_amount;
+            self::$product->save();
+        }
     }
 
     public static function deleteOrderDetail($id)

@@ -79,7 +79,7 @@
                                     <span>
                                         <a style="color: #00cc00; font-size: 18px"><i class="fa fa-line-chart"></i> {{ $product->hit_count }} View(s)</a>
                                         <a class="px-5" style="color: darkred; font-size: 18px"><i class="fa fa-bar-chart-o"></i> {{ count($product->reviews) }} Review(s)</a>
-                                        <a class="px-1" style="color: #008069; font-size: 18px"><i class=" fa fa-cubes"></i>In Stock</a>
+                                        <a class="px-1" style="color: #008069; font-size: 18px"><i class=" fa fa-cubes"></i> {{ $product->stock }}In Stock</a>
                                     </span>
                                 </div>
                             </div>

@@ -20,6 +20,7 @@
                         <table class="table table-bordered text-nowrap border-bottom" id="basic-datatable">
                             <thead>
                             <tr>
+                                <th class="wd-15p border-bottom-0">Order</th>
                                 <th class="wd-15p border-bottom-0">Order Number</th>
                                 <th class="wd-20p border-bottom-0">Date</th>
                                 <th class="wd-15p border-bottom-0">Customer</th>
@@ -32,6 +33,7 @@
                             <tbody>
                             @foreach($orders as $order)
                                 <tr>
+                                    <td>{{ $order->id }}</td>
                                     <td>{{ $order->order_number }}</td>
                                     <td>{{ $order->order_date }}</td>
                                     <td>{{ $order->customer->first_name.'('. $order->customer->phone.')'}}</td>

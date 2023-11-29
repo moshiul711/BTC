@@ -147,6 +147,7 @@
                                     </td>
 
                                     <td>
+                                        <h4>Order Track</h4>
                                         Invoice #: {{$order->order_number}}<br/>
                                         Order Date: {{$order->order_date}}<br/>
                                         Invoice Date: {{date('Y-m-d')}}
@@ -208,6 +209,20 @@
                         <td style="text-align: right">{{$order->order_total+$order->delivery_charge-$order->discount}}</td>
                     </tr>
                 </table>
+                {{--<table style="margin-top: 50px">--}}
+                    {{--<tr>--}}
+                        {{--<td>-------------</td>--}}
+                        {{--<td></td>--}}
+                        {{--<td></td>--}}
+                        {{--<td></td>--}}
+                    {{--</tr>--}}
+                    {{--<tr>--}}
+                        {{--<td>Signature</td>--}}
+                        {{--<td style="text-align: left"></td>--}}
+                        {{--<td></td>--}}
+                        {{--<td></td>--}}
+                    {{--</tr>--}}
+                {{--</table>--}}
             </div>
         </div>
     </div>

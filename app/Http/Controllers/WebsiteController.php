@@ -29,7 +29,12 @@ class WebsiteController extends Controller
                 'name' => $name
             ]
         )->first();
-        if (!$this->product){
+        if (!$this->product)
+        {
+            return view('website.home.error');
+        }
+        elseif ($this->product->stock < 1)
+        {
             return view('website.home.error');
         }
         else
