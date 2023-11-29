@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Delivery;
 use App\Models\Order;
+use App\Models\OrderDetails;
 use Illuminate\Http\Request;
 use App\Models\Courier;
 
@@ -60,8 +61,8 @@ class AdminController extends Controller
         if ($this->order->order_status == 'cancel')
         {
             Order::deleteOrder($this->order->id);
-            OrderDetail::deleteOrderDetail($this->order->id);
-            return back()->with('message', 'Order delete successfully');
+            OrderDetails::deleteOrderDetail($this->order->id);
+            return back()->with('message', 'Order Info delete successfully');
         }
         return back()->with('message', 'Sorry ... this order can not be deleted.');
     }

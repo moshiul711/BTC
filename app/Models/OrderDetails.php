@@ -35,6 +35,15 @@ class OrderDetails extends Model
         return $data;
     }
 
+    public static function deleteOrderDetail($id)
+    {
+        self::$orderDetails = OrderDetails::where('order_id',$id)->get();
+        foreach (self::$orderDetails as $detail)
+        {
+            $detail->delete();
+        }
+    }
+
     public function product()
     {
         return $this->belongsTo(Product::class);
