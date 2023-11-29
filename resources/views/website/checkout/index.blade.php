@@ -60,7 +60,7 @@
                                     <textarea class="form-control" placeholder="Home Address" name="address">{{ $customer->address }}</textarea>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-md-6">
+                            <div class="col-sm-12 col-md-12">
                                 <div class="form-group">
                                     <label class="form-label">City <span class="text-red">*</span></label>
                                     <select name="city" class="form-control">
@@ -76,28 +76,28 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label" for="distr">Select District<span class="text-red">*</span></label>
-                                    <select name="" class="form-control" id="distr" onchange="thanaList();"></select>
-                                </div>
-                            </div>
+                            {{--<div class="col-sm-6 col-md-6">--}}
+                                {{--<div class="form-group">--}}
+                                    {{--<label class="form-label" for="distr">Select District<span class="text-red">*</span></label>--}}
+                                    {{--<select name="" class="form-control" id="distr" onchange="thanaList();"></select>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
 
-                            <div class="col-sm-6 col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label" for="polic_sta">Select Police Station<span class="text-red">*</span></label>
-                                    <select class="form-control" name="" id="polic_sta"></select>
-                                </div>
-                            </div>
+                            {{--<div class="col-sm-6 col-md-6">--}}
+                                {{--<div class="form-group">--}}
+                                    {{--<label class="form-label" for="polic_sta">Select Police Station<span class="text-red">*</span></label>--}}
+                                    {{--<select class="form-control" name="" id="polic_sta"></select>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
 
 
 
-                            <div class="col-sm-6 col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label">Postal Code <span class="text-red">*</span></label>
-                                    <input type="number" value="{{ $customer->postal_code }}" name="postal_code" class="form-control" placeholder="ZIP Code">
-                                </div>
-                            </div>
+                            {{--<div class="col-sm-6 col-md-6">--}}
+                                {{--<div class="form-group">--}}
+                                    {{--<label class="form-label">Postal Code <span class="text-red">*</span></label>--}}
+                                    {{--<input type="number" value="{{ $customer->postal_code }}" name="postal_code" class="form-control" placeholder="ZIP Code">--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
 
                             <div class="col-md-12">
                                 <div class="form-group">

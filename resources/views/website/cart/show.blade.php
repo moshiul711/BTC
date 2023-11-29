@@ -45,7 +45,7 @@
                                             <img src="{{ asset($item->options->image) }}" alt="" class="cart-img">
                                         </td>
                                         <td>
-                                            <a href="{{ route('product.detail',$item->id) }}" style="color: black">
+                                            <a href="{{ route('product.detail',[$item->id,$item->name]) }}" style="color: black">
                                                 {{ substr($item->name,0,30) }}
                                             </a>
                                         </td>
