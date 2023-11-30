@@ -446,7 +446,7 @@
                             <ul class="slide-menu">
                                 @foreach($category->subCategories as $subCategory)
                                     <li>
-                                        <a href="#" class="slide-item">{{ $subCategory->name }}</a>
+                                        <a href="{{ route('product.subcategory',['id'=>$subCategory->id,'name'=>$subCategory->name]) }}" class="slide-item">{{ $subCategory->name }}</a>
                                     </li>
                                 @endforeach
                             </ul>

@@ -49,7 +49,7 @@
                                         <a href="{{route('admin.order-detail', ['id' => $order->order_number])}}" class="btn btn-success btn-sm" title="Order Detail Info">
                                             <i class="fa fa-eye"></i>
                                         </a>
-                                        <a href="{{route('admin.order-edit', ['id' => $order->order_number])}}" class="btn btn-info btn-sm {{$order->order_status == 'Complete' ? 'disabled' : ''}}" title="Edit Order">
+                                        <a href="{{route('admin.order-edit', ['id' => $order->order_number])}}" class="btn btn-info btn-sm {{$order->order_status == 'cancel' ? 'disabled' : ''}}" title="Edit Order">
                                             <i class="fa fa-edit"></i>
                                         </a>
                                         <a href="{{route('admin.order-invoice', ['id' => $order->order_number])}}" target="_blank" class="btn btn-warning btn-sm" title="Order Invoice">

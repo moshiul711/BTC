@@ -6,13 +6,14 @@ use App\Models\Category;
 use App\Models\Coupon;
 use App\Models\Customer;
 use App\Models\ProductReview;
+use App\Models\SubCategory;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use Session;
 
 class WebsiteController extends Controller
 {
-    public $categories, $product,$customer,$reviews,$coupons;
+    public $categories, $product, $products,$customer,$reviews,$coupons;
 
     public function index()
     {
@@ -54,8 +55,9 @@ class WebsiteController extends Controller
         return back()->with('message','Thanks To Share Your Review...');
     }
 
-    public function productShow()
+    public function productSubcategory($id,$name)
     {
+        return $this->products = SubCategory::where('id',$id)->where('name',$name)->first();
         return view('website.product.show');
     }
 

@@ -44,7 +44,7 @@
             <div class="btn btn-success btn-block">
                 <marquee direction="left">
                 @foreach($coupons as $coupon)
-                        <span class="mx-6">Apply Code <b>{{ $coupon->code }}</b> To Get Taka {{ $coupon->amount }} Discount.</span>
+                        <span class="mx-6">Apply Code <b>{{ $coupon->code }}</b> To Get Taka {{ $coupon->amount }} Discount. Minimum Order Tk. <b>{{ $coupon->order_amount }}</b>.</span>
                     @endforeach
                 </marquee>
 

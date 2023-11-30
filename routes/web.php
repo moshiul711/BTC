@@ -28,8 +28,10 @@ Route::get('/',[WebsiteController::class,'index'])->name('home');
 Route::get('/contact-us',[WebsiteController::class,'contact'])->name('contact-us');
 Route::get('/refer-earn',[WebsiteController::class,'referEarn'])->name('refer-earn');
 Route::get('/faq',[WebsiteController::class,'faq'])->name('faq');
+Route::post('/coupon-apply',[CouponController::class,'apply'])->name('coupon.apply');
 
 //Product on Home Page
+Route::get('/product/subcategory/{id}/{name}',[WebsiteController::class,'productSubcategory'])->name('product.subcategory');
 Route::get('/product-detail/{id}/{name}',[WebsiteController::class,'productDetail'])->name('product.detail');
 Route::post('/product-review/{id}',[WebsiteController::class,'productReview'])->name('product.review');
 
@@ -47,7 +49,6 @@ Route::get('/customer-review/{id}',[CustomerController::class,'review'])->name('
 Route::get('/customer-allReview/',[CustomerController::class,'allReview'])->name('customer.allReview');
 Route::get('/customer-change-password',[CustomerController::class,'changePassword'])->name('customer.change.password');
 
-Route::post('/coupon-apply',[CouponController::class,'apply'])->name('coupon.apply');
 
 
 //Checkout Module

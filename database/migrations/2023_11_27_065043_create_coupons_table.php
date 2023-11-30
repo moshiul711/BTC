@@ -16,6 +16,7 @@ return new class extends Migration
             $table->integer('customer_id')->nullable();
             $table->string('code');
             $table->integer('amount');
+            $table->integer('order_amount');
             $table->string('status')->default(1);
             $table->timestamps();
         });

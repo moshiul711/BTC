@@ -50,7 +50,11 @@ class CouponController extends Controller
         $this->coupon = Coupon::where('code',$request->coupon)->first();
         if ($this->coupon)
         {
-            if (Session::get('customer_id'))
+            if ($this->coupon->order_amount >= Cart::subTotal())
+            {
+                return response()->json(['error'=>'This Coupon Is Not Valid For This Order Amount']);
+            }
+            elseif (Session::get('customer_id'))
             {
                 $this->test = Session::put('coupon',$this->coupon->amount);
                 return response()->json(
