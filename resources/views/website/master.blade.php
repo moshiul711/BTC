@@ -552,7 +552,7 @@
                                                     <li><a href="javascript:void(0);">Other Pages</a></li>
                                                 </ul>
                                             </div>
-                                            <div class="col-lg-2 col-md-12">
+                                            <div class="col-lg-2 col-md-6 col-sm-6">
                                                 <h6>Information</h6>
                                                 <ul class="list-unstyled mb-4">
                                                     <li><a href="javascript:void(0);">Our Team</a></li>
@@ -563,7 +563,7 @@
                                                     <li><a href="javascript:void(0);">Terms and Services</a></li>
                                                 </ul>
                                             </div>
-                                            <div class="col-lg-4 col-md-12">
+                                            <div class="col-lg-4 col-md-6 col-sm-6">
                                                 <h6>Location</h6>
                                                 <ul class="list-unstyled mb-4">
                                                     <li><a href="javascript:void(0);">Address1:7363 Old Livingston Drive Dyersburg</a></li>

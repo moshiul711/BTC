@@ -44,7 +44,7 @@ class AdminController extends Controller
         {
             OrderDetails::updateProductStock($this->order->id);
         }
-        return redirect('/admin/order')->with('message','Order Updated Successfully...');
+        return redirect('/admin/order')->with('message','Order Info Updated Successfully...');
     }
 
     public function orderInvoice($id)

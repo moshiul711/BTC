@@ -13,7 +13,7 @@ use Session;
 
 class WebsiteController extends Controller
 {
-    public $categories, $product, $products,$customer,$reviews,$coupons;
+    public $categories,$category,$subCategory, $product, $products,$customer,$reviews,$coupons;
 
     public function index()
     {
@@ -55,10 +55,17 @@ class WebsiteController extends Controller
         return back()->with('message','Thanks To Share Your Review...');
     }
 
+    public function productCategory($id,$name)
+    {
+        $this->coupons = Coupon::where('status',1)->get();
+        $this->category = Category::where(['id'=>$id,'name'=>$name])->first();
+        return view('website.product.category-show',['category'=>$this->category,'coupons'=>$this->coupons]);
+    }
     public function productSubcategory($id,$name)
     {
-        return $this->products = SubCategory::where('id',$id)->where('name',$name)->first();
-        return view('website.product.show');
+        $this->coupons = Coupon::where('status',1)->get();
+        $this->subCategory = SubCategory::where(['id'=>$id,'name'=>$name])->first();
+        return view('website.product.subCategory-show',['subCategory'=>$this->subCategory,'coupons'=>$this->coupons]);
     }
 
     public function contact()

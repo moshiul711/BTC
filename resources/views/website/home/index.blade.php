@@ -2,7 +2,7 @@
 
 @section('title')
     Bangladesh Technology Company
-    @endsection
+@endsection
 
 @section('slider')
     <div class="row mt-2">
@@ -102,8 +102,11 @@
     @foreach($categories as $category)
         @if(count($category->products) > 0)
     <div class="page-header">
-        <div>
-            <h1 class="page-title">{{ $category->name }}</h1>
+        <div class="hover:bg-gray-100">
+            <a href="{{ route('product.category',['id'=>$category->id,'name'=>$category->name]) }}" class="page-title text-black">{{ $category->name }} <i class="fa fa-angle-right"></i></a>
+            {{--<h1 class="page-title">--}}
+                {{----}}
+            {{--</h1>--}}
         </div>
     </div>
 
@@ -111,6 +114,7 @@
         <div class="col-xl-12 col-lg-12">
             <div class="row products-main">
                 @foreach($category->products as $product)
+                    @if($product->status == 1)
                     <div class="col-12 col-md-6 col-sm-6 col-lg-6 col-xl-3 product-each">
                     <div class="card item-card">
                         <div class="product-grid6 card-body">
@@ -171,6 +175,7 @@
 
                     </div>
                 </div>
+                    @endif
                 @endforeach
             </div>
         </div><!-- COL-END -->
