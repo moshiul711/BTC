@@ -124,7 +124,7 @@
                                     </label>
                                     <label>
                                         <input name="payment" required type="radio" value="online">
-                                        <img src="{{ asset('/') }}website/assets/icons/cards_icon.webp" alt="">
+                                        <img src="{{ asset('/') }}website/assets/icons/ssl1.png" alt="">
                                     </label>
                                 </div>
                             </div>

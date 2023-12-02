@@ -577,7 +577,8 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <img src="{{ asset('/') }}website/assets/icons/ssl.png" alt="">
+                                                {{--<img src="{{ asset('/') }}website/assets/icons/ssl.png" alt="">--}}
+                                                <img src="{{ asset('/') }}website/assets/icons/ssl1.png" alt="">
                                             </div>
                                         </div>
                                     </div>

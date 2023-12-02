@@ -14,6 +14,7 @@ class Coupon extends Model
         self::$coupon = new Coupon();
         self::$coupon->code = $request->code;
         self::$coupon->amount = $request->amount;
+        self::$coupon->order_amount = $request->order_amount;
         self::$coupon->status = $request->status;
         self::$coupon->save();
         return self::$coupon;
@@ -23,6 +24,7 @@ class Coupon extends Model
         self::$coupon = Coupon::find($id);
         self::$coupon->code = $request->code;
         self::$coupon->amount = $request->amount;
+        self::$coupon->order_amount = $request->order_amount;
         self::$coupon->status = $request->status;
         self::$coupon->save();
         return self::$coupon;

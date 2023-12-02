@@ -25,12 +25,13 @@
                             <thead>
                             <tr>
                                 <th class="wd-15p border-bottom-0">Order Number</th>
-                                <th class="wd-15p border-bottom-0">Order Total</th>
-                                <th class="wd-15p border-bottom-0">Order Date</th>
-                                <th class="wd-20p border-bottom-0">Order Status</th>
+                                <th class="wd-15p border-bottom-0">Total</th>
+                                <th class="wd-15p border-bottom-0">Date</th>
+                                <th class="wd-20p border-bottom-0">Status</th>
                                 <th class="wd-20p border-bottom-0">Payment Amount</th>
                                 <th class="wd-20p border-bottom-0">Payment Method</th>
-                                <th class="wd-20p border-bottom-0">Payment Status</th>
+                                <th class="wd-20p border-bottom-0">Status</th>
+                                <th class="wd-20p border-bottom-0">Action</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -39,7 +40,17 @@
                                     <td>{{ $order->order_number }}</td>
                                     <td>{{ $order->order_total }}</td>
                                     <td>{{ $order->order_date }}</td>
-                                    <td>{{ $order->order_status }}</td>
+                                    <td>
+                                        @if($order->order_status=='pending')
+                                            <button class="btn btn-info-gradient">Pending</button>
+                                        @elseif($order->order_status=='processing')
+                                            <button class="btn btn-info-gradient">Pending</button>
+                                        @elseif($order->order_status=='complete')
+                                            <button class="btn btn-success-gradient">Complete</button>
+                                        @else
+                                            <button class="btn btn-danger-gradient">Cancel</button>
+                                        @endif
+                                    </td>
                                     <td>{{ $order->payment_amount }}</td>
                                     <td>
                                         @if($order->payment_method=='cod')
@@ -49,6 +60,9 @@
                                             @endif
                                     </td>
                                     <td>{{ $order->payment_status }}</td>
+                                    <td>
+                                        <a href="{{ route('customer.order.detail', $order->order_number ) }}" class="btn btn-success-gradient">Detail</a>
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>

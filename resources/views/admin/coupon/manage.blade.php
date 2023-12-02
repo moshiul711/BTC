@@ -26,6 +26,7 @@
                                 <th class="wd-15p border-bottom-0">Sl.</th>
                                 <th class="wd-15p border-bottom-0">Coupon Code</th>
                                 <th class="wd-15p border-bottom-0">Coupon Amount</th>
+                                <th class="wd-15p border-bottom-0">Order Amount</th>
                                 <th class="wd-20p border-bottom-0">Status</th>
                                 <th class="wd-25p border-bottom-0">Action</th>
                             </tr>
@@ -36,7 +37,14 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $coupon->code }}</td>
                                     <td>{{ $coupon->amount }}</td>
-                                    <td>{{ $coupon->status==1?'Active':'Disable' }}</td>
+                                    <td>{{ $coupon->order_amount }}</td>
+                                    <td>
+                                        @if($coupon->status == 1)
+                                            <button class="btn btn-sm btn-success">Active</button>
+                                        @else
+                                            <button class="btn btn-sm btn-danger">Disable</button>
+                                        @endif
+                                    </td>
                                     <td>
                                         <a href="{{ route('coupon.edit',$coupon->id) }}" class="btn btn-info" title="Coupon Edit">
                                             <i class="fa fa-edit"></i>

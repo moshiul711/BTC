@@ -13,7 +13,7 @@ use Session;
 
 class WebsiteController extends Controller
 {
-    public $categories,$category,$subCategory, $product, $products,$customer,$reviews,$coupons;
+    public $categories,$category,$subCategory, $product, $products,$customer,$reviews,$coupons,$relatedProducts;
 
     public function index()
     {
@@ -24,12 +24,7 @@ class WebsiteController extends Controller
 
     public function productDetail($id,$name)
     {
-        $this->product = Product::where(
-            [
-                'id' =>$id,
-                'name' => $name
-            ]
-        )->first();
+        $this->product = Product::where(['id' =>$id,'name' => $name])->first();
         if (!$this->product)
         {
             return view('website.home.error');
@@ -43,8 +38,10 @@ class WebsiteController extends Controller
 //            $this->reviews = ProductReview::where('product_id',$id)->get();
             $this->product->hit_count = $this->product->hit_count+1;
             $this->product->save();
+            $this->relatedProducts = Product::where('sub_category_id',$this->product->sub_category_id)->get();
             return view('website.product.detail',[
                 'product' => $this->product,
+                'relatedProducts' => $this->relatedProducts
             ]);
         }
     }

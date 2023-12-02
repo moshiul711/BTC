@@ -45,6 +45,7 @@ Route::get('/customer-profile',[CustomerController::class,'profile'])->name('cus
 Route::post('/customer-update',[CustomerController::class,'update'])->name('customer.update');
 Route::get('/customer-dashboard',[CustomerController::class,'dashboard'])->name('customer.dashboard');
 Route::get('/customer-order',[CustomerController::class,'order'])->name('customer.order');
+Route::get('/customer/order-detail/{id}',[CustomerController::class,'orderDetail'])->name('customer.order.detail');
 Route::get('/customer-payment',[CustomerController::class,'payment'])->name('customer.payment');
 Route::get('/customer-review/{id}',[CustomerController::class,'review'])->name('customer.review');
 Route::get('/customer-allReview/',[CustomerController::class,'allReview'])->name('customer.allReview');

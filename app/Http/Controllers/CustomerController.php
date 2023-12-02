@@ -10,7 +10,7 @@ use Session;
 
 class CustomerController extends Controller
 {
-    public $email, $password,$customer,$reviews,$orders;
+    public $email, $password,$customer,$reviews,$orders,$order;
     public function index()
     {
         return view('customer.home.index');
@@ -82,6 +82,17 @@ class CustomerController extends Controller
     {
         $this->orders = Order::where('customer_id',Session::get('customer_id'))->get();
         return view('customer.home.orders',['orders'=>$this->orders]);
+    }
+
+    public function orderDetail($id)
+    {
+        $this->customer = Session::get('customer_id');
+        $this->order = Order::where(['order_number'=>$id, 'customer_id'=>$this->customer])->first();
+        if (!$this->order)
+        {
+            return view('website.home.error');
+        }
+        return view('customer.home.orderDetail',['order'=>$this->order]);
     }
 
 }

@@ -33,6 +33,11 @@
                         </div>
 
                         <div class="form-group">
+                            <p>Order Amount:</p>
+                            <input type="number" class="form-control" name="order_amount" placeholder="Order Amount">
+                        </div>
+
+                        <div class="form-group">
                             <p>Coupon Name:</p>
                             <select name="status" id="" class="form-control">
                                 <option value="">Select Coupon Status</option>
