@@ -35,22 +35,24 @@ Route::get('/product/category/{id}/{name}',[WebsiteController::class,'productCat
 Route::get('/product/subcategory/{id}/{name}',[WebsiteController::class,'productSubcategory'])->name('product.subcategory');
 Route::get('/product-detail/{id}/{name}',[WebsiteController::class,'productDetail'])->name('product.detail');
 Route::post('/product-review/{id}',[WebsiteController::class,'productReview'])->name('product.review');
+Route::get('/search',[WebsiteController::class,'productSearch'])->name('product.search');
 
 //Customer Module
-Route::get('/customer',[CustomerController::class,'index'])->name('customer');
+Route::middleware('customer')->group(function (){
+    Route::get('/customer',[CustomerController::class,'index'])->name('customer');
+    Route::get('/customer-profile',[CustomerController::class,'profile'])->name('customer.profile');
+    Route::post('/customer-update',[CustomerController::class,'update'])->name('customer.update');
+    Route::get('/customer-dashboard',[CustomerController::class,'dashboard'])->name('customer.dashboard');
+    Route::get('/customer-order',[CustomerController::class,'order'])->name('customer.order');
+    Route::get('/customer/order-detail/{id}',[CustomerController::class,'orderDetail'])->name('customer.order.detail');
+    Route::get('/customer-payment',[CustomerController::class,'payment'])->name('customer.payment');
+    Route::get('/customer-review/{id}',[CustomerController::class,'review'])->name('customer.review');
+    Route::get('/customer-reviews/',[CustomerController::class,'allReview'])->name('customer.reviews');
+    Route::get('/customer-change-password',[CustomerController::class,'changePassword'])->name('customer.change.password');
+});
 Route::post('/customer-login',[CustomerController::class,'login'])->name('customer.login');
 Route::get('/customer-logout',[CustomerController::class,'logout'])->name('customer.logout');
 Route::post('/customer-register',[CustomerController::class,'register'])->name('customer.register');
-Route::get('/customer-profile',[CustomerController::class,'profile'])->name('customer.profile');
-Route::post('/customer-update',[CustomerController::class,'update'])->name('customer.update');
-Route::get('/customer-dashboard',[CustomerController::class,'dashboard'])->name('customer.dashboard');
-Route::get('/customer-order',[CustomerController::class,'order'])->name('customer.order');
-Route::get('/customer/order-detail/{id}',[CustomerController::class,'orderDetail'])->name('customer.order.detail');
-Route::get('/customer-payment',[CustomerController::class,'payment'])->name('customer.payment');
-Route::get('/customer-review/{id}',[CustomerController::class,'review'])->name('customer.review');
-Route::get('/customer-allReview/',[CustomerController::class,'allReview'])->name('customer.allReview');
-Route::get('/customer-change-password',[CustomerController::class,'changePassword'])->name('customer.change.password');
-
 
 
 //Checkout Module

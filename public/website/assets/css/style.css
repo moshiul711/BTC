@@ -24781,7 +24781,7 @@ body.fixed-header .header {
 }
 
 .app .header .nav-link #profile-heading {
-    color: #100f15 !important
+    color: #fff !important
 }
 
 .app .header .nav-link #profile-heading:focus, .app .header .nav-link #profile-heading:hover {

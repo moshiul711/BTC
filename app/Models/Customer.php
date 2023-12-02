@@ -18,6 +18,7 @@ class Customer extends Model
         self::$customer->email = $request->email;
         self::$customer->phone = $request->phone;
         self::$customer->password = bcrypt($request->password);
+        self::$customer->image = 'website\assets\icons\account.png';
         self::$customer->save();
     }
 

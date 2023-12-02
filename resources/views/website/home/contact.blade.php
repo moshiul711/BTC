@@ -16,7 +16,19 @@
                 </div>
             </div>
         </div>
-
+        <div class="col-lg-12 col-md-12">
+            <div class="card custom-card">
+                <div class="card-header border-bottom">
+                    <h6 class="card-title">Google Map Location</h6>
+                </div>
+                <div class="card-body">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d912.1391951025734!2d90.39105636953764!3d23.8698674986618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c41bbb5acb1f%3A0xeb8a49fa5d1d1637!2sWorkstation%20Communication!5e0!3m2!1sen!2sbd!4v1699514479173!5m2!1sen!2sbd"
+                            style="border:0; width: 100%; height: 450px" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
         <div class="col-lg-12 col-md-6">
             <div class="card custom-card">
                 <div class="card-header border-bottom">
@@ -37,30 +49,13 @@
                             <textarea class="form-control" name="message" placeholder="Write Your Message"></textarea>
                         </div>
                         <div class="form-group mt-3">
-                            <div>
-                                <button type="submit" class="btn btn-primary">Send Message</button>
+                            <div style="float: right;">
+                                <button type="submit" class="btn btn-success-gradient">Send Message</button>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-
-
-        <div class="col-lg-12 col-md-12">
-            <div class="card custom-card">
-                <div class="card-header border-bottom">
-                    <h6 class="card-title">Google Map Location</h6>
-                </div>
-                <div class="card-body">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d912.1391951025734!2d90.39105636953764!3d23.8698674986618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c41bbb5acb1f%3A0xeb8a49fa5d1d1637!2sWorkstation%20Communication!5e0!3m2!1sen!2sbd!4v1699514479173!5m2!1sen!2sbd"
-                            style="border:0; width: 100%; height: 450px" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
-            </div>
-        </div>
-
-
     </div>
 @endsection

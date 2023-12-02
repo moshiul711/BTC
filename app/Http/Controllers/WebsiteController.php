@@ -29,10 +29,6 @@ class WebsiteController extends Controller
         {
             return view('website.home.error');
         }
-        elseif ($this->product->stock < 1)
-        {
-            return view('website.home.error');
-        }
         else
         {
 //            $this->reviews = ProductReview::where('product_id',$id)->get();
@@ -77,5 +73,17 @@ class WebsiteController extends Controller
     public function faq()
     {
         return view('website.home.faqs');
+    }
+
+    public function productSearch(Request $request)
+    {
+        $this->coupons = Coupon::where('status',1)->get();
+        $this->products = Product::where('name','LIKE',"%{$request->search}%")->orWhere('long_description','LIKE',"%{$request->search}%")->orWhere('short_description','LIKE',"%{$request->search}%")->get();
+        if (count($this->products)>0){
+            return view('website.product.show',['products'=>$this->products,'coupons'=>$this->coupons]);
+        }
+        else{
+            return view('website.home.error');
+        }
     }
 }

@@ -248,7 +248,7 @@
 													<img src="{{ asset(Session('customer_image')) }}" alt="profile-user" class="avatar  profile-user brround cover-image">
 												</span>
                                                 <div class="text-center p-1 d-flex d-lg-none-max">
-                                                    <h6 class="mb-0" id="profile-heading">{{ Session('customer_name') }}<i class="user-angle ms-1 fa fa-angle-down "></i></h6>
+                                                    <h6 class="mb-0 text-bold text-white" id="profile-heading">{{ Session('customer_name') }}</h6>
                                                 </div>
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
@@ -328,25 +328,25 @@
                         </li>
 
                         <li class="slide">
-                            <a class="side-menu__item"  href="{{ route('customer.allReview') }}" title="Reviews">
+                            <a class="side-menu__item"  href="{{ route('customer.reviews') }}" title="Reviews">
                                 <img src="{{ asset('/')}}website/assets/icons/review.png " alt="">
                                 <span class="side-menu__label px-2">Reviews</span>
                             </a>
                         </li>
 
-                        <li class="slide">
-                            <a class="side-menu__item"  href="{{ route('customer.payment') }}" title="Payment History">
-                                <img src="{{ asset('/')}}website/assets/icons/payment.png " alt="">
-                                <span class="side-menu__label px-2">Payment History</span>
-                            </a>
-                        </li>
+                        {{--<li class="slide">--}}
+                            {{--<a class="side-menu__item"  href="{{ route('customer.payment') }}" title="Payment History">--}}
+                                {{--<img src="{{ asset('/')}}website/assets/icons/payment.png " alt="">--}}
+                                {{--<span class="side-menu__label px-2">Payment History</span>--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
 
-                        <li class="slide">
-                            <a class="side-menu__item"  href="{{ route('customer.change.password') }}" title="Change Password">
-                                <img src="{{ asset('/')}}website/assets/icons/password.png " alt="">
-                                <span class="side-menu__label px-2">Change Password</span>
-                            </a>
-                        </li>
+                        {{--<li class="slide">--}}
+                            {{--<a class="side-menu__item"  href="{{ route('customer.change.password') }}" title="Change Password">--}}
+                                {{--<img src="{{ asset('/')}}website/assets/icons/password.png " alt="">--}}
+                                {{--<span class="side-menu__label px-2">Change Password</span>--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
 
                         {{--<li class="slide">--}}
                             {{--<a class="side-menu__item" data-bs-toggle="slide" href="#">--}}
@@ -513,7 +513,7 @@
                                     popup: 'colored-toast'
                                 },
                                 showConfirmButton: false,
-                                timer: 5000,
+                                timer: 3000,
                                 timerProgressBar: true
                             })
                             Toast.fire({
@@ -521,7 +521,18 @@
                                 title: "{{ session('message') }}"
                             })
                         </script>
-                @endif
+
+                        @elseif(session('error'))
+                        <script>
+                            Swal.fire({
+                                icon: "error",
+                                title: "Oops...",
+                                text: "Something went wrong!",
+                                footer: '<a href="#">Why do I have this issue?</a>'
+                            })
+                        </script>
+
+                    @endif
 
                 @yield('main-content')
                 <!--products-->

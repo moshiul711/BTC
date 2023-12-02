@@ -51,14 +51,14 @@
                                         </td>
                                         <td>{{ $item->price }}</td>
                                         <td>
-                                            <input type="number" required name="quantity" min="1" max="{{ $item->options->max }}" class="form-control text-center" value="{{ $item->qty }}" >
+                                            <input type="number" required name="quantity" min="1" max="{{ $item->options->max }}" placeholder="0" class="form-control text-center" value="{{ $item->qty }}" >
                                         </td>
                                         <td>
                                             {{ round($item->qty * $item->price) }}
                                         </td>
                                         <td>
-                                            <button type="submit" class="btn btn-square btn-success-light me-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Update"><i class="fa fa-edit fs-13"></i></button>
-                                            <a href="{{ route('cart.delete',$item->rowId) }}" class="btn btn-square btn-danger-light me-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove From Cart"><i class="icon icon-trash fs-13"></i></a>
+                                            <button type="submit" class="btn btn-success-gradient text-bold me-1">Update</button>
+                                            <a href="{{ route('cart.delete',$item->rowId) }}" class="text-bold btn btn-danger-gradient me-1">Delete</a>
                                         </td>
                                     </tr>
                                     </form>

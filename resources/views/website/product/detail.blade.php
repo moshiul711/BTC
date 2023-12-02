@@ -79,7 +79,10 @@
                                     <span>
                                         <a style="color: #00cc00; font-size: 18px"><i class="fa fa-line-chart"></i> {{ $product->hit_count }} View(s)</a>
                                         <a class="px-5" style="color: darkred; font-size: 18px"><i class="fa fa-bar-chart-o"></i> {{ count($product->reviews) }} Review(s)</a>
+                                        @if($product->stock > 0)
                                         <a class="px-1" style="color: #008069; font-size: 18px"><i class=" fa fa-cubes"></i> In Stock</a>
+                                        @else<a class="px-1 text-danger" style="color: #008069; font-size: 18px"><i class=" fa fa-cubes"></i>Out of Stock</a>
+                                            @endif
                                     </span>
                                 </div>
                             </div>
@@ -94,12 +97,25 @@
                                 <form action="{{ route('cart.add',$product->id) }}" method="post">
                                     @csrf
                                     <div class="row">
-                                        <div class="col-md-6 form-group">
-                                            <input type="number" class="form-control" value="1" min="1" max="{{ $product->stock }}"  name="qty">
-                                        </div>
-                                        <div class="col-md-6 form-group">
-                                            <input type="submit" class="form-control btn btn-success text-bold" value="ADD TO CART"  name="submit">
-                                        </div>
+
+                                        @if($product->stock > 0)
+                                            <div class="col-md-6 form-group">
+                                                <input type="number" class="form-control" required placeholder="Enter Product Quantity" value="1" min="1" max="{{ $product->stock }}"  name="qty">
+                                            </div>
+                                            <div class="col-md-6 form-group">
+                                                <input type="submit" class="form-control btn btn-success text-bold" value="ADD TO CART"  name="submit">
+                                            </div>
+                                        @else
+                                            <div class="col-md-6 form-group">
+                                                <input type="number" class="form-control" required placeholder="Enter Product Quantity" value="1" min="1" max="{{ $product->stock }}"  name="qty">
+                                            </div>
+                                            <div class="col-md-6 form-group">
+                                                {{--<input id="swal-timer" type="submit" class="form-control btn btn-success text-bold" value="ADD TO CART"  name="submit">--}}
+                                                <button id="swal-timer" class="form-control btn btn-outline-success text-bold">
+                                                    Add To Cart
+                                                </button>
+                                            </div>
+                                        @endif
                                     </div>
                                 </form>
                             </div>

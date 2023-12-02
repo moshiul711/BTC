@@ -23,9 +23,9 @@ class CustomerController extends Controller
         {
             if (password_verify($request->password,$this->customer->password))
             {
-                echo Session::put('customer_id', $this->customer->id);
-                echo Session::put('customer_name', $this->customer->first_name);
-                echo Session::put('customer_image', $this->customer->image);
+                Session::put('customer_id', $this->customer->id);
+                Session::put('customer_name', $this->customer->first_name);
+                Session::put('customer_image', $this->customer->image);
                 return back()->with('message','You Successfully Login..');
             }
             else
@@ -53,7 +53,10 @@ class CustomerController extends Controller
 
     public function update(Request $request)
     {
-        Customer::updateProfile($request);
+        $this->customer = Customer::updateProfile($request);
+        Session::put('customer_id', $this->customer->id);
+        Session::put('customer_name', $this->customer->first_name);
+        Session::put('customer_image', $this->customer->image);
         return back()->with('message','Thanks For Updating Your Profile...');
     }
 
@@ -63,7 +66,7 @@ class CustomerController extends Controller
         Session::forget('customer_name');
         Session::forget('customer_image');
 
-        return back()->with('message','Your are logged out.');;
+        return back()->with('logout','Your are logged out.');;
     }
 
     public function review(Request $request,$product_id)

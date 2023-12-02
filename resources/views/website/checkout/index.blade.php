@@ -65,14 +65,14 @@
                                     <label class="form-label">City <span class="text-red">*</span></label>
                                     <select name="city" class="form-control">
                                         <option value="">---Select City---</option>
-                                        <option value="dhaka">Dhaka</option>
-                                        <option value="chittagong">Chittagong</option>
-                                        <option value="rajshahi">Rajshahi</option>
-                                        <option value="khulna">Khulna</option>
-                                        <option value="barishal">Barishal</option>
-                                        <option value="mymensingh">Mymensingh</option>
-                                        <option value="rongpur">Rongpur</option>
-                                        <option value="sylhet">Sylhet</option>
+                                        <option {{ $customer->city == 'dhaka'?'selected':'' }} value="dhaka">Dhaka</option>
+                                        <option {{ $customer->city == 'chittagong'?'selected':'' }} value="chittagong">Chittagong</option>
+                                        <option {{ $customer->city == 'rajshahi'?'selected':'' }} value="rajshahi">Rajshahi</option>
+                                        <option {{ $customer->city == 'khulna'?'selected':'' }} value="khulna">Khulna</option>
+                                        <option {{ $customer->city == 'barishal'?'selected':'' }} value="barishal">Barishal</option>
+                                        <option {{ $customer->city == 'mymensingh'?'selected':'' }} value="mymensingh">Mymensingh</option>
+                                        <option {{ $customer->city == 'rongpur'?'selected':'' }} value="rongpur">Rongpur</option>
+                                        <option {{ $customer->city == 'sylhet'?'selected':'' }} value="sylhet">Sylhet</option>
                                     </select>
                                 </div>
                             </div>

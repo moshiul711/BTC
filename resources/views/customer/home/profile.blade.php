@@ -59,7 +59,17 @@
                             <div class="col-sm-6 col-md-6">
                                 <div class="form-group">
                                     <label class="form-label">City <span class="text-red">*</span></label>
-                                    <input type="text" value="{{ $customer->city }}" name="city" class="form-control" placeholder="City">
+                                    <select name="city" class="form-control">
+                                        <option value="">---Select City---</option>
+                                        <option {{ $customer->city == 'dhaka'?'selected':'' }} value="dhaka">Dhaka</option>
+                                        <option {{ $customer->city == 'chittagong'?'selected':'' }} value="chittagong">Chittagong</option>
+                                        <option {{ $customer->city == 'rajshahi'?'selected':'' }} value="rajshahi">Rajshahi</option>
+                                        <option {{ $customer->city == 'khulna'?'selected':'' }} value="khulna">Khulna</option>
+                                        <option {{ $customer->city == 'barishal'?'selected':'' }} value="barishal">Barishal</option>
+                                        <option {{ $customer->city == 'mymensingh'?'selected':'' }} value="mymensingh">Mymensingh</option>
+                                        <option {{ $customer->city == 'rongpur'?'selected':'' }} value="rongpur">Rongpur</option>
+                                        <option {{ $customer->city == 'sylhet'?'selected':'' }} value="sylhet">Sylhet</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-6">

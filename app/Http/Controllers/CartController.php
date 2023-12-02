@@ -12,20 +12,27 @@ class CartController extends Controller
     public function cartAdd(Request $request, $id)
     {
         $this->product = Product::find($id);
-        Cart::add(
-            [
-                'id' => $this->product->id,
-                'name' => $this->product->name,
-                'qty' => $request->qty,
-                'price' => $this->product->offer_price,
-                'options' =>
-                    [
-                        'min' => 1,
-                        'max' => $this->product->stock,
-                        'image' => $this->product->image
-                    ]
-            ]);
-        return back()->with('message','Product Successfully Added to Cart.');
+        if ($this->product)
+        {
+            Cart::add(
+                [
+                    'id' => $this->product->id,
+                    'name' => $this->product->name,
+                    'qty' => $request->qty,
+                    'price' => $this->product->offer_price,
+                    'options' =>
+                        [
+                            'min' => 1,
+                            'max' => $this->product->stock,
+                            'image' => $this->product->image
+                        ]
+                ]);
+            return back()->with('message','Product Successfully Added to Cart.');
+        }
+        elseif ($this->product->stock < 1)
+        {
+            return back()->with('message','Sorry ! The Product is Out of Stock..');
+        }
     }
 
     public function cartShow()
