@@ -49,6 +49,7 @@ Route::middleware('customer')->group(function (){
     Route::get('/customer-review/{id}',[CustomerController::class,'review'])->name('customer.review');
     Route::get('/customer-reviews/',[CustomerController::class,'allReview'])->name('customer.reviews');
     Route::get('/customer-change-password',[CustomerController::class,'changePassword'])->name('customer.change.password');
+    Route::post('/customer-password-update',[CustomerController::class,'updatePassword'])->name('customer.password.update');
 });
 Route::post('/customer-login',[CustomerController::class,'login'])->name('customer.login');
 Route::get('/customer-logout',[CustomerController::class,'logout'])->name('customer.logout');

@@ -341,12 +341,12 @@
                             {{--</a>--}}
                         {{--</li>--}}
 
-                        {{--<li class="slide">--}}
-                            {{--<a class="side-menu__item"  href="{{ route('customer.change.password') }}" title="Change Password">--}}
-                                {{--<img src="{{ asset('/')}}website/assets/icons/password.png " alt="">--}}
-                                {{--<span class="side-menu__label px-2">Change Password</span>--}}
-                            {{--</a>--}}
-                        {{--</li>--}}
+                        <li class="slide">
+                            <a class="side-menu__item"  href="{{ route('customer.change.password') }}" title="Change Password">
+                                <img src="{{ asset('/')}}website/assets/icons/password.png " alt="">
+                                <span class="side-menu__label px-2">Change Password</span>
+                            </a>
+                        </li>
 
                         {{--<li class="slide">--}}
                             {{--<a class="side-menu__item" data-bs-toggle="slide" href="#">--}}
@@ -522,6 +522,25 @@
                             })
                         </script>
 
+                    @elseif(session('logout'))
+                        <script>
+                            const Toast = Swal.mixin({
+                                toast: true,
+                                position: 'top-right',
+                                iconColor: 'white',
+                                customClass: {
+                                    popup: 'colored-toast'
+                                },
+                                showConfirmButton: false,
+                                timer: 5000,
+                                timerProgressBar: true
+                            })
+                            Toast.fire({
+                                icon: 'error',
+                                title: "{{ session('logout') }}"
+                            })
+                        </script>
+
                         @elseif(session('error'))
                         <script>
                             Swal.fire({
@@ -614,7 +633,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <img src="{{ asset('/') }}website/assets/icons/ssl.png" alt="">
+                                                <img src="{{ asset('/') }}website/assets/icons/ssl1.png" alt="">
                                             </div>
                                         </div>
                                     </div>

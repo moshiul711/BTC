@@ -60,5 +60,13 @@ class Customer extends Model
         self::$image->move(self::$imagePath,self::$imageFullName);
         return self::$imageUrl = self::$imagePath.self::$imageFullName;
     }
+
+    public static function updatePassword($id,$password)
+    {
+        self::$customer = Customer::find($id);
+        self::$customer->password = bcrypt($password);
+        self::$customer->save();
+        return self::$customer;
+    }
 }
 

@@ -20,8 +20,6 @@ class CustomerController extends Controller
     {
         $this->customer = Customer::where('email',$request->email)->first();
 
-
-
         if ($this->customer)
         {
             if (password_verify($request->password,$this->customer->password))
@@ -113,6 +111,28 @@ class CustomerController extends Controller
             return view('website.home.error');
         }
         return view('customer.home.orderDetail',['order'=>$this->order]);
+    }
+
+    public function changePassword()
+    {
+        return view('customer.home.password');
+    }
+
+    public function updatePassword(Request $request)
+    {
+        $this->customer = Customer::find(Session::get('customer_id'));
+        if (password_verify($request->password,$this->customer->password)){
+            if ($request->new_password == $request->confirm_new_password){
+                Customer::updatePassword($this->customer->id, $request->new_password);
+                return back()->with('message','Password Changed Successfully');
+            }
+            else{
+              return back()->with('logout','New Password & Confirm Password not Matched');
+            }
+        }
+        else{
+            return back()->with('logout','Your Password Is Not Matched to Our Database');
+        }
     }
 
 }
