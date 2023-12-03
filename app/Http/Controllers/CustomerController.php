@@ -19,13 +19,24 @@ class CustomerController extends Controller
     public function login(Request $request)
     {
         $this->customer = Customer::where('email',$request->email)->first();
+
+
+
         if ($this->customer)
         {
             if (password_verify($request->password,$this->customer->password))
             {
                 Session::put('customer_id', $this->customer->id);
                 Session::put('customer_name', $this->customer->first_name);
-                Session::put('customer_image', $this->customer->image);
+                if ($this->customer->image)
+                {
+                    Session::put('customer_image', $this->customer->image);
+                }
+                else
+                    {
+                        Session::put('customer_image', 'website/assets/icons/profile.png');
+                    }
+
                 return back()->with('message','You Successfully Login..');
             }
             else
@@ -41,7 +52,13 @@ class CustomerController extends Controller
 
     public function register(Request $request)
     {
-        Customer::register($request);
+        $this->customer = Customer::register($request);
+        if ($this->customer)
+        {
+            Session::put('customer_id', $this->customer->id);
+            Session::put('customer_name', $this->customer->first_name);
+            Session::put('customer_image', 'website/assets/icons/profile.png');
+        }
         return back()->with('message','Your Credentials are Successfully Registered');
     }
 
@@ -66,7 +83,7 @@ class CustomerController extends Controller
         Session::forget('customer_name');
         Session::forget('customer_image');
 
-        return back()->with('logout','Your are logged out.');;
+        return redirect('/')->with('logout','Your are logged out.');;
     }
 
     public function review(Request $request,$product_id)

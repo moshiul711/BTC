@@ -18,8 +18,9 @@ class Customer extends Model
         self::$customer->email = $request->email;
         self::$customer->phone = $request->phone;
         self::$customer->password = bcrypt($request->password);
-        self::$customer->image = 'website\assets\icons\account.png';
+//        self::$customer->image = 'website/uploadsaccount.png';
         self::$customer->save();
+        return self::$customer;
     }
 
     public static function updateProfile($request)

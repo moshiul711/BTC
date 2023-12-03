@@ -23862,7 +23862,7 @@ body.rtl .buy-now {
 
 .top-footer img:hover {
     color: #8e9090;
-    opacity: .6
+    /*opacity: .6*/
 }
 
 .top-footer .list-unstyled li {

@@ -260,7 +260,7 @@
                                     <div class="dropdown d-md-flex profile-1" >
                                         <a href="#" data-bs-target="#smallmodal" data-bs-toggle="modal">
                                             <span>
-                                                <img src="{{ asset('/') }}website/assets/icons/account.png" alt="profile-user" class="avatar  profile-user brround cover-image">
+                                                <img src="{{ asset('/') }}website/assets/icons/profile.png" alt="profile-user" class="avatar  profile-user brround cover-image">
                                             </span>
                                         </a>
                                     </div>
