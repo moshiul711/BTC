@@ -37,7 +37,17 @@
                                     <td>{{ $order->order_number }}</td>
                                     <td>{{ $order->order_date }}</td>
                                     <td>{{ $order->customer->first_name.'('. $order->customer->phone.')'}}</td>
-                                    <td>{{ $order->order_status }}</td>
+                                    <td>
+                                        @if($order->order_status=='pending')
+                                            <button class="btn btn-info-gradient">Pending</button>
+                                        @elseif($order->order_status=='processing')
+                                            <button class="btn btn-info-gradient">Pending</button>
+                                        @elseif($order->order_status=='complete')
+                                            <button class="btn btn-success-gradient">Complete</button>
+                                        @else
+                                            <button class="btn btn-danger-gradient">Cancel</button>
+                                        @endif
+                                    </td>
                                     <td>
                                         @if($order->payment_method=='cod')
                                             {{ 'Cash On Delivery' }}

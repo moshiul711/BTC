@@ -58,7 +58,7 @@ Route::post('/customer-register',[CustomerController::class,'register'])->name('
 
 //Checkout Module
 Route::get('/checkout',[CheckoutController::class,'index'])->name('checkout');
-Route::post('/order-place',[CheckoutController::class,'placeOrder'])->name('order-place');
+Route::post('/order-place',[CheckoutController::class,'placeOrder'])->name('order-place')->middleware('managePage');
 
 
 //Cart Module

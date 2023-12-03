@@ -54,6 +54,7 @@
 
         .invoice-box table tr.details td {
             padding-bottom: 20px;
+            font-weight: bold;
         }
 
         .invoice-box table tr.item td {
@@ -190,7 +191,7 @@
                         <td style="text-align: center"><b>:</b></td>
                         <td style="text-align: right">{{$sum}}</td>
                     </tr>
-                    <tr class="heading">
+                    <tr class="details">
                         <td></td>
                         <td>Delivery Charge</td>
                         <td style="text-align: center"><b>:</b></td>
@@ -202,7 +203,7 @@
                         <td style="text-align: center"><b>:</b></td>
                         <td style="text-align: right">{{$order->discount}}</td>
                     </tr>
-                    <tr class="heading">
+                    <tr class="details">
                         <td></td>
                         <td>Total Payable</td>
                         <td style="text-align: center"><b>:</b></td>

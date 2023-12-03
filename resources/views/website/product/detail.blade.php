@@ -111,9 +111,7 @@
                                             </div>
                                             <div class="col-md-6 form-group">
                                                 {{--<input id="swal-timer" type="submit" class="form-control btn btn-success text-bold" value="ADD TO CART"  name="submit">--}}
-                                                <button id="swal-timer" class="form-control btn btn-outline-success text-bold">
-                                                    Add To Cart
-                                                </button>
+                                                <a href="javascript:void(0)" id="swal-timer" class="form-control btn btn-outline-success text-bold">Add To Cart</a>
                                             </div>
                                         @endif
                                     </div>

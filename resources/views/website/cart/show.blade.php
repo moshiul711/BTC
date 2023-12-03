@@ -163,16 +163,13 @@
     </div><!-- COL-END -->
     <!-- ROW-1 CLOSED -->
     @else
-    <div class="row">
-        <div class="col-md-12 col-xl-12">
-            <div class="card">
-                <div class="card-body">
-                    <p class="card-title text-center text-success-darkest">There is no product found in the cart</p>
-                    <span>
-                        <p class="text-center text-success-darkest text-bold">Add Some product first</p>
-                    </span>
-                    <div class="text-center">
-                        <a href="{{ route('home') }}" class="btn btn-outline-success">Go Back To Home</a>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="card">
+                    <div class="card-body text-center m-auto">
+                        <h3 class="text-bold text-danger-shadow py-5">Sorry !! No Products Found In Shopping Cart...</h3>
+                        <p class="text-bold text-danger-shadow py-2">Please ! Add Some product first</p>
+                        <a href="{{ route('home') }}" class="btn btn-danger-gradient text-bold">Go Back To Home</a>
                     </div>
                 </div>
             </div>

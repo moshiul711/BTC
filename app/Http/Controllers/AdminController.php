@@ -19,7 +19,7 @@ class AdminController extends Controller
 
     public function allOrder()
     {
-        $this->orders = Order::orderBy('id','desc')->get();
+        $this->orders = Order::all();
         return view('admin.order.index',['orders'=>$this->orders]);
     }
 
