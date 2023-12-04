@@ -13,7 +13,8 @@ class CustomerController extends Controller
     public $email, $password,$customer,$reviews,$orders,$order;
     public function index()
     {
-        return view('customer.home.index');
+        $this->orders = Order::where('customer_id',Session::get('customer_id'))->orderBy('id','desc')->get();
+        return view('customer.home.index',['orders'=>$this->orders]);
     }
 
     public function login(Request $request)
@@ -39,12 +40,12 @@ class CustomerController extends Controller
             }
             else
             {
-                return back()->with('message', 'Sorry ... your password is invalid.');
+                return back()->with('logout', 'Sorry ... your password is invalid.');
             }
         }
         else
         {
-            return back()->with('message', 'Sorry ... your email or mobile is invalid.');
+            return back()->with('logout', 'Sorry ... your email or mobile is invalid.');
         }
     }
 

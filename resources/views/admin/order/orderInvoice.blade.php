@@ -108,6 +108,11 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="javascript:void(0);">Order</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Order Invoice</li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    <a href="{{route('admin.order-download-order-invoice', ['id' => $order->order_number])}}" target="_blank" title="Print Invoice">
+                        <img src="{{ asset('/') }}website/assets/icons/printer.png" alt="">
+                    </a>
+                </li>
             </ol>
         </div>
     </div>

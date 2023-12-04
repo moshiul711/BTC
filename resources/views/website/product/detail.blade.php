@@ -53,16 +53,12 @@
                                             <div class="carousel-inner h-100">
                                                 <div class="carousel-item active">
                                                     <img alt="img" class="img img-thumbnail w-100 d-block " src="{{ asset($product->image) }}" style="height: 300px; width: 811px">
-                                                    <div class="top-left" style="position: absolute;top: 6px;left: 6px; color:red">
-                                                        <img src="{{ asset('/')}}website/assets/icons/icon.png " alt="">
-                                                    </div>
+                                                    <div class="top-left" style="position: absolute;top: 2px;left: 2px;"><button class="btn btn-sm btn-danger-gradient">BTC</button></div>
                                                 </div>
                                                 @foreach($product->otherImages as $otherImage)
                                                 <div class="carousel-item">
                                                     <img alt="img" class="img img-thumbnail w-100 d-block " src="{{ asset($otherImage->image) }}" style="height: 300px; width: 811px">
-                                                    <div class="top-left" style="position: absolute;top: 6px;left: 6px; color:red">
-                                                        <img src="{{ asset('/')}}website/assets/icons/icon.png " alt="">
-                                                    </div>
+                                                    <div class="top-left" style="position: absolute;top: 2px;left: 2px;"><button class="btn btn-sm btn-danger-gradient">BTC</button></div>
                                                 </div>
                                                 @endforeach
                                             </div>

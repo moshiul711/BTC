@@ -47,7 +47,7 @@
                                         <div class="product-image6">
                                             <a href="{{ route('product.detail',[$product->id,$product->name]) }}" class="img-container" target="_blank">
                                                 <img class="img-fluid" src="{{ asset($product->image) }}" style="height: 150px" alt="img">
-                                                <div class="top-left" style="position: absolute;top: 8px;left: 16px; color:red">BTC</div>
+                                                <div class="top-left" style="position: absolute;top: 2px;left: 2px;"><button class="btn btn-sm btn-danger-gradient">BTC</button></div>
                                             </a>
                                             <div class="icon-container">
                                                 <ul class="icons">

@@ -28,8 +28,8 @@
                                 <th class="wd-15p border-bottom-0">Total</th>
                                 <th class="wd-15p border-bottom-0">Date</th>
                                 <th class="wd-20p border-bottom-0">Status</th>
-                                <th class="wd-20p border-bottom-0">Payment Amount</th>
-                                <th class="wd-20p border-bottom-0">Payment Method</th>
+                                <th class="wd-20p border-bottom-0">Amount</th>
+                                <th class="wd-20p border-bottom-0">Method</th>
                                 <th class="wd-20p border-bottom-0">Status</th>
                                 <th class="wd-20p border-bottom-0">Action</th>
                             </tr>

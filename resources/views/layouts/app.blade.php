@@ -259,7 +259,7 @@
                                                          class="avatar  profile-user brround cover-image">
 												</span>
                                             <div class="text-center p-1 d-flex d-lg-none-max">
-                                                <h6 class="mb-0" id="profile-heading">Elena<i class="user-angle ms-1 fa fa-angle-down "></i></h6>
+                                                <h6 class="mb-0" id="profile-heading">{{ Auth::user()->name }}<i class="user-angle ms-1 fa fa-angle-down "></i></h6>
                                             </div>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
@@ -397,7 +397,7 @@
                                 <span class="side-menu__label">Order Module</span><i class="angle fa fa-angle-right"></i></a>
                             <ul class="slide-menu">
                                 <li><a href="{{ route('order.manage') }}" class="slide-item">Manage Order</a></li>
-{{--                                <li><a href="{{ route('invoice.create') }}" class="slide-item">Create Invoice</a></li>--}}
+                                <li><a href="{{ route('order.search') }}" class="slide-item">Search Order</a></li>
                             </ul>
                         </li>
                     </ul>

@@ -14,7 +14,8 @@ class AdminController extends Controller
     public $orders, $order,$orderDetails,$product,$stock_amount;
     public function index()
     {
-        return view('admin.home.index');
+        $this->order = Order::orderTotal();
+        return view('admin.home.index',['order'=>$this->order]);
     }
 
     public function allOrder()
@@ -44,6 +45,10 @@ class AdminController extends Controller
         {
             OrderDetails::updateProductStock($this->order->id);
         }
+        elseif ($request->order_status == 'complete')
+        {
+            OrderDetails::updateSalesCount($this->order->id);
+        }
         return redirect('/admin/order')->with('message','Order Info Updated Successfully...');
     }
 
@@ -69,5 +74,16 @@ class AdminController extends Controller
             return back()->with('message', 'Order Info delete successfully');
         }
         return back()->with('message', 'Sorry ... this order can not be deleted.');
+    }
+
+    public function orderSearch()
+    {
+        return view('admin.order.search');
+    }
+
+    public function orderSearchResult(Request $request)
+    {
+        $this->orders = Order::orderTotalByMonth($request);
+        return view('admin.order.search',['orders'=>$this->orders]);
     }
 }

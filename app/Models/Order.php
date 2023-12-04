@@ -4,13 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 use Cart;
 use Session;
 
 class Order extends Model
 {
     use HasFactory;
-    private static $order;
+    private static $order,$orderInfo=[];
     public static function storeOrderInfo($request,$deliveryId)
     {
         self::$order = new Order();
@@ -86,6 +87,30 @@ class Order extends Model
     public function orderDetails()
     {
         return $this->hasMany(OrderDetails::class);
+    }
+
+
+    public static function orderTotal()
+    {
+        $month = '2023-11';
+        self::$orderInfo['order_total'] = DB::table('orders')->where('order_status','complete')->sum('order_total');
+        self::$orderInfo['order_count'] = DB::table('orders')->where('order_status','complete')->count('id');
+        self::$orderInfo['visitor'] = DB::table('products')->sum('hit_count');
+        self::$orderInfo['users'] = Customer::all();
+        self::$orderInfo['month'] = DB::table('orders')->where('order_date','LIKE',"%{$month}%")->sum('order_total');
+
+        return self::$orderInfo;
+    }
+
+    public static function orderTotalByMonth($request)
+    {
+        $result = "{$request->year}".'-'."{$request->month}";
+        self::$orderInfo['month_orders'] = DB::table('orders')->where('order_date','LIKE',"%{$result}%")->get();
+        self::$orderInfo['month_total'] = DB::table('orders')
+            ->where('order_date','LIKE',"%{$result}%")
+            ->where('order_status','complete')
+            ->sum('order_total');
+        return self::$orderInfo;
     }
 
 }

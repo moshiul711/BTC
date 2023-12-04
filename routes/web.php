@@ -130,6 +130,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::get('admin/order-invoice/{id}',[AdminController::class,'orderInvoice'])->name('admin.order-invoice');
     Route::get('admin/order-download-order-invoice/{id}',[AdminController::class,'orderDownload'])->name('admin.order-download-order-invoice');
     Route::get('admin/order-delete/{id}',[AdminController::class,'orderDelete'])->name('admin.order-delete');
+    Route::get('admin/order-search',[AdminController::class,'orderSearch'])->name('order.search');
+    Route::get('admin/order-search',[AdminController::class,'orderSearchResult'])->name('order.search');
 
 
 

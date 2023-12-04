@@ -165,7 +165,7 @@
         </tr>
         @php($sum=0)
         @foreach($order->orderDetails as $orderDetail)
-            <tr class="item">
+            <tr class="details">
                 <td>{{$orderDetail->product_name}}</td>
                 <td style="text-align: center">{{$orderDetail->product_price}}</td>
                 <td style="text-align: center">{{$orderDetail->product_quantity}}</td>
@@ -179,9 +179,8 @@
             <td style="text-align: center"><b>:</b></td>
             <td style="text-align: right">{{$sum}}</td>
         </tr>
-        <tr class="heading">
-            <td></td>
-            <td>Delivery Charge</td>
+        <tr class="details">
+            <td colspan="2" style="text-align: right">Delivery Charge</td>
             <td style="text-align: center"><b>:</b></td>
             <td style="text-align: right">{{$order->delivery_charge}}</td>
         </tr>
@@ -191,7 +190,7 @@
             <td style="text-align: center"><b>:</b></td>
             <td style="text-align: right">{{$order->discount}}</td>
         </tr>
-        <tr class="heading">
+        <tr class="details">
             <td></td>
             <td>Total Payable</td>
             <td style="text-align: center"><b>:</b></td>
