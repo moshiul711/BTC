@@ -26,6 +26,10 @@ class Order extends Model
         Session::forget('coupon');
         self::$order->payment_amount = Session::get('payment_amount');
         self::$order->payment_method = $request->payment;
+        if ($request->payment == 'online')
+        {
+            self::$order->transaction_id = uniqid();
+        }
         self::$order->save();
         return self::$order;
     }

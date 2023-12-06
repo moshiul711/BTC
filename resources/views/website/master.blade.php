@@ -36,6 +36,8 @@
     <link href="{{ asset('/') }}website/assets/switcher/demo.css" rel="stylesheet">
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="{{ asset('/') }}website/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="{{ asset('/') }}website/assets/css/owl.theme.default.min.css">
     <style>
         .colored-toast.swal2-icon-success {
             background-color: #a5dc86 !important;
@@ -341,11 +343,11 @@
                             </span>
                             </div>
                             <div class="text-end pt-1">
-                                <p class="mb-0"><a href="" class="text-primary ms-1">Forgot Password?</a></p>
+                                <p class="mb-0"><a href="{{ route('forgot-password') }}" class="text-primary ms-1">Forgot Password?</a></p>
                             </div>
 
                             <div class="text-center pt-3">
-                                <p class="text-dark mb-0">Not a member?<a href="register.html" data-bs-target="#registration" data-bs-toggle="modal" class="text-primary ms-1">Create an Account</a></p>
+                                <p class="text-dark mb-0">Not a member?<a href="#" data-bs-target="#registration" data-bs-toggle="modal" class="text-primary ms-1">Create an Account</a></p>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -376,13 +378,13 @@
                             <div class="wrap-input100 validate-input" data-bs-validate = "First Name Required">
                                 <input class="input100" type="text" name="first_name" placeholder="First Name">
                                 <span class="focus-input100"></span>
-                                <span class="symbol-input100"><i class="zmdi zmdi-email" aria-hidden="true"></i></span>
+                                <span class="symbol-input100"><i class="zmdi zmdi-account" aria-hidden="true"></i></span>
                             </div>
 
                             <div class="wrap-input100 validate-input" data-bs-validate = "Last Name Required">
                                 <input class="input100" type="text" name="last_name" placeholder="Last Name">
                                 <span class="focus-input100"></span>
-                                <span class="symbol-input100"><i class="zmdi zmdi-email" aria-hidden="true"></i></span>
+                                <span class="symbol-input100"><i class="zmdi zmdi-account" aria-hidden="true"></i></span>
                             </div>
 
                             <div class="wrap-input100 validate-input" data-bs-validate = "Valid email is required: ex@abc.xyz">
@@ -395,7 +397,7 @@
                             <div class="wrap-input100 validate-input" data-bs-validate = "Phone Number is required: 01700123456">
                                 <input class="input100" type="tel" name="phone" placeholder="Phone">
                                 <span class="focus-input100"></span>
-                                <span class="symbol-input100"><i class="zmdi zmdi-email" aria-hidden="true"></i></span>
+                                <span class="symbol-input100"><i class="zmdi zmdi-phone" aria-hidden="true"></i></span>
                             </div>
 
                             <div class="wrap-input100 validate-input" data-bs-validate = "Password is required">
@@ -643,7 +645,7 @@
 
 <!-- JQUERY JS -->
 <script src="{{ asset('/') }}website/assets/plugins/jquery/jquery.min.js"></script>
-
+<script src="{{ asset('/') }}website/assets/js/owl.carousel.min.js"></script>
 <!-- BOOTSTRAP JS -->
 <script src="{{ asset('/') }}website/assets/plugins/bootstrap/js/popper.min.js"></script>
 <script src="{{ asset('/') }}website/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
@@ -750,7 +752,22 @@
         })
     })
 </script>
-
+<script>
+    var owl = $('.owl-carousel');
+    owl.owlCarousel({
+        loop:true,
+        margin:10,
+        autoplay:true,
+        autoplayTimeout:2000,
+        autoplayHoverPause:true
+    });
+    $('.play').on('click',function(){
+        owl.trigger('play.owl.autoplay',[1000])
+    })
+    $('.stop').on('click',function(){
+        owl.trigger('stop.owl.autoplay')
+    })
+</script>
 </body>
 
 

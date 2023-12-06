@@ -136,4 +136,19 @@ class CustomerController extends Controller
         }
     }
 
+
+    public function forgotPassword()
+    {
+        return view('website.home.forgotPassword');
+    }
+
+    public function forgotEmailCheck(Request $request)
+    {
+        $this->customer = Customer::where('email',$request->email)->first();
+        if ($this->customer)
+        {
+
+        }
+    }
+
 }

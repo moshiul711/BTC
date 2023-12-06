@@ -8,6 +8,7 @@ use App\Models\Order;
 use App\Models\OrderDetails;
 use Illuminate\Http\Request;
 use Session;
+use App\Library\SslCommerz\SslCommerzNotification;
 
 class CheckoutController extends Controller
 {
@@ -34,10 +35,17 @@ class CheckoutController extends Controller
             $this->orderInfo = Order::storeOrderInfo($request,$this->deliveryInfo->id);
             $this->orderDetailsInfo = OrderDetails::storeOrderDetails($this->orderInfo->id);
 
-            return view('website.checkout.order-complete',[
-                'orderNumber' => $this->orderInfo->order_number,
-                'orderDetails' => $this->orderDetailsInfo
-            ]);
+            if ($request->payment == 'cod')
+            {
+                return view('website.checkout.order-complete',[
+                    'orderNumber' => $this->orderInfo->order_number,
+                    'orderDetails' => $this->orderDetailsInfo
+                ]);
+            }
+            else
+                {
+                    return 'Online Payment';
+                }
         }
         else
         {
