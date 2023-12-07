@@ -445,12 +445,10 @@
 
 
     <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row align-items-center flex-row-reverse">
-                <div class="col-md-12 col-sm-12 text-center">
-                    Copyright © 2023. All rights reserved by <a href="#"> Bangladesh Technology Company.</a>
-                </div>
+    <footer class="main-footer ps-3 pe-3">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 footer1 text-center text-lg-bold">
+                Copyright © {{ date('Y') }}. All Rights Reserved By<a href="{{ route('home') }}"> Bangladesh Technology Company</a>
             </div>
         </div>
     </footer>
