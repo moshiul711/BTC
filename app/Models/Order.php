@@ -26,6 +26,7 @@ class Order extends Model
         Session::forget('coupon');
         self::$order->payment_amount = Session::get('payment_amount');
         self::$order->payment_method = $request->payment;
+
         if ($request->payment == 'online')
         {
             self::$order->transaction_id = uniqid();
@@ -96,12 +97,13 @@ class Order extends Model
 
     public static function orderTotal()
     {
-        $month = '2023-11';
-        self::$orderInfo['order_total'] = DB::table('orders')->where('order_status','complete')->sum('order_total');
-        self::$orderInfo['order_count'] = DB::table('orders')->where('order_status','complete')->count('id');
+//        $month = '2023-12';
+        self::$orderInfo['order_total'] = DB::table('orders')->sum('order_total');
+        self::$orderInfo['order_count'] = DB::table('orders')->count('id');
         self::$orderInfo['visitor'] = DB::table('products')->sum('hit_count');
         self::$orderInfo['users'] = Customer::all();
-        self::$orderInfo['month'] = DB::table('orders')->where('order_date','LIKE',"%{$month}%")->sum('order_total');
+        self::$orderInfo['products'] = Product::all();
+//        self::$orderInfo['month'] = DB::table('orders')->where('order_date','LIKE',"%{$month}%")->sum('order_total');
 
         return self::$orderInfo;
     }
