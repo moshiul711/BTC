@@ -35,7 +35,8 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 }
 
 body {
-    background-color: #fff;
+    background-color: #0c46621f;
+    /*background-image: url("https://bangladesh.gov.bd/themes/responsive_npf/images/bg_main.gif");*/
     color: #0d0a0a;
     font-family: segoe ui,Helvetica,droid sans,Arial,lucida grande,tahoma,verdana,arial,sans-serif;
     font-size: 12px;
@@ -14489,25 +14490,25 @@ a.chip:hover {
     background-position: 50%;
     background-repeat: no-repeat;
     border-radius: 7px;
-    bottom: 20px;
+    bottom: 24px;
     color: #fff;
     display: none;
-    height: 50px;
+    height: 35px;
     position: fixed;
-    right: 20px;
+    right: 27px;
     text-align: center;
     transition: background-color .1s linear;
     -moz-transition: background-color .1s linear;
     -webkit-transition: background-color .1s linear;
     -o-transition: background-color .1s linear;
-    width: 50px;
+    width: 35px;
     z-index: 99;
     z-index: 10000
 }
 
 #back-to-top i {
     font-size: 16px;
-    padding-top: 15px
+    padding-top: 10px
 }
 
 #back-to-top:hover {
@@ -60497,7 +60498,7 @@ div.dtr-bs-modal table.table tr:first-child td {
 
 @media (min-width: 992px) {
     .app-content {
-        margin-left: 270px
+        margin-left: 230px
     }
 
     .app.sidebar-mini.sidenav-toggled .side-header {

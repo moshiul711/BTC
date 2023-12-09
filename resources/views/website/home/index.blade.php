@@ -6,8 +6,8 @@
 
 @section('slider')
     <div class="row mt-2">
-        <div id="carousel-controls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
+        <div id="carousel-controls" class=" carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner" style="border: 1px solid #80bc5b">
                 <div class="carousel-item active">
                     <img class="d-block w-100" alt="" src="{{ asset('/') }}website/assets/icons/s.jpg"
                          data-bs-holder-rendered="true">
@@ -110,20 +110,21 @@
 
 @section('main-content')
     @foreach($categories as $category)
-        @if(count($category->products) > 0)
+        @if(count($category->products) > 0 )
             <div class="page-header">
                 <div class="hover:bg-gray-100">
                     <a href="{{ route('product.category',['id'=>$category->id,'name'=>$category->name]) }}"
-                       class="page-title text-black">{{ $category->name }} <i class="fa fa-angle-right"></i></a>
-                    <h1 class="page-title">
-
-                    </h1>
+                       class="page-title text-black">{{ $category->name }} <i class="fa fa-angle-right"></i>
+                    </a>
+                    <a href="{{ route('product.category',['id'=>$category->id,'name'=>$category->name]) }}"
+                       class="page-title text-black" style="float: right">View All</i>
+                    </a>
                 </div>
             </div>
             <div class="row row-cards">
                     <div class="col-xl-12 col-lg-12 ">
-                        <div class="row products-main" style="width: 100%">
-                            @foreach($category->products as $product)
+                        <div class="row products-main">
+                            @foreach($category->products->take(4) as $product)
                                 @if($product->status == 1)
                                     <div class="col-12 col-md-6 col-sm-6 col-lg-6 col-xl-3 product-each">
                                         <div class="card item-card">

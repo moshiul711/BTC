@@ -15,7 +15,7 @@ class AdminController extends Controller
     public $orders, $order,$orderDetails,$product,$stock_amount;
     public function index()
     {
-        $this->orders = Order::all();
+        $this->orders = Order::where('order_date',date('Y-m-d'))->get();
         $this->order = Order::orderTotal();
         return view('admin.home.index',['order'=>$this->order,'orders'=>$this->orders]);
     }

@@ -39,6 +39,12 @@
     <link rel="stylesheet" href="{{ asset('/') }}website/assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="{{ asset('/') }}website/assets/css/owl.theme.default.min.css">
     <style>
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+
+            opacity: 1;
+
+        }
         .colored-toast.swal2-icon-success {
             background-color: #a5dc86 !important;
         }
@@ -681,7 +687,6 @@
 
 <script src="{{ asset('/') }}website/assets/plugins/sweet-alert/sweetalert.min.js"></script>
 <script src="{{ asset('/') }}website/assets/plugins/sweet-alert/jquery.sweet-alert.js"></script>
-
 
 
 <script>

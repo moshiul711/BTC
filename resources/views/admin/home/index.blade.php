@@ -532,7 +532,7 @@
                             <tr>
                                 <th class="bg-transparent border-bottom-0 wp-15">##</th>
                                 <th class="bg-transparent border-bottom-0">Name</th>
-                                {{--<th class="bg-transparent border-bottom-0">Email</th>--}}
+                                <th class="bg-transparent border-bottom-0">Email</th>
                                 <th class="bg-transparent border-bottom-0">Phone</th>
                                 <th class="bg-transparent border-bottom-0">Address</th>
                                 {{--<th class="bg-transparent border-bottom-0 no-btn">Action</th>--}}
@@ -542,8 +542,8 @@
                             @foreach($order['users'] as $user)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $user->first_name.' '.$user->last_name }}</td>
-{{--                                <td>{{ $user->email }}</td>--}}
+                                <td>{{ $user->first_name.' '.$user->last_name.'('. $user->phone.')' }}</td>
+                                <td>{{ $user->email }}</td>
                                 <td>{{ $user->phone }}</td>
                                 <td>{{ $user->city }}</td>
                                 {{--<td>--}}
@@ -562,8 +562,12 @@
                 </div>
             </div>
         </div>
+
         <div class="col-12 col-sm-12">
             <div class="card">
+                <div class="card-header border-bottom">
+                    <h3 class="card-title mb-0">Orders Of {{ date('d-m-Y') }}</h3>
+                </div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered text-nowrap border-bottom" id="basic-datatable">
@@ -582,7 +586,7 @@
                             <tbody>
                             @foreach($orders as $order)
                                 <tr>
-                                    <td>{{ $order->id }}</td>
+                                    <td>{{ $loop->iteration }}</td>
                                     <td>{{ $order->order_number }}</td>
                                     <td>{{ $order->order_date }}</td>
                                     <td>{{ $order->customer->first_name.'('. $order->customer->phone.')'}}</td>
