@@ -340,14 +340,14 @@
                             </a>
                         </span>
                             <div class="wrap-input100 validate-input" data-bs-validate = "Valid email is required: ex@abc.xyz">
-                                <input class="input100" type="email" name="email" placeholder="Email">
+                                <input class="input100" type="email" name="email" placeholder="Email" required>
                                 <span class="focus-input100"></span>
                                 <span class="symbol-input100">
                                 <i class="zmdi zmdi-email" aria-hidden="true"></i>
                             </span>
                             </div>
                             <div class="wrap-input100 validate-input" data-bs-validate = "Password is required">
-                                <input class="input100" type="password" name="password" placeholder="Password">
+                                <input class="input100" type="password" name="password" placeholder="Password" required>
                                 <span class="focus-input100"></span>
                                 <span class="symbol-input100">
                                 <i class="zmdi zmdi-lock" aria-hidden="true"></i>
@@ -609,37 +609,43 @@
                                                     {{--</li>--}}
                                                 </ul>
                                             </div>
-                                            <div class="col-6 col-lg-2 col-md-12 text-center">
+                                            <div class="col-6 col-lg-2 col-md-12">
                                                 <h6>Pages</h6>
                                                 <ul class="list-unstyled mb-4">
-                                                    <li><a href="javascript:void(0);">Home</a></li>
-                                                    <li><a href="javascript:void(0);">Contact Us</a></li>
-                                                    <li><a href="javascript:void(0);">Forms</a></li>
-                                                    <li><a href="javascript:void(0);">Charts</a></li>
-                                                    <li><a href="javascript:void(0);">Tables</a></li>
-                                                    <li><a href="javascript:void(0);">Other Pages</a></li>
+                                                    <li><a href="{{ route('home') }}">Home</a></li>
+                                                    <li><a href="{{ route('contact-us')}}">Contact Us</a></li>
+                                                    <li><a href="{{ route('refer-earn') }}">Refer & Win</a></li>
+                                                    {{--<li><a href="javascript:void(0);">Charts</a></li>--}}
+                                                    {{--<li><a href="javascript:void(0);">Tables</a></li>--}}
+                                                    {{--<li><a href="javascript:void(0);">Other Pages</a></li>--}}
                                                 </ul>
                                             </div>
-                                            <div class="col-6 col-lg-2 col-md-6 col-sm-6 text-center">
+                                            <div class="col-6 col-lg-2 col-md-6 col-sm-6">
                                                 <h6>Information</h6>
                                                 <ul class="list-unstyled mb-4">
-                                                    <li><a href="javascript:void(0);">Our Team</a></li>
-                                                    <li><a href="javascript:void(0);">Contact US</a></li>
+                                                    <li>
+                                                        <a href="#" data-bs-target="#smallmodal" data-bs-toggle="modal">
+                                                            Login
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" data-bs-target="#registration" data-bs-toggle="modal">Registration</a>
+                                                    </li>
                                                     <li><a href="javascript:void(0);">About</a></li>
-                                                    <li><a href="javascript:void(0);">Services</a></li>
-                                                    <li><a href="javascript:void(0);">Blog</a></li>
-                                                    <li><a href="javascript:void(0);">Terms and Services</a></li>
+                                                    {{--<li><a href="javascript:void(0);">Services</a></li>--}}
+                                                    {{--<li><a href="javascript:void(0);">Blog</a></li>--}}
+                                                    {{--<li><a href="javascript:void(0);">Terms and Services</a></li>--}}
                                                 </ul>
                                             </div>
                                             <div class="col-lg-4 col-md-6 col-sm-6">
                                                 <h6>Location</h6>
                                                 <ul class="list-unstyled mb-4">
-                                                    <li><a href="javascript:void(0);">Address1:7363 Old Livingston Drive Dyersburg</a></li>
-                                                    <li><a href="javascript:void(0);">Address2:4 Harrison St.Fairborn, OH 45324</a></li>
-                                                    <li><a href="javascript:void(0);">Phno1: +123 456 8976</a></li>
-                                                    <li><a href="javascript:void(0);">Phno2: +567 234 7865</a></li>
-                                                    <li><a href="javascript:void(0);">Mail1: yourdomain@gmail.com</a></li>
-                                                    <li><a href="javascript:void(0);">Mail2: infodomain@gmail.com</a></li>
+                                                    <li><a href="javascript:void(0);">House #03, Road #03, Sector #03</a></li>
+                                                    <li><a href="javascript:void(0);">Uttara, Dhaka, Bangladesh</a></li>
+                                                    <li><a href="javascript:void(0);">Phone 1 : +01977699801</a></li>
+                                                    <li><a href="javascript:void(0);">Phone 2 : +567 234 7865</a></li>
+                                                    <li><a href="javascript:void(0);">Mail: info@workstation.com.bd</a></li>
+                                                    {{--<li><a href="javascript:void(0);">Mail2: infodomain@gmail.com</a></li>--}}
                                                 </ul>
                                             </div>
                                         </div>
