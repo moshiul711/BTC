@@ -123,7 +123,7 @@
                                         <img src="{{ asset('/') }}website/assets/icons/cod_icon.webp" alt="">
                                     </label>
                                     <label>
-                                        <input name="payment" required type="radio" value="online">
+                                        <input name="payment" required type="radio" value="cod">
                                         <img src="{{ asset('/') }}website/assets/icons/ssl1.png" alt="">
                                     </label>
                                 </div>

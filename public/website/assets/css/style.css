@@ -45,7 +45,9 @@ body {
     margin: 0;
     text-align: left
 }
+/*.after-slider(max-screen;){*/
 
+/*}*/
 .marquee {
     padding: 5px;
 }
@@ -25141,7 +25143,7 @@ body.fixed-header .header {
 }
 
 .navbar-toggler-icon.fe.fe-more-vertical {
-    color: #495584 !important
+    color: #ffffff !important
 }
 
 .mobile-dropdown li a {
@@ -25262,7 +25264,7 @@ body.fixed-header .header {
 
 @media (max-width: 767px) {
     .responsive-navbar .navbar-collapse {
-        background: #fff;
+        background: #008069;
         box-shadow: 0 12px 11px -3px hsla(212, 8%, 45%, .1);
         left: 0;
         margin-top: 41px;

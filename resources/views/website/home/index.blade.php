@@ -60,7 +60,7 @@
 @endsection
 
 @section('after-slider')
-    <div class="row mt-2">
+    <div class="row mt-2 after-slider">
         <div class="col-lg-6 col-sm-12 col-md-6 col-xl-3">
             <div class="card " style="background-color: #0fa751">
                 <div class="card-body text-center">
@@ -109,6 +109,7 @@
 @endsection
 
 @section('main-content')
+
     @foreach($categories as $category)
         @if(count($category->products) > 0 )
             <div class="page-header">
@@ -122,11 +123,11 @@
                 </div>
             </div>
             <div class="row row-cards">
-                    <div class="col-xl-12 col-lg-12 ">
+                    <div class="col-xl-12 col-lg-12">
                         <div class="row products-main">
-                            @foreach($category->products->take(4) as $product)
+                            @foreach($category->products as $product)
                                 @if($product->status == 1)
-                                    <div class="col-12 col-md-6 col-sm-6 col-lg-6 col-xl-3 product-each">
+                                    <div class="col-6 col-md-6 col-sm-4 col-lg-6 col-xl-3 product-each">
                                         <div class="card item-card">
                                             <div class="product-grid6 card-body ">
                                                 <div class="product-image6">
@@ -185,20 +186,22 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            @if($product->stock > 0)
-                                                <form id="cartAdd" action="{{ route('cart.add',$product->id) }}"
-                                                      method="post">
-                                                    @csrf
-                                                    <input type="hidden" name="qty" value="1">
-                                                    <button class="btn btn-outline-success text-bold btn-block">Add To
-                                                        Cart
+                                            <div class="p-2 text-center px-5">
+                                                @if($product->stock > 0)
+                                                    <form id="cartAdd" action="{{ route('cart.add',$product->id) }}"
+                                                          method="post">
+                                                        @csrf
+                                                        <input type="hidden" name="qty" value="1">
+                                                        <button class="btn btn-success text-bold btn-block">Add To
+                                                            Cart
+                                                        </button>
+                                                    </form>
+                                                @else
+                                                    <button id="swal-timer" class="btn btn-outline-success text-bold">
+                                                        Add To Cart
                                                     </button>
-                                                </form>
-                                            @else
-                                                <button id="swal-timer" class="btn btn-outline-success text-bold btn-block">
-                                                    Add To Cart
-                                                </button>
-                                            @endif
+                                                @endif
+                                            </div>
                                         </div>
                                     </div>
                                 @endif

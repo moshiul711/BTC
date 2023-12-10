@@ -19,7 +19,7 @@
 
         <div class="col-lg-12 col-md-6">
             <div class="card custom-card">
-                <div class="card-body" style="text-align: center">
+                <div class="card-body">
                     <img src="{{ asset('/') }}website/assets/icons/refer.gif" alt="" style="height: 350px">
                 </div>
             </div>

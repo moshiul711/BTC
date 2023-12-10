@@ -96,7 +96,7 @@
 
                                         @if($product->stock > 0)
                                             <div class="col-md-6 form-group">
-                                                <input type="number" class="form-control" required placeholder="Enter Product Quantity" value="1" min="1" max="{{ $product->stock }}"  name="qty">
+                                                <input type="number" class="form-control" required placeholder="Enter Product Quantity" value="1" min="1" max="{{ $product->stock }}"  name="qty" id="quantity">
                                             </div>
                                             <div class="col-md-6 form-group">
                                                 <input type="submit" class="form-control btn btn-success text-bold" value="ADD TO CART"  name="submit">

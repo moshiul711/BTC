@@ -39,12 +39,12 @@
     <link rel="stylesheet" href="{{ asset('/') }}website/assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="{{ asset('/') }}website/assets/css/owl.theme.default.min.css">
     <style>
-        input[type=number]::-webkit-inner-spin-button,
-        input[type=number]::-webkit-outer-spin-button {
+        /*input[type=number]::-webkit-inner-spin-button,*/
+        /*input[type=number]::-webkit-outer-spin-button {*/
 
-            opacity: 1;
+            /*opacity: 1;*/
 
-        }
+        /*}*/
         .colored-toast.swal2-icon-success {
             background-color: #a5dc86 !important;
         }
@@ -126,8 +126,8 @@
                     <!-- LOGO -->
 
 
-                    <div class="main-header-center ms-3 d-none d-xl-block">
-                        <form action="{{ route('product.search') }}">
+                    <div class="main-header-center ms-3 d-none d-xl-block" style="text-align: center">
+                        <form action="{{ route('product.search') }}" style="text-align: center">
                             @csrf
                             <input class="form-control" name="search" placeholder="Search for results..." type="search">
                             <button class="btn" type="submit">
@@ -135,11 +135,11 @@
                             </button>
                         </form>
                     </div>
-                    <div class="d-flex order-lg-2 ms-auto header-right-icons">
-                        <div class="dropdown d-xl-none d-md-block d-none">
+                    <div class="d-flex order-lg-2 ms-auto header-right-icons" style="text-align: center">
+                        <div class="dropdown d-xl-none d-md-block d-none" style="text-align: center">
                             <a href="#" class="nav-link icon" data-bs-toggle="dropdown">
                                 <img src="{{ asset('/') }}website/assets/icons/search-btn.png" height="25px" width="25px" alt="">                            </a>
-                            <div class="dropdown-menu header-search dropdown-menu-start">
+                            <div class="dropdown-menu header-search dropdown-menu-start" style="text-align: center">
                                 <div class="input-group w-100 p-2">
                                     <form action="{{ route('product.search') }}">
                                         @csrf
@@ -153,11 +153,13 @@
                         </div>
 
 
-
-
+                        {{--shopping cart--}}
                         <div class="dropdown  d-flex shopping-cart">
                             <a href="javascript:void(0);" class="nav-link icon text-center"  data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="{{ asset('/') }}website/assets/icons/cart.png" alt="">
+
+                                <i class="fa fa-shopping-cart text-white"></i>
+
+                                {{--<img src="{{ asset('/') }}website/assets/icons/cart.png" alt="">--}}
                                 {{--<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24"><path d="M9,18c-1.1045532,0-2,0.8954468-2,2s0.8954468,2,2,2c1.1040039-0.0014038,1.9985962-0.8959961,2-2C11,18.8954468,10.1045532,18,9,18z M9,21c-0.5523071,0-1-0.4476929-1-1s0.4476929-1,1-1c0.552124,0.0003662,0.9996338,0.447876,1,1C10,20.5523071,9.5523071,21,9,21z M17,18c-1.1045532,0-2,0.8954468-2,2s0.8954468,2,2,2c1.1040039-0.0014038,1.9985962-0.8959961,2-2C19,18.8954468,18.1045532,18,17,18z M17,21c-0.5523071,0-1-0.4476929-1-1s0.4476929-1,1-1c0.552124,0.0003662,0.9996338,0.447876,1,1C18,20.5523071,17.5523071,21,17,21z M19.4985352,12.0502319l1.9848633-7.4213257c0.0111694-0.0419312,0.0167847-0.085083,0.0167847-0.128479C21.5002441,4.2241211,21.2763062,4.000061,21,4H5.9198608L5.4835205,2.371582C5.4249268,2.1530151,5.2268677,2.0009766,5.0005493,2.0009766H3.5048218C3.5031128,2.0009766,3.501709,2,3.5,2C3.223877,2,3,2.223877,3,2.5S3.223877,3,3.5,3v0.0009766L4.6162109,3l2.579834,9.6288452C7.2546387,12.8477783,7.453064,13,7.6796875,13H11h6.8603516H19c0.8284302,0,1.5,0.6715698,1.5,1.5S19.8284302,16,19,16H5c-0.276123,0-0.5,0.223877-0.5,0.5S4.723877,17,5,17h14c1.3807373,0,2.5-1.1192627,2.5-2.5C21.5,13.2900391,20.6403809,12.2813721,19.4985352,12.0502319z M18.4761963,12h-0.6158447H11H8.0634766L6.1878052,5h14.1608276L18.4761963,12z"/></svg>--}}
                                 <span class="badge bg-info header-badge bg-red" >{{ Cart::count() }}</span>
                             </a>
@@ -217,8 +219,6 @@
                         </div>
 
 
-
-
                         <!-- SEARCH -->
                         <button class="navbar-toggler navresponsive-toggler d-md-none ms-auto" type="button"
                                 data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent-4"
@@ -246,30 +246,31 @@
                                     </div>
                                     <!-- COUNTRY -->
 
-                                    <div class="dropdown  d-flex shopping-cart">
-                                        <a href="{{ route('home') }}" class="nav-link icon text-center" title="Home">
-                                            <img src="{{ asset('/') }}website/assets/icons/home.png" alt="">
-                                        </a>
-                                    </div>
+                                    {{--<div class="dropdown  d-flex shopping-cart">--}}
+                                        {{--<a href="{{ route('home') }}" class="nav-link icon text-center" title="Home">--}}
+                                            {{--<img src="{{ asset('/') }}website/assets/icons/home.png" alt="">--}}
+                                        {{--</a>--}}
+                                    {{--</div>--}}
 
-                                    <div class="dropdown  d-flex shopping-cart">
-                                        <a href="{{ route('contact-us') }}" class="nav-link icon text-center" title="Contact Us">
-                                            <img src="{{ asset('/') }}website/assets/icons/contact-us.png" alt="">
-                                        </a>
-                                    </div>
+                                    {{--<div class="dropdown  d-flex shopping-cart">--}}
+                                        {{--<a href="{{ route('contact-us') }}" class="nav-link icon text-center" title="Contact Us">--}}
+                                            {{--<img src="{{ asset('/') }}website/assets/icons/contact-us.png" alt="">--}}
+                                        {{--</a>--}}
+                                    {{--</div>--}}
 
-                                    <div class="dropdown  d-flex shopping-cart">
-                                        <a href="{{ route('refer-earn') }}" class="nav-link icon text-center" title="Refer & Earn">
-                                            <img src="{{ asset('/') }}website/assets/icons/refer.png" alt="">
+                                    <div class="dropdown  d-flex shopping-cart px-5">
+                                        <a href="#" data-bs-target="#refer" data-bs-toggle="modal">
+                                            <h4 class="text-white">Refer <br><b>& Win</b> </h4>
                                         </a>
                                     </div>
 
                                     @if(!Session::get('customer_id'))
-                                    <div class="dropdown d-md-flex profile-1" >
+                                    <div class="dropdown d-md-flex profile-1 px-5" >
                                         <a href="#" data-bs-target="#smallmodal" data-bs-toggle="modal">
-                                            <span>
-                                                <img src="{{ asset('/') }}website/assets/icons/profile.png" alt="profile-user" class="avatar  profile-user brround cover-image">
-                                            </span>
+                                            <h4 class="text-white">Hello <br><b>User</b> </h4>
+                                            {{--<span>--}}
+                                                {{--<img src="{{ asset('/') }}website/assets/icons/profile.png" alt="profile-user" class="avatar  profile-user brround cover-image">--}}
+                                            {{--</span>--}}
                                         </a>
                                     </div>
                                     @else
@@ -277,11 +278,15 @@
 
                                     <div class="dropdown d-md-flex profile-1" >
                                         <a href="#" data-bs-toggle="dropdown" class="nav-link pe-2 leading-none d-flex animate">
-												<span>
-													<img src="{{ asset(Session('customer_image')) }}" alt="profile-user" class="avatar  profile-user brround cover-image">
-												</span>
+
+                                            <h4 class="text-white">Hello <br><b>{{ Session('customer_name') }}</b> </h4>
+
+                                            {{--<span>--}}
+                                                     {{----}}
+{{--													<img src="{{ asset(Session('customer_image')) }}" alt="profile-user" class="avatar  profile-user brround cover-image">--}}
+												{{--</span>--}}
                                             <div class="text-center p-1 d-flex d-lg-none-max">
-                                                <h6 class="mb-0 text-bold text-white" id="profile-heading">{{ Session('customer_name') }}</h6>
+                                                <h6 class="mb-0 text-bold text-white" id="profile-heading"></h6>
                                             </div>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
@@ -360,6 +365,22 @@
                             <button  class="btn btn-primary" type="submit" style="display: block; width: 100%">Login</button>
                         </div>
                     </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade"  id="refer">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Refer & Win Cash Prizes</h5>
+                        <button  class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" style="text-align: center">
+                        <img src="{{ asset('/') }}website/assets/icons/refer.gif" alt="" style="height: 350px">
+                    </div>
                 </div>
             </div>
         </div>
@@ -547,6 +568,8 @@
 
                     <div class="row">
                         <div class="col-12">
+                            {{--<iframe defer src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d912.1391864629985!2d90.39105636953198!3d23.869868725058065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c41bbb5acb1f%3A0xeb8a49fa5d1d1637!2sWorkstation%20Communication!5e0!3m2!1sen!2sbd!4v1702115489464!5m2!1sen!2sbd" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>--}}
+
                             <div class="card">
                                 <div class="card-body">
                                     <div class="top-footer">
@@ -554,7 +577,7 @@
                                             <div class="col-lg-4 col-md-12">
                                                 <h6>About</h6>
                                                 <p>
-                                                    Workstation communication has 5 years professional experience in selling Cisco, MikroTik, Juniper, Netgear and others ISP grade hardware, offering better pre-sale and after-sale support, solutions, which attracted more than 500+ Buyers internet service provider, IIG, IGW and call center all over the Bangladesh
+                                                    Bangladesh Technology Company has 5 years professional experience in selling Cisco, MikroTik, Juniper, Netgear and others ISP grade hardware, offering better pre-sale and after-sale support, solutions, which attracted more than 500+ Buyers internet service provider, IIG, IGW and call center all over the Bangladesh
                                                 </p>
                                                 <ul class="footer-social-list" style="text-align: center">
                                                     <li>
@@ -589,8 +612,8 @@
                                             <div class="col-lg-2 col-md-12">
                                                 <h6>Pages</h6>
                                                 <ul class="list-unstyled mb-4">
-                                                    <li><a href="javascript:void(0);">Dashboard</a></li>
-                                                    <li><a href="javascript:void(0);">Elements</a></li>
+                                                    <li><a href="javascript:void(0);">Home</a></li>
+                                                    <li><a href="javascript:void(0);">Contact Us</a></li>
                                                     <li><a href="javascript:void(0);">Forms</a></li>
                                                     <li><a href="javascript:void(0);">Charts</a></li>
                                                     <li><a href="javascript:void(0);">Tables</a></li>
@@ -757,22 +780,45 @@
         })
     })
 </script>
-<script>
-    var owl = $('.owl-carousel');
-    owl.owlCarousel({
-        loop:true,
-        margin:10,
-        autoplay:true,
-        autoplayTimeout:2000,
-        autoplayHoverPause:true
-    });
-    $('.play').on('click',function(){
-        owl.trigger('play.owl.autoplay',[1000])
-    })
-    $('.stop').on('click',function(){
-        owl.trigger('stop.owl.autoplay')
-    })
+
+
+<script type="text/javascript">
+    function initMap() {
+        const myLatLng = { lat: 22.2734719, lng: 70.7512559 };
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 5,
+            center: myLatLng,
+        });
+
+        new google.maps.Marker({
+            position: myLatLng,
+            map,
+            title: "Hello Rajkot!",
+        });
+    }
+
+    window.initMap = initMap;
 </script>
+
+<script type="text/javascript"
+        src="https://maps.google.com/maps/api/js?key={{ env('GOOGLE_MAP_KEY') }}&callback=initMap" ></script>
+
+{{--<script>--}}
+    {{--var owl = $('.owl-carousel');--}}
+    {{--owl.owlCarousel({--}}
+        {{--loop:true,--}}
+        {{--margin:10,--}}
+        {{--autoplay:true,--}}
+        {{--autoplayTimeout:2000,--}}
+        {{--autoplayHoverPause:true--}}
+    {{--});--}}
+    {{--$('.play').on('click',function(){--}}
+        {{--owl.trigger('play.owl.autoplay',[1000])--}}
+    {{--})--}}
+    {{--$('.stop').on('click',function(){--}}
+        {{--owl.trigger('stop.owl.autoplay')--}}
+    {{--})--}}
+{{--</script>--}}
 </body>
 
 
