@@ -25148,7 +25148,9 @@ body.fixed-header .header {
 }
 
 .app-header {
-    border-bottom: 1px solid #eaedf1
+    border-bottom: 1px solid #eaedf1;
+    display: flex;
+    align-items: center;
 }
 
 .navbar-toggler-icon.fe.fe-more-vertical {
