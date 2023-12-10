@@ -348,20 +348,22 @@
                                         </div>
                                     </div>
                                 </div>
-                                @if($product->stock > 0)
-                                    <form id="cartAdd" action="{{ route('cart.add',$product->id) }}"
-                                          method="post">
-                                        @csrf
-                                        <input type="hidden" name="qty" value="1">
-                                        <button class="btn btn-outline-success text-bold btn-block">Add To
-                                            Cart
+                                <div class="p-2 text-center px-5">
+                                    @if($product->stock > 0)
+                                        <form id="cartAdd" action="{{ route('cart.add',$product->id) }}"
+                                              method="post">
+                                            @csrf
+                                            <input type="hidden" name="qty" value="1">
+                                            <button class="btn btn-success text-bold btn-block">Add To
+                                                Cart
+                                            </button>
+                                        </form>
+                                    @else
+                                        <button id="swal-timer" class="btn btn-outline-success text-bold">
+                                            Add To Cart
                                         </button>
-                                    </form>
-                                @else
-                                    <button id="swal-timer" class="btn btn-outline-success text-bold btn-block">
-                                        Add To Cart
-                                    </button>
-                                @endif
+                                    @endif
+                                </div>
                             </div>
                         </div>
                     @endif

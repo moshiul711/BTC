@@ -267,7 +267,7 @@
                                     @if(!Session::get('customer_id'))
                                     <div class="dropdown d-md-flex profile-1 px-5" >
                                         <a href="#" data-bs-target="#smallmodal" data-bs-toggle="modal">
-                                            <h4 class="text-white">Hello <br><b>User</b> </h4>
+                                            <h5 class="text-white">Hello <br><b>User</b> </h5>
                                             {{--<span>--}}
                                                 {{--<img src="{{ asset('/') }}website/assets/icons/profile.png" alt="profile-user" class="avatar  profile-user brround cover-image">--}}
                                             {{--</span>--}}
@@ -279,7 +279,7 @@
                                     <div class="dropdown d-md-flex profile-1" >
                                         <a href="#" data-bs-toggle="dropdown" class="nav-link pe-2 leading-none d-flex animate">
 
-                                            <h4 class="text-white">Hello <br><b>{{ Session('customer_name') }}</b> </h4>
+                                            <h5 class="text-white">Hello <br><b>{{ Session('customer_name') }}</b> </h5>
 
                                             {{--<span>--}}
                                                      {{----}}
@@ -372,8 +372,8 @@
         <div class="modal fade"  id="refer">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Refer & Win Cash Prizes</h5>
+                    <div class="modal-header text-center">
+                        <h5 class="modal-title text-bold">Refer & Win Cash Prizes</h5>
                         <button  class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">×</span>
                         </button>
@@ -609,7 +609,7 @@
                                                     {{--</li>--}}
                                                 </ul>
                                             </div>
-                                            <div class="col-lg-2 col-md-12">
+                                            <div class="col-6 col-lg-2 col-md-12 text-center">
                                                 <h6>Pages</h6>
                                                 <ul class="list-unstyled mb-4">
                                                     <li><a href="javascript:void(0);">Home</a></li>
@@ -620,7 +620,7 @@
                                                     <li><a href="javascript:void(0);">Other Pages</a></li>
                                                 </ul>
                                             </div>
-                                            <div class="col-lg-2 col-md-6 col-sm-6">
+                                            <div class="col-6 col-lg-2 col-md-6 col-sm-6 text-center">
                                                 <h6>Information</h6>
                                                 <ul class="list-unstyled mb-4">
                                                     <li><a href="javascript:void(0);">Our Team</a></li>

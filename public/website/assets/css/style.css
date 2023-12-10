@@ -56,9 +56,18 @@ body {
     -webkit-animation: marquee 20s linear infinite;
     animation: marquee 20s linear infinite;
 }
+
+
+/*@media (max-width: 700px) {*/
+    /*.after-slider {*/
+        /*display: none;*/
+    /*}*/
+/*}*/
 .content:hover {
     animation-play-state: paused;
 }
+
+
 
 @-moz-keyframes marquee {
     0% {
@@ -2051,7 +2060,7 @@ blockquote cite:before {
 }
 
 .breadcrumb-item + .breadcrumb-item:before {
-    color: #d6dfe7;
+    color: #23598a;
     content: var(--bs-breadcrumb-divider, "\e933");
     float: none;
     font-family: feather !important;

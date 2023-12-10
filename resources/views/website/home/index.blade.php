@@ -60,8 +60,8 @@
 @endsection
 
 @section('after-slider')
-    <div class="row mt-2 after-slider">
-        <div class="col-lg-6 col-sm-12 col-md-6 col-xl-3">
+    <div class="row mt-2 after-slider d-sm-none-max">
+        <div class="col-lg-6 col-sm-12 col-md-6 col-xl-3 ">
             <div class="card " style="background-color: #0fa751">
                 <div class="card-body text-center">
                     <span class="avatar avatar-xxl brround cover-image cover-image"
