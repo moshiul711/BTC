@@ -11,21 +11,13 @@
                 <li class="breadcrumb-item">
                     <a href="{{ route('home') }}">Home</a>
                 </li>
-                {{--<li class="breadcrumb-item">--}}
-                    {{--<a href="{{ route('product.category',['id'=>$subCategory->category->id,'name'=>$subCategory->category->name]) }}">{{ $subCategory->category->name }}</a>--}}
-                {{--</li>--}}
                 <li class="breadcrumb-item active">{{ $category->name }}</li>
             </ol>
         </nav>
     </div>
 
     @if(count($category->products) > 0)
-        {{--<div class="page-header">--}}
-        {{--<div>--}}
-        {{--<h1 class="page-title">{{ $subCategory->name }}</h1>--}}
-        {{--</div>--}}
-        {{--</div>--}}
-        <div class="row mt-2 py-2">
+        <div class="row">
             <div class="col-lg-12 col-sm-12 col-md-12 col-xl-12">
                 <div class="btn btn-success btn-block">
                     <marquee direction="left">
@@ -41,7 +33,7 @@
             <div class="col-xl-12 col-lg-12">
                 <div class="row products-main">
                     @foreach($category->products as $product)
-                        <div class="col-12 col-md-6 col-sm-6 col-lg-6 col-xl-3 product-each">
+                        <div class="col-6 col-md-6 col-sm-6 col-lg-6 col-xl-3 product-each">
                             <div class="card item-card">
                                 <div class="product-grid6 card-body">
                                     <div class="product-image6">
@@ -89,15 +81,22 @@
                                         </div>
                                     </div>
                                 </div>
-                                @if($product->stock > 0)
-                                    <form id="cartAdd" action="{{ route('cart.add',$product->id) }}" method="post">
-                                        @csrf
-                                        <input type="hidden" name="qty" value="1">
-                                        <button class="btn btn-outline-success text-bold btn-block">Add To Cart</button>
-                                    </form>
-                                @else
-                                    <button id="swal-timer" class="btn btn-outline-success text-bold btn-block">Add To Cart</button>
-                                @endif
+                                <div class="p-2 text-center px-5">
+                                    @if($product->stock > 0)
+                                        <form id="cartAdd" action="{{ route('cart.add',$product->id) }}"
+                                              method="post">
+                                            @csrf
+                                            <input type="hidden" name="qty" value="1">
+                                            <button class="btn btn-success text-bold btn-block">Add To
+                                                Cart
+                                            </button>
+                                        </form>
+                                    @else
+                                        <button id="swal-timer" class="btn btn-outline-success text-bold">
+                                            Add To Cart
+                                        </button>
+                                    @endif
+                                </div>
 
                             </div>
                         </div>

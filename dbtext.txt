@@ -1,0 +1,7 @@
+DB_DATABASE=workstationbd_btc
+DB_USERNAME=workstationbd_btc
+DB_PASSWORD=Workstation@2023
+
+DB_DATABASE=bd_tech_com
+DB_USERNAME=root
+DB_PASSWORD=

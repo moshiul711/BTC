@@ -24,6 +24,12 @@
                     <h3 class="card-title">Shopping Cart</h3>
                 </div>
                 <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+
+                        </div>
+                    </div>
+
                     <div class="table-responsive">
                         <table class="table table-bordered table-vcenter text-nowrap mb-0">
                             <thead>
@@ -35,7 +41,7 @@
                                     <th>Total</th>
                                     <th>Actions</th>
                                 </tr>
-                                </thead>
+                            </thead>
                             <tbody>
                                 @foreach(Cart::content() as $item)
                                     <form action="{{ route('cart.update',$item->rowId) }}" method="post">

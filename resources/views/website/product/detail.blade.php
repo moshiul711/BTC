@@ -284,7 +284,7 @@
             <div class="row">
                 @foreach($relatedProducts as $product)
                     @if($product->status == 1)
-                        <div class="col-12 col-md-6 col-sm-6 col-lg-6 col-xl-3 product-each">
+                        <div class="col-6 col-md-6 col-sm-6 col-lg-6 col-xl-3 product-each">
                             <div class="card item-card">
                                 <div class="product-grid6 card-body">
                                     <div class="product-image6">

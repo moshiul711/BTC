@@ -10,7 +10,7 @@ use Session;
 
 class CustomerController extends Controller
 {
-    public $email, $password,$customer,$reviews,$orders,$order;
+    public $email, $password,$customer,$reviews,$orders,$order,$check;
     public function index()
     {
         $this->orders = Order::where('customer_id',Session::get('customer_id'))->orderBy('id','desc')->get();
@@ -144,11 +144,21 @@ class CustomerController extends Controller
 
     public function forgotEmailCheck(Request $request)
     {
-        $this->customer = Customer::where('email',$request->email)->first();
+        $this->customer = Customer::forgetPassword($request);
         if ($this->customer)
         {
-
+            return view('website.home.changePassword',['customer'=>$this->customer]);
         }
+        else
+        {
+            return back()->with('message','Your Information Not Found');
+        }
+    }
+
+    public function recoveryPassword(Request $request, $id)
+    {
+        $this->check = Customer::updatePassword($id,$request->new_password);
+        return view('website.home.login');
     }
 
 }

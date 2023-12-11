@@ -25228,9 +25228,9 @@ body.fixed-header .header {
 
 .header .main-header-center {
     align-items: center;
-    max-width: 610px;
+    max-width: 500px;
     position: relative;
-    width: 610px
+    width: 100%
 }
 
 .header .main-header-center i:hover {

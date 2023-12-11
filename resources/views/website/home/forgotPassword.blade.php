@@ -16,7 +16,7 @@
     <meta name="keywords" content="laravel admin template, bootstrap admin template, admin dashboard template, admin dashboard, admin template, admin, bootstrap 5, laravel admin, laravel admin dashboard template, laravel ui template, laravel admin panel, admin panel, laravel admin dashboard, laravel template, admin ui dashboard">
 
     <!-- TITLE -->
-    <title>Bangladesh Technology Company</title>
+    <title>Forget Password</title>
 
     <!-- FAVICON -->
     <link rel="shortcut icon" type="image/x-icon" href="https://www.bangladeshtechcom.com/assets/uploads/logos/header_logo-BTC.png" />
@@ -62,7 +62,7 @@
             <div class="wrap-login100 p-0">
                 <div class="card-body">
                     <div class="col col-login mx-auto text-center mb-5">
-                        <a href="{{ asset('home') }}" class="text-center">
+                        <a href="{{ route('home') }}" class="text-center">
                             <img src="https://www.bangladeshtechcom.com/assets/uploads/logos/header_logo-BTC.png" class="header-brand-img" alt="">
                         </a>
                     </div>
@@ -70,13 +70,13 @@
 
 
                     <div class="text-center text-danger" >
-                        <x-validation-errors class="mb-4" />
+                        <p class="text-lg text-bold">{{ Session('message') }}</p>
                     </div>
 
                     <form class="login100-form validate-form" action="{{ route('forgot-password') }}" method="post">
                         @csrf
                         <div class="wrap-input100 validate-input" data-bs-validate = "Valid email is required: ex@abc.xyz">
-                            <input class="input100" type="email" name="email" placeholder="Email">
+                            <input class="input100" type="text" name="email_phone" placeholder="Enter Your Email/Phone" required>
                             <span class="focus-input100"></span>
                             <span class="symbol-input100">
 											<i class="zmdi zmdi-email" aria-hidden="true"></i>

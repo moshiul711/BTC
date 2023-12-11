@@ -57,6 +57,7 @@ Route::get('/customer-logout',[CustomerController::class,'logout'])->name('custo
 Route::post('/customer-register',[CustomerController::class,'register'])->name('customer.register');
 Route::get('/forgot-password',[CustomerController::class,'forgotPassword'])->name('forgot-password');
 Route::post('/forgot-password',[CustomerController::class,'forgotEmailCheck'])->name('forgot-password');
+Route::post('/update-password/{id}',[CustomerController::class,'recoveryPassword'])->name('update-password');
 
 
 //Checkout Module

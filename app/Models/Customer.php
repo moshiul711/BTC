@@ -4,12 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 use Session;
 
 class Customer extends Model
 {
     use HasFactory;
-    public static $customer,$imageUrl,$image,$imageName,$imageExt,$imageFullName,$imagePath;
+    public static $customer,$imageUrl,$image,$imageName,$imageExt,$imageFullName,$imagePath,$check;
     public static function register($request)
     {
         self::$customer = new Customer();
@@ -59,6 +60,15 @@ class Customer extends Model
         self::$imagePath = 'uploads/customer-image/';
         self::$image->move(self::$imagePath,self::$imageFullName);
         return self::$imageUrl = self::$imagePath.self::$imageFullName;
+    }
+
+    public static function forgetPassword($request)
+    {
+        self::$check = DB::table('customers')
+            ->where('email', $request->email_phone)
+            ->orWhere('phone', $request->email_phone)
+            ->first();
+        return self::$check;
     }
 
     public static function updatePassword($id,$password)
