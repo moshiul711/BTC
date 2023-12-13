@@ -14,6 +14,7 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\CouponController;
 use App\Http\Controllers\SslCommerzPaymentController;
+use App\Http\Controllers\SliderController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -137,7 +138,13 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::get('admin/order-search',[AdminController::class,'orderSearch'])->name('order.search');
     Route::get('admin/order-search',[AdminController::class,'orderSearchResult'])->name('order.search');
 
-
+//    Slider Module
+    Route::get('/slider/manage',[SliderController::class,'index'])->name('slider.manage');
+    Route::get('/slider/create',[SliderController::class,'create'])->name('slider.create');
+    Route::post('/slider/store',[SliderController::class,'store'])->name('slider.store');
+    Route::get('/slider/edit/{id}',[SliderController::class,'edit'])->name('slider.edit');
+    Route::post('/slider/update/{id}',[SliderController::class,'update'])->name('slider.update');
+    Route::get('/slider/delete/{id}',[SliderController::class,'delete'])->name('slider.delete');
 
     Route::get('/get-sub-category-by-category', [ProductController::class, 'getCategoryBySubCategory'])->name('get-sub-category-by-category');
 });
