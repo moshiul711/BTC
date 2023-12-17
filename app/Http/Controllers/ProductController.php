@@ -51,7 +51,10 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $this->product = Product::storeProduct($request);
-        ProductOtherImage::storeOtherImages($request->file('other_image'),$this->product->id);
+        if ($request->file('other_image'))
+        {
+            ProductOtherImage::storeOtherImages($request->file('other_image'),$this->product->id);
+        }
         return back()->with('message','Product Uploaded Successfully...');
     }
 

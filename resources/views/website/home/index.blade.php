@@ -12,22 +12,12 @@
                     <img class="d-block w-100" alt="" src="{{ asset('/') }}website/assets/icons/s.jpg"
                          data-bs-holder-rendered="true">
                 </div>
+                @foreach($sliders as $slider)
                 <div class="carousel-item">
-                    <img class="d-block w-100" alt="" src="{{ asset('/') }}website/assets/icons/s01.webp"
+                    <img class="d-block w-100" alt="" src="{{ asset($slider->image) }}"
                          data-bs-holder-rendered="true">
                 </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" alt="" src="{{ asset('/') }}website/assets/icons/s02.webp"
-                         data-bs-holder-rendered="true">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" alt="" src="{{ asset('/') }}website/assets/icons/s03.webp"
-                         data-bs-holder-rendered="true">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" alt="" src="{{ asset('/') }}website/assets/icons/s04.webp"
-                         data-bs-holder-rendered="true">
-                </div>
+                @endforeach
             </div>
             <a class="carousel-control-prev" href="#carousel-controls" role="button" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -117,17 +107,18 @@
                     <a href="{{ route('product.category',['id'=>$category->id,'name'=>$category->name]) }}"
                        class="page-title text-black">{{ $category->name }} <i class="fa fa-angle-right"></i>
                     </a>
+
                     <a href="{{ route('product.category',['id'=>$category->id,'name'=>$category->name]) }}"
-                       class="page-title text-black" style="float: right">View All</i>
+                       class="page-title text-black float-end">View All</i>
                     </a>
                 </div>
             </div>
             <div class="row row-cards">
                     <div class="col-xl-12 col-lg-12">
                         <div class="row products-main">
-                            @foreach($category->products as $product)
+                            @foreach($category->products->take(4) as $product)
                                 @if($product->status == 1)
-                                    <div class="col-6 col-md-6 col-sm-4 col-lg-6 col-xl-3 product-each">
+                                    <div class="col-6 col-md-6 col-sm-6 col-lg-6 col-xl-3 product-each">
                                         <div class="card item-card">
                                             <div class="product-grid6 card-body ">
                                                 <div class="product-image6">

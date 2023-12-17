@@ -128,9 +128,15 @@
                     <!-- LOGO -->
                     <div class="dropdown d-sm-block d-md-none d-xl-block d-none  d-flex shopping-cart px-5">
                         <a href="#">
+                            @if(!Session::get('customer_id'))
                             <h4 class="text-white">
                                 <i class="fa fa-location-arrow"></i> Deliver To <br><b>Bangladesh</b>
                             </h4>
+                                @else
+                                <h4 class="text-white">
+                                    <i class="fa fa-location-arrow"></i> Deliver To <br><b>{{ Session('customer_city') }}</b>
+                                </h4>
+                                @endif
                         </a>
                     </div>
 
@@ -325,7 +331,7 @@
                         @csrf
                         <div class="modal-body">
                     <span class="login100-form-title">
-                            <a href="index.html" class="text-center">
+                            <a href="{{ route('home') }}" class="text-center">
                                 <img src="https://www.bangladeshtechcom.com/assets/uploads/logos/header_logo-BTC.png" class="header-brand-img" alt="">
                             </a>
                         </span>
@@ -478,6 +484,7 @@
                                         <a href="{{ route('product.subcategory',['id'=>$subCategory->id,'name'=>$subCategory->name]) }}" class="slide-item">{{ $subCategory->name }}</a>
                                     </li>
                                 @endforeach
+                                    <li><a href="{{ route('product.category',['id'=>$category->id,'name'=>$category->name]) }}">All Products</a></li>
                             </ul>
                         </li>
                         @endforeach
@@ -652,7 +659,7 @@
                                                     <li><a href="javascript:void(0);">House #03, Road #03, Sector #03</a></li>
                                                     <li><a href="javascript:void(0);">Uttara, Dhaka, Bangladesh</a></li>
                                                     <li><a href="javascript:void(0);">Phone 1 : +01977699801</a></li>
-                                                    <li><a href="javascript:void(0);">Phone 2 : +567 234 7865</a></li>
+                                                    <li><a href="javascript:void(0);">Phone 2 : +01977699806</a></li>
                                                     <li><a href="javascript:void(0);">Mail: info@workstation.com.bd</a></li>
                                                     {{--<li><a href="javascript:void(0);">Mail2: infodomain@gmail.com</a></li>--}}
                                                 </ul>

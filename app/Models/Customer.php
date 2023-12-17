@@ -27,18 +27,18 @@ class Customer extends Model
     public static function updateProfile($request)
     {
         self::$customer = Customer::find(Session::get('customer_id'));
-        if ($request->file('image'))
-        {
-            if (file_exists(self::$customer->image))
-            {
-                unlink(self::$customer->image);
-            }
-            self::$imageUrl = self::uploadCustomerImage($request);
-        }
-        else
-        {
-            self::$imageUrl = self::$customer->image;
-        }
+//        if ($request->file('image'))
+//        {
+//            if (file_exists(self::$customer->image))
+//            {
+//                unlink(self::$customer->image);
+//            }
+//            self::$imageUrl = self::uploadCustomerImage($request);
+//        }
+//        else
+//        {
+//            self::$imageUrl = self::$customer->image;
+//        }
         self::$customer->first_name = $request->first_name;
         self::$customer->last_name = $request->last_name;
         self::$customer->email = $request->email;
@@ -46,7 +46,7 @@ class Customer extends Model
         self::$customer->address = $request->address;
         self::$customer->city = $request->city;
         self::$customer->postal_code = $request->postal_code;
-        self::$customer->image = self::$imageUrl;
+//        self::$customer->image = self::$imageUrl;
         self::$customer->save();
         return self::$customer;
     }

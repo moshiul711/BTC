@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Coupon;
 use App\Models\Customer;
 use App\Models\ProductReview;
+use App\Models\Slider;
 use App\Models\SubCategory;
 use Illuminate\Http\Request;
 use App\Models\Product;
@@ -13,13 +14,14 @@ use Session;
 
 class WebsiteController extends Controller
 {
-    public $categories,$category,$subCategory, $product, $products,$customer,$reviews,$coupons,$relatedProducts;
+    public $categories,$category,$subCategory, $product, $products,$customer,$reviews,$coupons,$relatedProducts,$sliders;
 
     public function index()
     {
         $this->coupons = Coupon::where('status',1)->get();
         $this->categories = Category::all();
-        return view('website.home.index',['categories'=>$this->categories,'coupons'=>$this->coupons]);
+        $this->sliders = Slider::all();
+        return view('website.home.index',['categories'=>$this->categories,'coupons'=>$this->coupons,'sliders'=>$this->sliders]);
     }
 
     public function productDetail($id,$name)

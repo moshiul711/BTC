@@ -27,14 +27,15 @@ class CustomerController extends Controller
             {
                 Session::put('customer_id', $this->customer->id);
                 Session::put('customer_name', $this->customer->first_name);
-                if ($this->customer->image)
-                {
-                    Session::put('customer_image', $this->customer->image);
-                }
-                else
-                    {
-                        Session::put('customer_image', 'website/assets/icons/profile.png');
-                    }
+                Session::put('customer_city', $this->customer->city);
+//                if ($this->customer->image)
+//                {
+//                    Session::put('customer_image', $this->customer->image);
+//                }
+//                else
+//                    {
+//                        Session::put('customer_image', 'website/assets/icons/profile.png');
+//                    }
 
                 return back()->with('message','You Successfully Login..');
             }
@@ -56,7 +57,7 @@ class CustomerController extends Controller
         {
             Session::put('customer_id', $this->customer->id);
             Session::put('customer_name', $this->customer->first_name);
-            Session::put('customer_image', 'website/assets/icons/profile.png');
+//            Session::put('customer_image', 'website/assets/icons/profile.png');
         }
         return back()->with('message','Your Credentials are Successfully Registered');
     }
@@ -72,7 +73,8 @@ class CustomerController extends Controller
         $this->customer = Customer::updateProfile($request);
         Session::put('customer_id', $this->customer->id);
         Session::put('customer_name', $this->customer->first_name);
-        Session::put('customer_image', $this->customer->image);
+//        Session::put('customer_image', $this->customer->image);
+        Session::put('customer_city', $this->customer->city);
         return back()->with('message','Thanks For Updating Your Profile...');
     }
 
@@ -80,7 +82,8 @@ class CustomerController extends Controller
     {
         Session::forget('customer_id');
         Session::forget('customer_name');
-        Session::forget('customer_image');
+//        Session::forget('customer_image');
+        Session::forget('customer_city');
 
         return redirect('/')->with('logout','Your are logged out.');;
     }

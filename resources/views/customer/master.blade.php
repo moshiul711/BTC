@@ -101,9 +101,15 @@
                     <!-- LOGO -->
                     <div class="dropdown d-sm-block d-md-none d-xl-block d-none  d-flex shopping-cart px-5">
                         <a href="#">
-                            <h4 class="text-white">
-                                <i class="fa fa-location-arrow"></i> Deliver To <br><b>Bangladesh</b>
-                            </h4>
+                            @if(!Session::get('customer_id'))
+                                <h4 class="text-white">
+                                    <i class="fa fa-location-arrow"></i> Deliver To <br><b>Bangladesh</b>
+                                </h4>
+                            @else
+                                <h4 class="text-white">
+                                    <i class="fa fa-location-arrow"></i> Deliver To <br><b class="text-right">{{ Session('customer_city') }}</b>
+                                </h4>
+                            @endif
                         </a>
                     </div>
 
