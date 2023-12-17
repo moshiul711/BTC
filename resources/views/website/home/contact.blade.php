@@ -28,18 +28,19 @@
                     <h4 class="card-title text-lg-bold">Contact Form</h4>
                 </div>
                 <div class="card-body">
-                    <form class="form-horizontal" >
+                    <form class="form-horizontal" action="{{ route('contact.message') }}" method="post">
+                        @csrf
                         <div class="form-group">
-                            <input type="text" class="form-control" id="inputName" placeholder="Name">
+                            <input type="text" name="name" class="form-control" id="inputName" placeholder="Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" id="inputEmail2" placeholder="Email">
+                            <input type="email" name="email" class="form-control" id="inputEmail2" placeholder="Email" required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" class="form-control" id="inputPassword3" placeholder="phone">
+                            <input type="tel" name="phone" class="form-control" id="inputPassword3" placeholder="phone" required>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" rows="5" name="message" placeholder="Write Your Message"></textarea>
+                            <textarea class="form-control"  rows="5" name="message" placeholder="Write Your Message" required></textarea>
                         </div>
                         <div class="form-group mt-3">
                             <div style="float: right;">

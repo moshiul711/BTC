@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Coupon;
 use App\Models\Customer;
+use App\Models\Message;
 use App\Models\ProductReview;
 use App\Models\Slider;
 use App\Models\SubCategory;
@@ -14,7 +15,7 @@ use Session;
 
 class WebsiteController extends Controller
 {
-    public $categories,$category,$subCategory, $product, $products,$customer,$reviews,$coupons,$relatedProducts,$sliders;
+    public $message, $categories,$category,$subCategory, $product, $products,$customer,$reviews,$coupons,$relatedProducts,$sliders;
 
     public function index()
     {
@@ -66,6 +67,12 @@ class WebsiteController extends Controller
     public function contact()
     {
         return view('website.home.contact');
+    }
+
+    public function message(Request $request)
+    {
+        $this->message = Message::storeMessage($request);
+        return back()->with('contact','Thank You for Contacting Us. We will Contact You Shortly');
     }
 
     public function referEarn()

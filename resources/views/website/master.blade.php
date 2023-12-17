@@ -569,6 +569,16 @@
                                 timer: 5000,
                             })
                         </script>
+
+                        @elseif(session('contact'))
+                        <script>
+                            Swal.fire({
+                                title: "Good job!",
+                                text: "{{ session('contact') }}",
+                                icon: "success",
+                                timer: 5000
+                            });
+                        </script>
                 @endif
                     @yield('slider')
 

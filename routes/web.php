@@ -28,6 +28,7 @@ use App\Http\Controllers\SliderController;
 
 Route::get('/',[WebsiteController::class,'index'])->name('home');
 Route::get('/contact-us',[WebsiteController::class,'contact'])->name('contact-us');
+Route::post('/contact-message',[WebsiteController::class,'message'])->name('contact.message');
 Route::get('/refer-earn',[WebsiteController::class,'referEarn'])->name('refer-earn');
 Route::get('/faq',[WebsiteController::class,'faq'])->name('faq');
 Route::post('/coupon-apply',[CouponController::class,'apply'])->name('coupon.apply');
