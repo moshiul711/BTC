@@ -40,6 +40,8 @@
     <link rel="stylesheet" href="{{ asset('/') }}owlcarousel/owl.carousel.min.css">
     <link rel="stylesheet" href="{{ asset('/') }}owlcarousel/owl.theme.default.min.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
+
     <style>
         /*input[type=number]::-webkit-inner-spin-button,*/
         /*input[type=number]::-webkit-outer-spin-button {*/
@@ -354,7 +356,7 @@
                             </div>
 
                             <div class="text-center pt-3">
-                                <p class="text-dark mb-0">Not a member?<a href="#" data-bs-target="#registration" data-bs-toggle="modal" class="text-primary ms-1">Create an Account</a></p>
+                                <p class="text-dark mb-0">Don't You Have an Account?<a href="#" data-bs-target="#registration" data-bs-toggle="modal" class="text-primary ms-1">Create an Account</a></p>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -401,32 +403,33 @@
                             </a>
                         </span>
                             <div class="wrap-input100 validate-input" data-bs-validate = "First Name Required">
-                                <input class="input100" type="text" name="first_name" placeholder="First Name">
+                                <input class="input100" type="text" name="first_name" placeholder="First Name" required>
                                 <span class="focus-input100"></span>
                                 <span class="symbol-input100"><i class="zmdi zmdi-account" aria-hidden="true"></i></span>
                             </div>
 
                             <div class="wrap-input100 validate-input" data-bs-validate = "Last Name Required">
-                                <input class="input100" type="text" name="last_name" placeholder="Last Name">
+                                <input class="input100" type="text" name="last_name" placeholder="Last Name" required>
                                 <span class="focus-input100"></span>
                                 <span class="symbol-input100"><i class="zmdi zmdi-account" aria-hidden="true"></i></span>
                             </div>
 
                             <div class="wrap-input100 validate-input" data-bs-validate = "Valid email is required: ex@abc.xyz">
-                                <input class="input100" type="email" name="email" placeholder="Email">
+                                <input class="input100" type="email" name="email" placeholder="Email" required>
                                 <span class="focus-input100"></span>
                                 <span class="symbol-input100"><i class="zmdi zmdi-email" aria-hidden="true"></i></span>
                             </div>
 
 
                             <div class="wrap-input100 validate-input" data-bs-validate = "Phone Number is required: 01700123456">
-                                <input class="input100" type="tel" name="phone" placeholder="Phone">
+                                <input class="input100" pattern="(^([+]{1}[8]{2}|0088)?(01){1}[3-9]{1}\d{8})$" type="tel" name="phone" placeholder="Phone" required>
                                 <span class="focus-input100"></span>
-                                <span class="symbol-input100"><i class="zmdi zmdi-phone" aria-hidden="true"></i></span>
+                                <span class="symbol-input100">
+                                <i class="zmdi zmdi-phone" aria-hidden="true"></i>
                             </div>
 
                             <div class="wrap-input100 validate-input" data-bs-validate = "Password is required">
-                                <input class="input100" type="password" name="password" placeholder="Password">
+                                <input class="input100" type="password" name="password" placeholder="Password" required>
                                 <span class="focus-input100"></span>
                                 <span class="symbol-input100">
                                 <i class="zmdi zmdi-lock" aria-hidden="true"></i>
@@ -434,7 +437,7 @@
                             </div>
 
                             <div class="text-center pt-3">
-                                <p class="text-dark mb-0">Have an account?<a href=""data-bs-target="#smallmodal" data-bs-toggle="modal" class="text-primary ms-1">Login</a></p>
+                                <p class="text-dark mb-0">If You Have an account<a href=""data-bs-target="#smallmodal" data-bs-toggle="modal" class="text-primary ms-1">Login Here</a></p>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -755,6 +758,8 @@
 
 <script src="{{ asset('/') }}owlcarousel/owl.carousel.min.js"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+
 <script>
 
     $('.pop').click(function () {
@@ -858,6 +863,14 @@
             })
         })
     })
+</script>
+
+<script>
+    const phoneInputField = document.querySelector("#phone");
+    const phoneInput = window.intlTelInput(phoneInputField, {
+        utilsScript:
+            "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+    });
 </script>
 
 

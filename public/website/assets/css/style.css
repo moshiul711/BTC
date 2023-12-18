@@ -25228,7 +25228,7 @@ body.fixed-header .header {
 
 .header .main-header-center {
     align-items: center;
-    max-width: 700px;
+    max-width: 650px;
     position: relative;
     width: 100%
 }

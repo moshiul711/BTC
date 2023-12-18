@@ -535,25 +535,26 @@
                                 <th class="bg-transparent border-bottom-0">Email</th>
                                 <th class="bg-transparent border-bottom-0">Phone</th>
                                 <th class="bg-transparent border-bottom-0">Address</th>
-                                {{--<th class="bg-transparent border-bottom-0 no-btn">Action</th>--}}
+                                <th class="bg-transparent border-bottom-0 no-btn">Action</th>
                             </tr>
                             </thead>
                             <tbody class="table-body">
                             @foreach($order['users'] as $user)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $user->first_name.' '.$user->last_name.'('. $user->phone.')' }}</td>
+                                <td>{{ $user->first_name.' '.$user->last_name }}</td>
+                                <td>{{ $user->phone }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->phone }}</td>
                                 <td>{{ $user->city }}</td>
-                                {{--<td>--}}
-                                    {{--<a href="" class="btn btn-success-gradient">--}}
-                                        {{--<i class="fa fa-edit"></i>--}}
-                                    {{--</a>--}}
-                                    {{--<a href="" class="btn btn-danger-gradient">--}}
-                                        {{--<i class="fa fa-trash-o"></i>--}}
-                                    {{--</a>--}}
-                                {{--</td>--}}
+                                <td>
+                                    <a href="" class="btn btn-success-gradient">
+                                        <i class="fa fa-edit"></i>
+                                    </a>
+                                    <a href="" class="btn btn-danger-gradient">
+                                        <i class="fa fa-trash-o"></i>
+                                    </a>
+                                </td>
                             </tr>
                                 @endforeach
                             </tbody>
