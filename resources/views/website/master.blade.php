@@ -126,16 +126,16 @@
                              alt="logo">
                     </a>
                     <!-- LOGO -->
-                    <div class="dropdown d-sm-block d-md-none d-xl-block d-none  d-flex shopping-cart px-5">
+                    <div class="dropdown d-sm-block d-md-none d-xl-block d-none  d-flex shopping-cart">
                         <a href="#">
                             @if(!Session::get('customer_id'))
-                            <h4 class="text-white">
+                            <h6 class="text-white">
                                 <i class="fa fa-location-arrow"></i> Deliver To <br><b>Bangladesh</b>
-                            </h4>
+                            </h6>
                                 @else
-                                <h4 class="text-white">
+                                <h6 class="text-white">
                                     <i class="fa fa-location-arrow"></i> Deliver To <br><b>{{ Session('customer_city') }}</b>
-                                </h4>
+                                </h6>
                                 @endif
                         </a>
                     </div>
@@ -263,16 +263,16 @@
                                         </div>
                                     </div>
 
-                                    <div class="dropdown  d-flex shopping-cart pe-5">
+                                    <div class="dropdown  d-flex shopping-cart pe-5 py-2">
                                         <a href="#" data-bs-target="#refer" data-bs-toggle="modal">
-                                            <h4 class="text-white">Refer <br><b>& Win</b> </h4>
+                                            <h6 class="text-white">Refer <br><b>& Win</b> </h6>
                                         </a>
                                     </div>
 
                                     @if(!Session::get('customer_id'))
-                                    <div class="dropdown d-md-flex profile-1 pe-5" >
+                                    <div class="dropdown d-md-flex profile-1 pe-5">
                                         <a href="#" data-bs-target="#smallmodal" data-bs-toggle="modal">
-                                            <h5 class="text-white">Hello <br><b>User</b> </h5>
+                                            <h6 class="text-white">Hello <br><b>User</b> </h6>
                                             {{--<span>--}}
                                                 {{--<img src="{{ asset('/') }}website/assets/icons/profile.png" alt="profile-user" class="avatar  profile-user brround cover-image">--}}
                                             {{--</span>--}}
@@ -284,7 +284,7 @@
                                     <div class="dropdown d-md-flex profile-1" >
                                         <a href="#" data-bs-toggle="dropdown" class="nav-link pe-2 leading-none d-flex animate">
 
-                                            <h5 class="text-white">Hello <br><b>{{ Session('customer_name') }}</b> </h5>
+                                            <h6 class="text-white">Hello <br><b>{{ Session('customer_name') }}</b> </h6>
                                             <div class="text-center p-1 d-flex d-lg-none-max">
                                                 <h6 class="mb-0 text-bold text-white" id="profile-heading"></h6>
                                             </div>
@@ -699,6 +699,16 @@
         <!-- CONTAINER CLOSED -->
     </div>
 </div>
+
+<div class="modal fade test" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <img id="popup-img" src="" alt="">
+            </div>
+        </div>
+    </div>
+</div>
 <!-- page -->
 
 <!-- BACK-TO-TOP -->
@@ -747,10 +757,11 @@
 
 <script>
 
-    // $(document).ready(function(){
-    //     $(".owl-carousel").owlCarousel({items:4, loop:true, margin:10, autoplay:true, autoplayTimeout:1000, autoplayHoverPause:true});
-    // });
-    //
+    $('.pop').click(function () {
+        var src = $(this).attr('src');
+        $('.test').modal('show');
+        $('#popup-img').attr('src',src);
+    });
 
 
     $(document).ready(function () {

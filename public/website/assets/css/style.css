@@ -23975,7 +23975,7 @@ body.rtl .buy-now {
 
 .header {
     background: #fff;
-    padding-bottom: .75rem;
+    padding-bottom: .5rem;
     padding-top: .75rem
 }
 
@@ -25228,7 +25228,7 @@ body.fixed-header .header {
 
 .header .main-header-center {
     align-items: center;
-    max-width: 500px;
+    max-width: 700px;
     position: relative;
     width: 100%
 }

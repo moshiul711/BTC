@@ -6,29 +6,29 @@
 
 @section('slider')
     <div class="row mt-2">
-        <div id="carousel-controls" class=" carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner" style="border: 1px solid #80bc5b">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" alt="" src="{{ asset('/') }}website/assets/icons/s.jpg"
-                         data-bs-holder-rendered="true">
-                </div>
-                @foreach($sliders as $slider)
-                    <div class="carousel-item">
-                        <img class="d-block w-100" alt="" src="{{ asset($slider->image) }}"
+        <div class="col-md-12 col-xxl-auto">
+            <div id="carousel-controls" class=" carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner" style="border: 1px solid #80bc5b">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" alt="" src="{{ asset('/') }}website/assets/icons/s.jpg"
                              data-bs-holder-rendered="true">
                     </div>
-                @endforeach
+                    @foreach($sliders as $slider)
+                        <div class="carousel-item">
+                            <img class="d-block w-100" alt="" src="{{ asset($slider->image) }}" data-bs-holder-rendered="true">
+                        </div>
+                    @endforeach
+                </div>
+                <a class="carousel-control-prev" href="#carousel-controls" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carousel-controls" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
-            <a class="carousel-control-prev" href="#carousel-controls" role="button" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carousel-controls" role="button" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
         </div>
-
     </div>
 @endsection
 
@@ -122,28 +122,28 @@
                                     <div class="card item-card">
                                         <div class="product-grid6 card-body ">
                                             <div class="product-image6">
-                                                <a href="{{ route('product.detail',[$product->id,$product->name]) }}"
-                                                   class="img-container" target="_blank">
-                                                    <img class="img-fluid" src="{{ asset($product->image) }}"
-                                                         style="height: 150px" alt="img">
+                                                <div class="">
+                                                    <img class="pop img-fluid" src="{{ asset($product->image) }}"
+                                                         style="height: 150px;cursor: pointer" alt="img">
                                                     <div class="top-left"
                                                          style="position: absolute;top: 2px;left: 2px;">
                                                         <button class="btn btn-sm btn-danger-gradient">BTC</button>
                                                     </div>
-                                                </a>
-                                                <div class="icon-container">
-                                                    <ul class="icons">
-                                                        <li>
-                                                            <a href="{{ route('product.detail',[$product->id,$product->name]) }}"
-                                                               target="_blank" data-tip="Quick View">
-                                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                                     class="w-inner-icn"
-                                                                     enable-background="new 0 0 24 24"
-                                                                     viewBox="0 0 24 24">
-                                                                    <path d="M12,8c-2.2091675,0-4,1.7908325-4,4s1.7908325,4,4,4c2.208252-0.0021973,3.9978027-1.791748,4-4C16,9.7908325,14.2091675,8,12,8z M12,15c-1.6568604,0-3-1.3431396-3-3s1.3431396-3,3-3c1.6561279,0.0018311,2.9981689,1.3438721,3,3C15,13.6568604,13.6568604,15,12,15z M21.960022,11.8046875C19.9189453,6.9902344,16.1025391,4,12,4s-7.9189453,2.9902344-9.960022,7.8046875c-0.0537109,0.1246948-0.0537109,0.2659302,0,0.390625C4.0810547,17.0097656,7.8974609,20,12,20s7.9190063-2.9902344,9.960022-7.8046875C22.0137329,12.0706177,22.0137329,11.9293823,21.960022,11.8046875z M12,19c-3.6396484,0-7.0556641-2.6767578-8.9550781-7C4.9443359,7.6767578,8.3603516,5,12,5s7.0556641,2.6767578,8.9550781,7C19.0556641,16.3232422,15.6396484,19,12,19z"></path>
-                                                                </svg>
-                                                            </a>
-                                                        </li>
+                                                </div>
+
+                                                {{--<div class="icon-container">--}}
+                                                    {{--<ul class="icons">--}}
+                                                        {{--<li>--}}
+                                                            {{--<a href="{{ route('product.detail',[$product->id,$product->name]) }}"--}}
+                                                               {{--target="_blank" data-tip="Quick View">--}}
+                                                                {{--<svg xmlns="http://www.w3.org/2000/svg"--}}
+                                                                     {{--class="w-inner-icn"--}}
+                                                                     {{--enable-background="new 0 0 24 24"--}}
+                                                                     {{--viewBox="0 0 24 24">--}}
+                                                                    {{--<path d="M12,8c-2.2091675,0-4,1.7908325-4,4s1.7908325,4,4,4c2.208252-0.0021973,3.9978027-1.791748,4-4C16,9.7908325,14.2091675,8,12,8z M12,15c-1.6568604,0-3-1.3431396-3-3s1.3431396-3,3-3c1.6561279,0.0018311,2.9981689,1.3438721,3,3C15,13.6568604,13.6568604,15,12,15z M21.960022,11.8046875C19.9189453,6.9902344,16.1025391,4,12,4s-7.9189453,2.9902344-9.960022,7.8046875c-0.0537109,0.1246948-0.0537109,0.2659302,0,0.390625C4.0810547,17.0097656,7.8974609,20,12,20s7.9190063-2.9902344,9.960022-7.8046875C22.0137329,12.0706177,22.0137329,11.9293823,21.960022,11.8046875z M12,19c-3.6396484,0-7.0556641-2.6767578-8.9550781-7C4.9443359,7.6767578,8.3603516,5,12,5s7.0556641,2.6767578,8.9550781,7C19.0556641,16.3232422,15.6396484,19,12,19z"></path>--}}
+                                                                {{--</svg>--}}
+                                                            {{--</a>--}}
+                                                        {{--</li>--}}
                                                         {{--<li>--}}
                                                             {{--<a href="{{ route('cart.add',$product->id) }}"--}}
                                                                {{--data-tip="Add to Cart" target="_blank">--}}
@@ -155,15 +155,15 @@
                                                                 {{--</svg>--}}
                                                             {{--</a>--}}
                                                         {{--</li>--}}
-                                                    </ul>
-                                                </div>
+                                                    {{--</ul>--}}
+                                                {{--</div>--}}
                                             </div>
                                             <div class="product-content w-100 p-3">
                                                 <div class="mb-2">
                                                     <h4 class="mb-1 text-normal">
-                                                        <a href="{{ route('product.detail',[$product->id,$product->name]) }}"
-                                                           target="_blank"
-                                                           title="{{ $product->name }}">{{ substr($product->name, 0,20) }}</a>
+                                                        <a href="{{ route('product.detail',[$product->id,$product->name]) }}" title="{{ $product->name }}">
+                                                            {{ substr($product->name, 0,20) }}
+                                                        </a>
                                                     </h4>
                                                     <p class="mb-0 text-muted text-start">{{ $product->brand->name }}</p>
                                                 </div>
@@ -216,6 +216,8 @@
             </div>
         @endif
     @endforeach
+
+    <!-- Modal -->
 
 
 @endsection

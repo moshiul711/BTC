@@ -70,7 +70,7 @@
                                                     <h4 class="mb-1 text-normal"><a
                                                                 href="{{ route('product.detail',[$product->id,$product->name]) }}"
                                                                 target="_blank"
-                                                                title="{{ $product->name }}">{{ substr($product->name, 0,25) }}  </a>
+                                                                title="{{ $product->name }}">{{ substr($product->name, 0,20) }}  </a>
                                                     </h4>
                                                     <p class="mb-0 text-muted text-start">{{ $product->brand->name }}</p>
                                                 </div>
