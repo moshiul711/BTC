@@ -1,17 +1,15 @@
 <!doctype html>
-<html lang="en" dir="ltr"> <!-- This "app.blade.php" master page is used for all the pages content present in "views/livewire" except "custom" and "switcher" pages -->
-
-<!-- Mirrored from laravel8.spruko.com/noa/products by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 06 May 2023 13:11:22 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<html lang="en" dir="ltr">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
 
     <!-- META DATA -->
     <meta charset="UTF-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Noa - Laravel Bootstrap 5 Admin & Dashboard Template">
-    <meta name="author" content="Spruko Technologies Private Limited">
-    <meta name="keywords" content="laravel admin template, bootstrap admin template, admin dashboard template, admin dashboard, admin template, admin, bootstrap 5, laravel admin, laravel admin dashboard template, laravel ui template, laravel admin panel, admin panel, laravel admin dashboard, laravel template, admin ui dashboard">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
 
     <!-- TITLE -->
     <title>@yield('title')</title>
@@ -415,7 +413,7 @@
                             </div>
 
                             <div class="wrap-input100 validate-input" data-bs-validate = "Valid email is required: ex@abc.xyz">
-                                <input class="input100" type="email" name="email" placeholder="Email" required>
+                                <input class="input100" pattern="/^\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i" type="email" name="email" placeholder="Email" required>
                                 <span class="focus-input100"></span>
                                 <span class="symbol-input100"><i class="zmdi zmdi-email" aria-hidden="true"></i></span>
                             </div>
@@ -914,5 +912,4 @@
 </body>
 
 
-<!-- Mirrored from laravel8.spruko.com/noa/products by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 06 May 2023 13:11:27 GMT -->
 </html>

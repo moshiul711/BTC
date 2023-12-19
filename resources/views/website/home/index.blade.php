@@ -118,7 +118,7 @@
                     <div class="row products-main">
                         @foreach($category->products as $product)
                             @if($product->status == 1)
-                                <div class="col-6 col-md-6 col-sm-6 col-lg-6 col-xl-3 product-each">
+                                <div class="col-6 col-md-6 col-sm-6 col-lg-6 col-xl-3 col-xxl product-each">
                                     <div class="card item-card">
                                         <div class="product-grid6 card-body ">
                                             <div class="product-image6">
@@ -162,7 +162,7 @@
                                                 <div class="mb-2">
                                                     <h4 class="mb-1 text-normal">
                                                         <a href="{{ route('product.detail',[$product->id,$product->name]) }}" title="{{ $product->name }}">
-                                                            {{ substr($product->name, 0,20) }}
+                                                            {{ substr($product->name, 0,19) }}
                                                         </a>
                                                     </h4>
                                                     <p class="mb-0 text-muted text-start">{{ $product->brand->name }}</p>
@@ -170,17 +170,17 @@
                                                 <p class="mb-2 text-warning">
                                                 <span>
                                                     <del class="text-18  ms-1"
-                                                         style="color: black">Tk. {{ $product->regular_price }}
+                                                         style="color: black">Tk.{{ $product->regular_price }}
                                                     </del>
                                                 </span>
-                                                    <span class="badge bg-red ms-2" style="float: right">
+                                                    <span class="badge bg-red" style="float: right">
                                                         {{ round($offer = (($product->regular_price - $product->offer_price )/$product->regular_price)*100) }}
                                                         % Off
                                                     </span>
                                                 </p>
                                                 <div class="d-flex align-items-center justify-content-between">
                                                     <p class="mb-0">
-                                                        <span class="text-22 text-bold">Tk. {{ $product->offer_price }}</span>
+                                                        <span class="text-22 text-bold">Tk.{{ $product->offer_price }}</span>
                                                     </p>
                                                     @if($product->stock > 0)
                                                         <p class="mb-0 text-success-darkest">Available</p>

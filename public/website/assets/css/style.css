@@ -387,39 +387,39 @@ pre code {
 .container {
     margin-left: auto;
     margin-right: auto;
-    padding-left: .75rem;
-    padding-right: .75rem;
+    padding-left: .1rem;
+    padding-right: .1rem;
     width: 100%
 }
 
 @media (max-width: 576px) {
     .container {
-        padding-left: .75rem;
-        padding-right: .75rem
+        padding-left: .1rem;
+        padding-right: .1rem
     }
 }
 
 @media (min-width: 576px) {
     .container {
-        max-width: 540px
+        max-width: 100%
     }
 }
 
 @media (min-width: 768px) {
     .container {
-        max-width: 720px
+        max-width: 100%
     }
 }
 
 @media (min-width: 992px) {
     .container {
-        max-width: 960px
+        max-width: 100%
     }
 }
 
 @media (min-width: 1280px) {
     .container {
-        max-width: 1140px
+        max-width: 100%
     }
 }
 
@@ -15626,7 +15626,7 @@ a.chip:hover {
     }
 
     .app-content .side-app {
-        padding: 0 15px !important
+        padding: 0 5px !important
     }
 }
 
@@ -25228,9 +25228,9 @@ body.fixed-header .header {
 
 .header .main-header-center {
     align-items: center;
-    max-width: 650px;
+    /*max-width: 650px;*/
     position: relative;
-    width: 100%
+    width: 65%
 }
 
 .header .main-header-center i:hover {
@@ -60498,7 +60498,7 @@ div.dtr-bs-modal table.table tr:first-child td {
 }
 
 .app-content .side-app {
-    padding: 0 15px
+    padding: 0 5px
 }
 
 .footer .container {

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Customer;
 use App\Models\Delivery;
 use App\Models\Order;
 use App\Models\OrderDetails;
@@ -12,7 +13,7 @@ use Barryvdh\DomPDF\Facade\Pdf;
 
 class AdminController extends Controller
 {
-    public $orders, $order,$orderDetails,$product,$stock_amount;
+    public $orders, $order,$orderDetails,$product,$stock_amount,$customer;
     public function index()
     {
         $this->orders = Order::where('order_date',date('Y-m-d'))->get();
@@ -87,5 +88,12 @@ class AdminController extends Controller
     {
         $this->orders = Order::orderTotalByMonth($request);
         return view('admin.order.search',['orders'=>$this->orders]);
+    }
+
+    public function userDelete($id)
+    {
+        $this->customer = Customer::find($id);
+        $this->customer->delete();
+        return back()->with('message','Customer Deleted Successfully');
     }
 }

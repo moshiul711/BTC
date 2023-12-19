@@ -147,6 +147,10 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::post('/slider/update/{id}',[SliderController::class,'update'])->name('slider.update');
     Route::get('/slider/delete/{id}',[SliderController::class,'delete'])->name('slider.delete');
 
+
+    //User Module
+    Route::get('/user/delete/{id}',[AdminController::class,'userDelete'])->name('user.delete');
+
     Route::get('/get-sub-category-by-category', [ProductController::class, 'getCategoryBySubCategory'])->name('get-sub-category-by-category');
 });
 
