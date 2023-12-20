@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- TITLE -->
-    <title>Bangladesh Technology Company</title>
+    <title>Workstation Communication Limited</title>
 
     <!-- FAVICON -->
     <link rel="shortcut icon" type="image/x-icon" href="https://www.bangladeshtechcom.com/themes/default/shop/assets/images/icon.png" />

@@ -41,7 +41,7 @@
                             </div>
                             <div aria-labelledby="headingTwo" class="collapse" data-bs-parent="#accordion" id="collapseTwo" role="tabpanel">
                                 <div class="card-body br-bottom-radius-5">
-                                    A. You can always call 16710 or mail us at support@chaldal.com.
+                                    A. You can always call 01977699806 or mail us at info@workstation.com.bd.
                                 </div>
                             </div>
                         </div>
@@ -51,7 +51,7 @@
                             </div>
                             <div aria-labelledby="headingThree" class="collapse" data-bs-parent="#accordion" id="collapseThree" role="tabpanel">
                                 <div class="card-body br-bottom-radius-5">
-                                    A. We are always open to new suggestions and will add an item to our inventory just for you. There is a "Product Request" feature that you can use to inform us of your requirement. You can also call 16710 or mail us at support@chaldal.com to add an item to our inventory.                                 </div>
+                                    A. We are always open to new suggestions and will add an item to our inventory just for you. There is a "Product Request" feature that you can use to inform us of your requirement. You can also call 01977699806 or mail us at info@workstation.com.bd to add an item to our inventory.                                 </div>
                             </div><!-- collapse -->
                         </div>
                     </div><!-- accordion -->

@@ -1,6 +1,6 @@
 @extends('website.master')
 @section('title')
-    Bangladesh Technology Company
+Workstation Communication Limited
 @endsection
 
 
@@ -62,24 +62,30 @@
                                                 </h4>
                                                 <p class="mb-0 text-muted text-start">{{ $product->brand->name }}</p>
                                             </div>
-                                            <p class="mb-2 text-warning">
-                                    <span>
-                                        <del class="text-18  ms-1" style="color: black">Tk. {{ $product->regular_price }}</del>
-                                    </span>
-
-                                                <span class="badge bg-red ms-2" style="float: right">{{ round($offer = (($product->regular_price - $product->offer_price )/$product->regular_price)*100) }}% Off</span>
-                                            </p>
-                                            <div class="d-flex align-items-center justify-content-between">
-                                                <p class="mb-0">
-                                                    <span class="text-22 text-bold">Tk. {{ $product->offer_price }}</span>
+                                            <a href="{{ route('product.detail',[$product->id,$product->name]) }}">
+                                                <p class="mb-2 text-warning">
+                                                    <span>
+                                                        <del class="text-18  ms-1"
+                                                             style="color: black">Tk.{{ $product->regular_price }}
+                                                        </del>
+                                                    </span>
+                                                        <span class="badge bg-red" style="float: right">
+                                                            {{ round($offer = (($product->regular_price - $product->offer_price )/$product->regular_price)*100) }}
+                                                            % Off
+                                                        </span>
                                                 </p>
-                                                @if($product->stock > 0)
-                                                    <p class="mb-0 text-success-darkest">Available</p>
-                                                @else
-                                                    <p class="mb-0 text-secondary">Out of Stock</p>
-                                                @endif
-
-                                            </div>
+                                                    <div class="d-flex align-items-center justify-content-between">
+                                                        <p class="mb-0">
+                                                            <span class="text-22 text-black text-bold">Tk.{{ $product->offer_price }}</span>
+                                                        </p>
+                                                        @if($product->stock > 0)
+                                                            <p class="mb-0 text-success-darkest">Available</p>
+                                                        @else
+                                                            <p class="mb-0 text-secondary">Out of Stock</p>
+                                                        @endif
+    
+                                                    </div>
+                                            </a>
                                         </div>
                                     </div>
                                     <div class="p-2 text-center px-5">

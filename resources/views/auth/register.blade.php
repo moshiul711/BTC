@@ -1,22 +1,20 @@
 
 
 <!doctype html>
-<html lang="en" dir="ltr"> <!-- This "custom-app.blade.php" master page is used only for "custom" page content present in "views/livewire" Ex: login, 404 -->
-
-<!-- Mirrored from laravel8.spruko.com/noa/login by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 06 May 2023 13:11:49 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<html lang="en" dir="ltr">
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
 
     <!-- META DATA -->
     <meta charset="UTF-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Noa - Laravel Bootstrap 5 Admin & Dashboard Template">
-    <meta name="author" content="Spruko Technologies Private Limited">
-    <meta name="keywords" content="laravel admin template, bootstrap admin template, admin dashboard template, admin dashboard, admin template, admin, bootstrap 5, laravel admin, laravel admin dashboard template, laravel ui template, laravel admin panel, admin panel, laravel admin dashboard, laravel template, admin ui dashboard">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
 
     <!-- TITLE -->
-    <title>Bangladesh Technology Company</title>
+    <title>Workstation communication Limited</title>
 
     <!-- FAVICON -->
     <link rel="shortcut icon" type="image/x-icon" href="https://www.bangladeshtechcom.com/assets/uploads/logos/header_logo-BTC.png" />
@@ -113,19 +111,6 @@
                         </div>
                     </form>
                 </div>
-                {{--<div class="card-footer">--}}
-                    {{--<div class="d-flex justify-content-center my-3">--}}
-                        {{--<a href="javascript:void(0)" class="social-login  text-center me-4">--}}
-                            {{--<i class="fa fa-google"></i>--}}
-                        {{--</a>--}}
-                        {{--<a href="javascript:void(0)" class="social-login  text-center me-4">--}}
-                            {{--<i class="fa fa-facebook"></i>--}}
-                        {{--</a>--}}
-                        {{--<a href="javascript:void(0)" class="social-login  text-center">--}}
-                            {{--<i class="fa fa-twitter"></i>--}}
-                        {{--</a>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
             </div>
         </div>
         <!-- CONTAINER CLOSED -->
@@ -161,7 +146,6 @@
 </body>
 
 
-<!-- Mirrored from laravel8.spruko.com/noa/login by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 06 May 2023 13:11:49 GMT -->
 </html>
 
 

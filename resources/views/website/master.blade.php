@@ -466,12 +466,12 @@
                     </div>
                     <ul class="side-menu ">
                         <li class="slide">
-                            <a class="side-menu__item" href="#" style="text-align: center">
+                            <a class="side-menu__item pt-2" href="#" style="text-align: center">
                                 <img src="{{ asset('/') }}website/assets/icons/category.png" alt="" width="20px">
                                 <span class="side-menu__label px-2">Categories</span>
                             </a>
                         </li>
-                        <hr>
+
                         @foreach($categories as $category)
                         <li class="slide">
                             <a class="side-menu__item" data-bs-toggle="slide" href="#" title="{{ $category->name }}">
@@ -604,7 +604,7 @@
                                             <div class="col-lg-4 col-md-12">
                                                 <h6>About</h6>
                                                 <p>
-                                                    Bangladesh Technology Company has 5 years professional experience in selling Cisco, MikroTik, Juniper, Netgear and others ISP grade hardware, offering better pre-sale and after-sale support, solutions, which attracted more than 500+ Buyers internet service provider, IIG, IGW and call center all over the Bangladesh
+                                                    Workstation Communication Limited has 5 years professional experience in selling Cisco, MikroTik, Juniper, Netgear and others ISP grade hardware, offering better pre-sale and after-sale support, solutions, which attracted more than 500+ Buyers internet service provider, IIG, IGW and call center all over the Bangladesh
                                                 </p>
                                                 <ul class="footer-social-list" style="text-align: center">
                                                     <li>
@@ -667,7 +667,7 @@
                                             <div class="col-lg-4 col-md-6 col-sm-6">
                                                 <h6>Location</h6>
                                                 <ul class="list-unstyled mb-4">
-                                                    <li><a href="javascript:void(0);">House #03, Road #03, Sector #03</a></li>
+                                                    <li><a href="javascript:void(0);">House #02, Road #03, Sector #13</a></li>
                                                     <li><a href="javascript:void(0);">Uttara, Dhaka, Bangladesh</a></li>
                                                     <li><a href="javascript:void(0);">Phone 1 : +01977699801</a></li>
                                                     <li><a href="javascript:void(0);">Phone 2 : +01977699806</a></li>
@@ -686,7 +686,7 @@
                                     <footer class="main-footer ps-3 pe-3">
                                         <div class="row">
                                             <div class="col-xl-12 col-lg-12 col-md-12 footer1 text-center text-lg-bold">
-                                                Copyright © {{ date('Y') }}. All Rights Reserved By<a href="{{ route('home') }}"> Bangladesh Technology Company</a>
+                                                Copyright © {{ date('Y') }}. All Rights Reserved By<a href="{{ route('home') }}"> Workstation Communication Limited</a>
                                             </div>
                                         </div>
                                     </footer>
@@ -766,36 +766,7 @@
         $('#popup-img').attr('src',src);
     });
 
-
     $(document).ready(function () {
-
-        $("#formPassword").submit(function (event) {
-            event.preventDefault();
-            alert('hi');
-            var form = $("#formPassword")[0];
-            var data = new FormData(form);
-
-            $("#btnPassword").text("Checking Info...");
-
-            $.ajax({
-                type: "POST",
-                url: "{{ route('forgot-password') }}",
-                data: data,
-                dataType: "JSON",
-                processData:false,
-                contentType:false,
-                success: function (response) {
-                    if (response.message)
-                    {
-                        $("#message").text(response.message);
-                        $("#btnPassword").text("Proceed To Change Password");
-                    }
-                }
-            })
-        });
-
-
-
         $("#formCoupon").submit(function (event) {
             event.preventDefault();
 
@@ -863,35 +834,12 @@
     })
 </script>
 
-<script>
-    const phoneInputField = document.querySelector("#phone");
-    const phoneInput = window.intlTelInput(phoneInputField, {
-        utilsScript:
-            "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-    });
-</script>
 
 
-<script type="text/javascript">
-    function initMap() {
-        const myLatLng = { lat: 22.2734719, lng: 70.7512559 };
-        const map = new google.maps.Map(document.getElementById("map"), {
-            zoom: 5,
-            center: myLatLng,
-        });
-
-        new google.maps.Marker({
-            position: myLatLng,
-            map,
-            title: "Hello Rajkot!",
-        });
-    }
-
-    window.initMap = initMap;
-</script>
 
 <script type="text/javascript"
-        src="https://maps.google.com/maps/api/js?key={{ env('GOOGLE_MAP_KEY') }}&callback=initMap" ></script>
+        src="https://maps.google.com/maps/api/js?key={{ env('GOOGLE_MAP_KEY') }}&callback=initMap" >
+    </script>
 
 {{--<script>--}}
     {{--var owl = $('.owl-carousel');--}}

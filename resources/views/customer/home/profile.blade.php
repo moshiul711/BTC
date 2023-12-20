@@ -78,17 +78,10 @@
                                     <input type="number" value="{{ $customer->postal_code }}" name="postal_code" class="form-control" placeholder="Post Code">
                                 </div>
                             </div>
-                            {{--<div class="col-sm-6 col-md-6">--}}
-                                {{--<div class="form-group">--}}
-                                    {{--<label class="form-label">Profile Photo<span class="text-red">*</span></label>--}}
-                                    {{--<input type="file"  name="image" class="form-control" >--}}
-                                    {{--<img src="{{ asset($customer->image) }}" class="img img-thumbnail mt-3" alt="Upload Your Image Please..." height="60" width="80">--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
                         </div>
                     </div>
                     <div class="card-footer text-end">
-                        <button type="submit" class="btn btn-outline-success" style="display: block;width: 100%"><h5>Update Profile</h5></button>
+                        <button type="submit" class="btn btn-success" style="display: block;width: 100%"><h5>Update Profile</h5></button>
                     </div>
                 </form>
             </div>

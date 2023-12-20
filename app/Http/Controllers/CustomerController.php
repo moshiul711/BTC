@@ -117,6 +117,7 @@ class CustomerController extends Controller
         return view('customer.home.orderDetail',['order'=>$this->order]);
     }
 
+    // Logged User Password Change
     public function changePassword()
     {
         return view('customer.home.password');
@@ -138,6 +139,10 @@ class CustomerController extends Controller
             return back()->with('logout','Your Password Is Not Matched to Our Database');
         }
     }
+    // Logged User Password Change
+
+
+    // For all Password Change
 
 
     public function forgotPassword()
@@ -160,8 +165,14 @@ class CustomerController extends Controller
 
     public function recoveryPassword(Request $request, $id)
     {
-        $this->check = Customer::updatePassword($id,$request->new_password);
-        return view('website.home.login');
+        if ($request->new_password == $request->confirm_password) {
+            $this->check = Customer::updatePassword($id,$request->new_password);
+            return redirect('/')->with('message','Password Changed Successfully. Please Login.');
+        }
+        else
+        {
+            return back();
+        }
     }
 
 }
