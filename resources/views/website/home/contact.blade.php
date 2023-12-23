@@ -1,7 +1,7 @@
 @extends('website.master')
 
 @section('title')
-    Contact Us
+    Contact - Workstation Communication Limited
     @endsection
 
 @section('main-content')

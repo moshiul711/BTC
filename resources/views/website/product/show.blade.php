@@ -1,7 +1,7 @@
 @extends('website.master')
 
 @section('title')
-Workstation Communication Limited
+    {{ $_GET['search'] }} Products - Workstation Communication Limited
 @endsection
 
 {{----}}
@@ -40,10 +40,10 @@ Workstation Communication Limited
                                             <div class="product-image6">
                                                 <div class="">
                                                     <img class="pop img-fluid" src="{{ asset($product->image) }}"
-                                                         style="height: 150px;cursor: pointer" alt="img">
+                                                         style="height: 150px;cursor: pointer" alt="{{ $product->name }}">
                                                     <div class="top-left"
                                                          style="position: absolute;top: 2px;left: 2px;">
-                                                        <button class="btn btn-sm btn-danger-gradient">BTC</button>
+                                                        <img src="{{ asset('/') }}website/assets/images/logo1.png" alt="" style="height:32px; width: 32px; border: 2px solid lightskyblue; border-radius: 50%">
                                                     </div>
                                                 </div>
                                             </div>

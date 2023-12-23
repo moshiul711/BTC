@@ -15,14 +15,22 @@ use Session;
 
 class WebsiteController extends Controller
 {
-    public $message, $categories,$category,$subCategory, $product, $products,$customer,$reviews,$coupons,$relatedProducts,$sliders;
+    public $featured_products, $message, $categories,$category,$subCategory, $product, $products,$customer,$reviews,$coupons,$relatedProducts,$sliders;
 
     public function index()
     {
         $this->coupons = Coupon::where('status',1)->get();
         $this->categories = Category::all();
         $this->sliders = Slider::all();
-        return view('website.home.index',['categories'=>$this->categories,'coupons'=>$this->coupons,'sliders'=>$this->sliders]);
+        $this->featured_products = Product::where('featured_status',1)->get();
+        return view('website.home.index',
+            [
+                'categories' => $this->categories,
+                'coupons' => $this->coupons,
+                'sliders' => $this->sliders,
+                'products' => $this->featured_products
+            ]
+        );
     }
 
     public function productDetail($id,$name)

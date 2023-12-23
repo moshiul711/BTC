@@ -35,11 +35,11 @@
                                             <div class="carousel-inner h-100">
                                                 <ul class="carousel-item active d-flex h-100">
                                                     <li class="thumb active" data-bs-slide-to="0" data-bs-target="#Slider">
-                                                        <img alt="img" src="{{ asset($product->image) }}">
+                                                        <img alt="{{ $product->name }}" src="{{ asset($product->image) }}">
                                                     </li>
                                                     @foreach($product->otherImages as $otherImage)
                                                     <li class="thumb" data-bs-slide-to="{{ $loop->iteration }}" data-bs-target="#Slider">
-                                                        <img alt="img" src="{{ asset($otherImage->image) }}">
+                                                        <img alt="{{ $product->name }}" src="{{ asset($otherImage->image) }}">
                                                     </li>
                                                     @endforeach
                                                 </ul>
@@ -52,13 +52,19 @@
                                         <div class="carousel slide h-100" data-bs-ride="false" id="Slider">
                                             <div class="carousel-inner h-100">
                                                 <div class="carousel-item active">
-                                                    <img alt="img" class="img img-thumbnail w-100 d-block " src="{{ asset($product->image) }}" style="height: 300px; width: 811px">
-                                                    <div class="top-left" style="position: absolute;top: 2px;left: 2px;"><button class="btn btn-sm btn-danger-gradient">BTC</button></div>
+                                                    <img alt="{{ $product->name }}" class="img img-thumbnail w-100 d-block " src="{{ asset($product->image) }}" style="height: 300px; width: 811px">
+                                                    <div class="top-left"
+                                                         style="position: absolute;top: 2px;left: 2px;">
+                                                        <img src="{{ asset('/') }}website/assets/images/logo1.png" alt="" style="height:32px; width: 32px; border: 2px solid lightskyblue; border-radius: 50%">
+                                                    </div>
                                                 </div>
                                                 @foreach($product->otherImages as $otherImage)
                                                 <div class="carousel-item">
                                                     <img alt="img" class="img img-thumbnail w-100 d-block " src="{{ asset($otherImage->image) }}" style="height: 300px; width: 811px">
-                                                    <div class="top-left" style="position: absolute;top: 2px;left: 2px;"><button class="btn btn-sm btn-danger-gradient">BTC</button></div>
+                                                    <div class="top-left"
+                                                         style="position: absolute;top: 2px;left: 2px;">
+                                                        <img src="{{ asset('/') }}website/assets/images/logo1.png" alt="" style="height:32px; width: 32px; border: 2px solid lightskyblue; border-radius: 50%">
+                                                    </div>
                                                 </div>
                                                 @endforeach
                                             </div>
@@ -290,10 +296,10 @@
                                     <div class="product-image6">
                                         <div class="">
                                             <img class="pop img-fluid" src="{{ asset($product->image) }}"
-                                                 style="height: 150px;cursor: pointer" alt="img">
+                                                 style="height: 150px;cursor: pointer" alt="{{ $product->name }}">
                                             <div class="top-left"
                                                  style="position: absolute;top: 2px;left: 2px;">
-                                                <button class="btn btn-sm btn-danger-gradient">BTC</button>
+                                                <img src="{{ asset('/') }}website/assets/images/logo1.png" alt="" style="height:32px; width: 32px; border: 2px solid lightskyblue; border-radius: 50%">
                                             </div>
                                         </div>
                                     </div>

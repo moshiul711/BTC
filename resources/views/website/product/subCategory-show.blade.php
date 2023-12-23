@@ -1,6 +1,6 @@
 @extends('website.master')
 @section('title')
-Workstation Communication Limited
+    {{ $subCategory->name }} Products - Workstation Communication Limited
 @endsection
 
 
@@ -50,7 +50,7 @@ Workstation Communication Limited
                                                      style="height: 150px;cursor: pointer" alt="img">
                                                 <div class="top-left"
                                                      style="position: absolute;top: 2px;left: 2px;">
-                                                    <button class="btn btn-sm btn-danger-gradient">BTC</button>
+                                                    <img src="{{ asset('/') }}website/assets/images/logo1.png" alt="{{ $product->name }}" style="height:32px; width: 32px; border: 2px solid lightskyblue; border-radius: 50%">
                                                 </div>
                                             </div>
                                         </div>

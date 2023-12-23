@@ -136,6 +136,17 @@
                         </div>
 
                         <div class="row mb-4">
+                            <label for="firstName" class="col-md-3 form-label">Featured Status</label>
+                            <div class="col-md-9">
+                                <select name="featured_status" class="form-control">
+                                    <option> -- Select Featured Status -- </option>
+                                    <option value="1">Active</option>
+                                    <option value="0">Disable</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4">
                             <label for="lastName" class="col-md-3 form-label">Short Description</label>
                             <div class="col-md-9">
                                 <textarea class="form-control" id="lastName" name="short_description" placeholder="Category Description"></textarea>

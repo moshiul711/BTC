@@ -17,7 +17,7 @@
     <title>New Password</title>
 
     <!-- FAVICON -->
-    <link rel="shortcut icon" type="image/x-icon" href="https://www.bangladeshtechcom.com/assets/uploads/logos/header_logo-BTC.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/') }}website/assets/images/logo1.png" />
 
     <!-- BOOTSTRAP CSS -->
     <link id="style" href="{{ asset('/') }}admin/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
@@ -61,7 +61,7 @@
                 <div class="card-body">
                     <div class="col col-login mx-auto text-center mb-5">
                         <a href="{{ route('home') }}" class="text-center">
-                            <img src="https://www.bangladeshtechcom.com/assets/uploads/logos/header_logo-BTC.png" class="header-brand-img" alt="">
+                            <img src="{{ asset('/') }}website/assets/images/logo1.png" class="header-brand-img" alt="">
                         </a>
                     </div>
 

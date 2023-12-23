@@ -1,5 +1,7 @@
 @extends('website.master')
-
+@section('title')
+    Checkout - Workstation Communication Limited
+@endsection
 
 @section('main-content')
 

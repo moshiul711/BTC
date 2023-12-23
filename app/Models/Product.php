@@ -42,6 +42,7 @@ class Product extends Model
         $product->offer_price = $request->offer_price;
         $product->stock = $request->stock;
         $product->status = $request->status;
+        $product->featured_status = $request->featured_status;
         $product->short_description = $request->short_description;
         $product->long_description = $request->long_description;
         $product->image = $imageUrl;

@@ -1,5 +1,7 @@
 @extends('website.master')
-
+@section('title')
+    Complete Order - Workstation Communication Limited
+@endsection
 @section('main-content')
 <div class="row mt-5">
     <div class="col-md-12 col-xl-12">

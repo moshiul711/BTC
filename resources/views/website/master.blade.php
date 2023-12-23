@@ -2,20 +2,18 @@
 <html lang="en" dir="ltr">
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
-
-    <!-- META DATA -->
     <meta charset="UTF-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <meta name="keywords" content="">
+    <meta name="description" content="Workstation Business Gateway">
+    <meta name="author" content="Workstation Communication Limited">
+    <meta name="keywords" content="Workstation, workstation, communication, Communication, Network, network, networking, networking product, patchcord, optical, olt, machine, signal fire,">
 
     <!-- TITLE -->
     <title>@yield('title')</title>
 
     <!-- FAVICON -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/') }}website/assets/icons/icon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/') }}website/assets/images/logo1.png" />
 
     <!-- BOOTSTRAP CSS -->
     <link id="style" href="{{ asset('/') }}website/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
@@ -35,67 +33,47 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <link rel="stylesheet" href="{{ asset('/') }}owlcarousel/owl.carousel.min.css">
-    <link rel="stylesheet" href="{{ asset('/') }}owlcarousel/owl.theme.default.min.css">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
 
     <style>
-        /*input[type=number]::-webkit-inner-spin-button,*/
-        /*input[type=number]::-webkit-outer-spin-button {*/
-
-            /*opacity: 1;*/
-
-        /*}*/
         .colored-toast.swal2-icon-success {
             background-color: #a5dc86 !important;
         }
-
         .colored-toast.swal2-icon-error {
             background-color: #f27474 !important;
         }
-
         .colored-toast.swal2-icon-warning {
             background-color: #f8bb86 !important;
         }
-
         .colored-toast.swal2-icon-info {
             background-color: #3fc3ee !important;
         }
-
         .colored-toast.swal2-icon-question {
             background-color: #87adbd !important;
         }
-
         .colored-toast .swal2-title {
             color: white;
         }
-
         .colored-toast .swal2-close {
             color: white;
         }
-
         .colored-toast .swal2-html-container {
             color: white;
         }
-
         [type=radio] {
             position: absolute;
             opacity: 0;
             width: 0;
             height: 0;
         }
-
         /* IMAGE STYLES */
         [type=radio] + img {
             cursor: pointer;
         }
-
         /* CHECKED STYLES */
         [type=radio]:checked + img {
             outline: 2px solid #008069;
         }
-
     </style>
 
 </head>
@@ -103,14 +81,10 @@
 <body class="ltr app sidebar-mini">
 
 
-
-<!-- GLOBAL-LOADER -->
 <div id="global-loader">
     <img src="{{ asset('/') }}website/assets/images/loader.svg" class="loader-img" alt="Loader">
 </div>
-<!-- /GLOBAL-LOADER -->
 
-<!-- PAGE -->
 <div class="page">
     <div class="page-main">
 
@@ -121,8 +95,8 @@
                     <a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-bs-toggle="sidebar" href="#"></a>
                     <!-- sidebar-toggle-->
                     <a class="logo-horizontal " href="{{ route('home') }}">
-                        <img src="https://www.bangladeshtechcom.com/assets/uploads/logos/header_logo-BTC.png" class="header-brand-img desktop-logo" alt="logo">
-                        <img src="https://www.bangladeshtechcom.com/assets/uploads/logos/header_logo-BTC.png" class="header-brand-img light-logo1"
+                        <img src="{{ asset('/') }}website/assets/images/logo.png" class="header-brand-img desktop-logo" alt="logo">
+                        <img src="{{ asset('/') }}website/assets/images/logo.png" class="header-brand-img light-logo1"
                              alt="logo">
                     </a>
                     <!-- LOGO -->
@@ -320,7 +294,7 @@
         {{--Login Modal--}}
         <div class="modal fade"  id="smallmodal">
             <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content">
+                <div class="modal-content text-white">
                     <div class="modal-header">
                         <h5 class="modal-title">Login</h5>
                         <button  class="btn-close" data-bs-dismiss="modal" aria-label="Close">
@@ -332,7 +306,7 @@
                         <div class="modal-body">
                     <span class="login100-form-title">
                             <a href="{{ route('home') }}" class="text-center">
-                                <img src="https://www.bangladeshtechcom.com/assets/uploads/logos/header_logo-BTC.png" class="header-brand-img" alt="">
+                                <img src="{{ asset('/') }}website/assets/images/logo.png" class="header-brand-img" alt="" style="color: red">
                             </a>
                         </span>
                             <div class="wrap-input100 validate-input" data-bs-validate = "Valid email is required: ex@abc.xyz">
@@ -350,11 +324,11 @@
                             </span>
                             </div>
                             <div class="text-end pt-1">
-                                <p class="mb-0"><a href="{{ route('forgot-password') }}" class="text-primary ms-1">Forgot Password?</a></p>
+                                <p class="mb-0 text-white"><a href="{{ route('forgot-password') }}" class="text-primary ms-1">Forgot Password?</a></p>
                             </div>
 
                             <div class="text-center pt-3">
-                                <p class="text-dark mb-0">Don't You Have an Account?<a href="#" data-bs-target="#registration" data-bs-toggle="modal" class="text-primary ms-1">Create an Account</a></p>
+                                <p class="text-dark mb-0 text-white">Don't You Have an Account?<a href="#" data-bs-target="#registration" data-bs-toggle="modal" class="text-primary ms-1">Create an Account</a></p>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -385,7 +359,7 @@
         {{--Registration Modal--}}
         <div class="modal fade"  id="registration">
             <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content">
+                <div class="modal-content text-white">
                     <div class="modal-header">
                         <h5 class="modal-title">Registration</h5>
                         <button  class="btn-close" data-bs-dismiss="modal" aria-label="Close">
@@ -397,7 +371,7 @@
                         <div class="modal-body">
                     <span class="login100-form-title">
                             <a href="#" class="text-center">
-                                <img src="https://www.bangladeshtechcom.com/assets/uploads/logos/header_logo-BTC.png" class="header-brand-img" alt="">
+                                <img src="{{ asset('/') }}website/assets/images/logo.png" class="header-brand-img" alt="">
                             </a>
                         </span>
                             <div class="wrap-input100 validate-input" data-bs-validate = "First Name Required">
@@ -451,10 +425,10 @@
             <div class="app-sidebar">
                 <div class="side-header" >
                     <a class="header-brand1" href="{{ route('home') }}">
-                        <img src="https://www.bangladeshtechcom.com/assets/uploads/logos/header_logo-BTC.png" class="header-brand-img desktop-logo" alt="logo">
-                        <img src="https://www.bangladeshtechcom.com/assets/uploads/logos/header_logo-BTC.png" class="header-brand-img toggle-logo" alt="logo">
-                        <img src="https://www.bangladeshtechcom.com/assets/uploads/logos/header_logo-BTC.png" class="header-brand-img light-logo" alt="logo">
-                        <img src="https://www.bangladeshtechcom.com/assets/uploads/logos/header_logo-BTC.png" class="header-brand-img light-logo1" alt="logo">
+                        <img src="{{ asset('/') }}website/assets/images/logo.png" class="header-brand-img desktop-logo" alt="logo">
+                        <img src="{{ asset('/') }}website/assets/images/logo1.png" class="header-brand-img toggle-logo" alt="logo">
+                        <img src="{{ asset('/') }}website/assets/images/logo1.png" class="header-brand-img light-logo" alt="logo">
+                        <img src="{{ asset('/') }}website/assets/images/logo.png" class="header-brand-img light-logo1" alt="logo">
                     </a><!-- LOGO -->
                 </div>
 
@@ -704,8 +678,18 @@
 <div class="modal fade test" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
+            <div class="modal-header text-white">
+                <h5 class="modal-title p-title"></h5>
+                <button  class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
             <div class="modal-body text-center">
                 <img id="popup-img" src="" alt="">
+                <div class="top-left"
+                     style="position: absolute;top: 18px;left: 18px;">
+                    <img src="{{ asset('/') }}website/assets/images/logo1.png" alt="" style="height:32px; width: 32px; border: 2px solid lightskyblue; border-radius: 50%">
+                </div>
             </div>
         </div>
     </div>
@@ -754,16 +738,17 @@
 <script src="{{ asset('/') }}website/assets/plugins/sweet-alert/sweetalert.min.js"></script>
 <script src="{{ asset('/') }}website/assets/plugins/sweet-alert/jquery.sweet-alert.js"></script>
 
-<script src="{{ asset('/') }}owlcarousel/owl.carousel.min.js"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 
 <script>
 
     $('.pop').click(function () {
         var src = $(this).attr('src');
+        var title = $(this).attr('alt');
+
         $('.test').modal('show');
         $('#popup-img').attr('src',src);
+        $('.p-title').text(title);
     });
 
     $(document).ready(function () {
@@ -834,30 +819,10 @@
     })
 </script>
 
-
-
-
 <script type="text/javascript"
         src="https://maps.google.com/maps/api/js?key={{ env('GOOGLE_MAP_KEY') }}&callback=initMap" >
-    </script>
+</script>
 
-{{--<script>--}}
-    {{--var owl = $('.owl-carousel');--}}
-    {{--owl.owlCarousel({--}}
-        {{--loop:true,--}}
-        {{--margin:10,--}}
-        {{--autoplay:true,--}}
-        {{--autoplayTimeout:2000,--}}
-        {{--autoplayHoverPause:true--}}
-    {{--});--}}
-    {{--$('.play').on('click',function(){--}}
-        {{--owl.trigger('play.owl.autoplay',[1000])--}}
-    {{--})--}}
-    {{--$('.stop').on('click',function(){--}}
-        {{--owl.trigger('stop.owl.autoplay')--}}
-    {{--})--}}
-{{--</script>--}}
 </body>
-
 
 </html>

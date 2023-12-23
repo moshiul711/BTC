@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Slider extends Model
 {
     use HasFactory;
-    private static $slider, $image, $image_name, $image_ext, $image_full_name, $image_path, $image_url;
+    private static $slider, $image, $imageName, $imageExt, $image_full_name, $image_path, $image_url;
 
     public static function createNewSlider($images)
     {
@@ -24,7 +24,9 @@ class Slider extends Model
 
     public static function getImageUrl($image)
     {
-        self::$image_full_name = $image->getClientOriginalName();
+        self::$imageName = substr(md5(time()),0,8);
+        self::$imageExt = $image->getClientOriginalExtension();
+        self::$image_full_name = self::$imageName.'.'.self::$imageExt;
         self::$image_path = 'uploads/slider-images/';
         $image->move(self::$image_path,self::$image_full_name);
         self::$image_url = self::$image_path.self::$image_full_name;

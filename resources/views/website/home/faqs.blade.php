@@ -1,6 +1,7 @@
 @extends('website.master')
-
-
+@section('title')
+    FAQs - Workstation Communication Limited
+@endsection
 @section('main-content')
     <div class="row mt-2">
         <div class="col-lg-12 col-md-12">
