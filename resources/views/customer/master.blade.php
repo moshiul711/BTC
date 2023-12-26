@@ -15,7 +15,7 @@
     <title>Workstation Communication Limited</title>
 
     <!-- FAVICON -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/') }}website/assets/images/brand/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/') }}website/assets/images/logo1.png" />
 
     <!-- BOOTSTRAP CSS -->
     <link id="style" href="{{ asset('/') }}website/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
@@ -92,8 +92,8 @@
                     <a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-bs-toggle="sidebar" href="#"></a>
                     <!-- sidebar-toggle-->
                     <a class="logo-horizontal " href="{{ route('home') }}">
-                        <img src="https://www.bangladeshtechcom.com/assets/uploads/logos/header_logo-BTC.png" class="header-brand-img desktop-logo" alt="logo">
-                        <img src="https://www.bangladeshtechcom.com/assets/uploads/logos/header_logo-BTC.png" class="header-brand-img light-logo1"
+                        <img src="{{ asset('/') }}website/assets/images/logo.png" class="header-brand-img desktop-logo" alt="logo">
+                        <img src="{{ asset('/') }}website/assets/images/logo.png" class="header-brand-img light-logo1"
                              alt="logo">
                     </a>
                     <!-- LOGO -->
@@ -285,10 +285,10 @@
             <div class="app-sidebar">
                 <div class="side-header" >
                     <a class="header-brand1" href="{{ route('home') }}">
-                        <img src="https://www.bangladeshtechcom.com/assets/uploads/logos/header_logo-BTC.png" class="header-brand-img desktop-logo" alt="logo">
-                        <img src="https://www.bangladeshtechcom.com/assets/uploads/logos/header_logo-BTC.png" class="header-brand-img toggle-logo" alt="logo">
-                        <img src="https://www.bangladeshtechcom.com/assets/uploads/logos/header_logo-BTC.png" class="header-brand-img light-logo" alt="logo">
-                        <img src="https://www.bangladeshtechcom.com/assets/uploads/logos/header_logo-BTC.png" class="header-brand-img light-logo1" alt="logo">
+                        <img src="{{ asset('/') }}website/assets/images/logo.png" class="header-brand-img desktop-logo" alt="logo">
+                        <img src="{{ asset('/') }}website/assets/images/logo1.png" class="header-brand-img toggle-logo" alt="logo">
+                        <img src="{{ asset('/') }}website/assets/images/logo1.png" class="header-brand-img light-logo" alt="logo">
+                        <img src="{{ asset('/') }}website/assets/images/logo.png" class="header-brand-img light-logo1" alt="logo">
                     </a><!-- LOGO -->
                 </div>
 

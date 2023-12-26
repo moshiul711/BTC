@@ -10,10 +10,12 @@ use Illuminate\Http\Request;
 use Session;
 use App\Library\SslCommerz\SslCommerzNotification;
 use DB;
+use Illuminate\Support\Facades\Http;
 
 class CheckoutController extends Controller
 {
     private $customer, $deliveryInfo,$orderInfo,$orderDetailsInfo;
+    public $url,$apikey,$secretKey,$callerId,$toUser,$messageContent,$response,$body,$data;
     public function index()
     {
         if (Session::get('customer_id'))
@@ -30,6 +32,34 @@ class CheckoutController extends Controller
 
     public function placeOrder(Request $request)
     {
+        // Your API endpoint URL
+        $url = 'https://sms.dinisoftbd.com:7790/sendtext';
+
+// API key and secret key
+        $apiKey = '83f4751692fdf3f6';
+        $secretKey = '33b1e9a8';
+
+// Caller ID, user, and message content
+        $callerID = 'wsc';
+        $toUser = '01977699806';
+        $messageContent = 'Thank you for placing an order with us. You will receive a phone call to verify your order. We appreciate your co-operation - Workstation Communication';
+
+// Make a GET request to the API
+        $response = Http::withoutVerifying()->get($url, [
+            'apikey' => $apiKey,
+            'secretkey' => $secretKey,
+            'callerID' => $callerID,
+            'toUser' => $toUser,
+            'messageContent' => $messageContent,
+        ]);
+
+// Get the response body as a string
+        $body = $response->body();
+
+// Process the response as needed
+// For example, you can convert the JSON response to an array
+        $data = json_decode($body, true);
+
 
         $this->deliveryInfo = Delivery::storeDeliveryInfo($request);
         $this->orderInfo = Order::storeOrderInfo($request,$this->deliveryInfo->id);

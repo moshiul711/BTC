@@ -33,6 +33,8 @@ Route::get('/refer-earn',[WebsiteController::class,'referEarn'])->name('refer-ea
 Route::get('/faq',[WebsiteController::class,'faq'])->name('faq');
 Route::post('/coupon-apply',[CouponController::class,'apply'])->name('coupon.apply');
 
+
+
 //Product on Home Page
 Route::get('/product/category/{id}/{name}',[WebsiteController::class,'productCategory'])->name('product.category');
 Route::get('/product/subcategory/{id}/{name}',[WebsiteController::class,'productSubcategory'])->name('product.subcategory');
