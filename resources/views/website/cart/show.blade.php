@@ -105,16 +105,16 @@
                             </div>
                         </div>
                     </form>
-                        <p id="output" class="text-center text-danger"></p>
+                        <p id="output" class="text-center text-danger text-bold"></p>
                     @else
-                        <form action="#">
+                        <form id="formCoupon">
                             {{--<form action="{{ route('coupon.apply') }}" method="post">--}}
                             @csrf
                             <div class="form-group">
                                 <div class="input-group">
                                     <input type="text" id="myInput" readonly name="coupon" class="form-control coupon" placeholder="Coupon code" required>
                                     <span class="input-group-btn">
-                                    <button class="btn btn-success btn-apply coupon disabled text-bold">Coupon Applied</button>
+                                    <button class="btn btn-success btn-apply coupon text-bold">Coupon Applied</button>
                                 </span>
                                 </div>
                             </div>

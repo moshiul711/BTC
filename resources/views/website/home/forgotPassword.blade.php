@@ -20,20 +20,20 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/') }}website/assets/images/logo1.png" />
 
     <!-- BOOTSTRAP CSS -->
-    <link id="style" href="{{ asset('/') }}admin/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link id="style" href="{{ asset('/') }}website/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- STYLE CSS -->
-    <link href="{{ asset('/') }}admin/assets/css/style.css" rel="stylesheet" />
-    <link href="{{ asset('/') }}admin/assets/css/skin-modes.css" rel="stylesheet" />
+    <link href="{{ asset('/') }}website/assets/css/style.css" rel="stylesheet" />
+    <link href="{{ asset('/') }}website/assets/css/skin-modes.css" rel="stylesheet" />
 
 
 
     <!--- FONT-ICONS CSS -->
-    <link href="{{ asset('/') }}admin/assets/plugins/icons/icons.css" rel="stylesheet" />
+    <link href="{{ asset('/') }}website/assets/plugins/icons/icons.css" rel="stylesheet" />
 
     <!-- INTERNAL Switcher css -->
-    <link href="{{ asset('/') }}admin/assets/switcher/css/switcher.css" rel="stylesheet">
-    <link href="{{ asset('/') }}admin/assets/switcher/demo.css" rel="stylesheet">
+    <link href="{{ asset('/') }}website/assets/switcher/css/switcher.css" rel="stylesheet">
+    <link href="{{ asset('/') }}website/assets/switcher/demo.css" rel="stylesheet">
 
 </head>
 
@@ -44,7 +44,7 @@
 
 <!-- GLOBAL-LOADER -->
 <div id="global-loader">
-    <img src="{{ asset('/') }}admin/assets/images/loader.svg" class="loader-img" alt="Loader">
+    <img src="{{ asset('/') }}website/assets/images/loader.svg" class="loader-img" alt="Loader">
 </div>
 
 <!-- Switcher Icon-->
@@ -96,28 +96,28 @@
 
 
 <!-- JQUERY JS -->
-<script src="{{ asset('/') }}admin/assets/plugins/jquery/jquery.min.js"></script>
+<script src="{{ asset('/') }}website/assets/plugins/jquery/jquery.min.js"></script>
 
 <!-- BOOTSTRAP JS -->
-<script src="{{ asset('/') }}admin/assets/plugins/bootstrap/js/popper.min.js"></script>
-<script src="{{ asset('/') }}admin/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="{{ asset('/') }}website/assets/plugins/bootstrap/js/popper.min.js"></script>
+<script src="{{ asset('/') }}website/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 
 <!-- Perfect SCROLLBAR JS-->
-<script src="{{ asset('/') }}admin/assets/plugins/p-scroll/perfect-scrollbar.js"></script>
+<script src="{{ asset('/') }}website/assets/plugins/p-scroll/perfect-scrollbar.js"></script>
 
 <!-- STICKY JS -->
-<script src="{{ asset('/') }}admin/assets/js/sticky.js"></script>
+<script src="{{ asset('/') }}website/assets/js/sticky.js"></script>
 
 
 
 <!-- COLOR THEME JS -->
-<script src="{{ asset('/') }}admin/assets/js/themeColors.js"></script>
+<script src="{{ asset('/') }}website/assets/js/themeColors.js"></script>
 
 <!-- CUSTOM JS -->
-<script src="{{ asset('/') }}admin/assets/js/custom.js"></script>
+<script src="{{ asset('/') }}website/assets/js/custom.js"></script>
 
 <!-- SWITCHER JS -->
-<script src="{{ asset('/') }}admin/assets/switcher/js/switcher.js"></script>
+<script src="{{ asset('/') }}website/assets/switcher/js/switcher.js"></script>
 
 </body>
 

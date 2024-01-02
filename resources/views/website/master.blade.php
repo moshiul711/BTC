@@ -114,7 +114,7 @@
                         </a>
                     </div>
 
-                    <div class="main-header-center ms-3 d-none d-xl-block">
+                    <div class="main-header-center ms-6 d-none d-xl-block">
                         <form action="{{ route('product.search') }}" style="text-align: center">
                             @csrf
                             <input class="form-control" name="search" placeholder="Search for results..." type="search">
@@ -167,7 +167,7 @@
                                 </div>
                                 @foreach(Cart::content() as $item)
                                 <div class="header-dropdown-list cart-menu ps4 overflow-hidden">
-                                    <a class="dropdown-item d-flex p-4" href="">
+                                    <a class="dropdown-item d-flex p-4" >
                                         <span class="avatar avatar-lg br-5 me-3 align-self-center cover-image" data-bs-image-src="{{ asset($item->options->image) }}"></span>
                                         <div class="wp-60 cart-desc mt-1">
                                             <p class="fs-13 mb-0 lh-1 mb-1 text-dark fw-500">{{ $item->name }}</p>
@@ -183,25 +183,23 @@
                                 </div>
                                 @endforeach
                                 <div class="dropdown-divider m-0"></div>
-                                {{--<a class="dropdown-item d-flex p-4" href="cart.html">--}}
-                                    {{--<div class="wp-60 cart-desc mt-1">--}}
-                                        {{--<p class="fs-13 mb-0 lh-1 mb-1 text-dark fw-500">Total</p>--}}
-                                    {{--</div>--}}
-                                    {{--<div class="ms-auto text-end d-flex fs-16">--}}
-                                            {{--<span class="fs-16 text-dark d-none d-sm-block fw-semibold">--}}
-                                                {{--{{ round(Cart::subtotal()) }}--}}
-                                            {{--</span>--}}
-                                    {{--</div>--}}
-                                {{--</a>--}}
+                                <div class="dropdown-item d-flex p-4" >
+                                    <div class="wp-60 cart-desc mt-1">
+                                        <p class="fs-13 mb-0 lh-1 mb-1 text-dark fw-500">Total</p>
+                                    </div>
+                                    <div class="ms-auto text-end d-flex fs-16">
+                                            <span class="fs-16 text-dark d-none d-sm-block fw-semibold">
+                                                {{ round(Cart::subtotal()) }}
+                                            </span>
+                                    </div>
+                                </div>
                                 <div class="dropdown-divider m-0"></div>
                                 <div class="text-center p-3">
-                                    <a href="{{ route('cart.show') }}" class="btn btn-primary">
-                                        <img src="{{ asset('/') }}website/assets/icons/cart.png" alt="">
+                                    <a href="{{ route('cart.show') }}" class="btn btn-success">
                                         View Cart
                                     </a>
                                     @if(Session::get('customer_id'))
                                     <a href="{{ route('checkout') }}" class="btn btn-danger right">
-                                        <img src="{{ asset('/') }}website/assets/icons/checkout.png" alt="">
                                         Checkout
                                     </a>
                                         @endif
@@ -342,7 +340,7 @@
         {{--Refer & Win Modal--}}
         <div class="modal fade"  id="refer">
             <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
+                <div class="modal-content" style="background-color: white">
                     <div class="modal-header text-center">
                         <h5 class="modal-title text-bold">Refer & Win Cash Prizes</h5>
                         <button  class="btn-close" data-bs-dismiss="modal" aria-label="Close">
@@ -350,7 +348,7 @@
                         </button>
                     </div>
                     <div class="modal-body" style="text-align: center">
-                        <img src="{{ asset('/') }}website/assets/icons/refer.gif" alt="" style="height: 350px">
+                        <img src="{{ asset('/') }}website/assets/icons/refer.gif" alt="" style="height: 350px; width: 80%">
                     </div>
                 </div>
             </div>
@@ -507,7 +505,7 @@
                                     popup: 'colored-toast'
                                 },
                                 showConfirmButton: false,
-                                timer: 2000,
+                                timer: 5000,
                                 timerProgressBar: true
                             })
                             Toast.fire({
@@ -528,7 +526,7 @@
                                 showConfirmButton: false,
                                 timer: 2000,
                                 timerProgressBar: true
-                            })
+                            });
                             Toast.fire({
                                 icon: 'error',
                                 title: "{{ session('logout') }}"
@@ -613,10 +611,11 @@
                                             <div class="col-6 col-lg-2 col-md-12">
                                                 <h6>Pages</h6>
                                                 <ul class="list-unstyled mb-4">
-                                                    <li><a href="{{ route('home') }}">Home</a></li>
+                                                    <li><a href="{{ route('about') }}">About</a></li>
                                                     <li><a href="{{ route('contact-us')}}">Contact Us</a></li>
+                                                    <li><a href="{{ route('privacy')}}">Privacy Policy</a></li>
+                                                    <li><a href="{{ route('refund') }}">Return & Refund Policy</a></li>
                                                     <li><a href="{{ route('refer-earn') }}">Refer & Win</a></li>
-                                                    {{--<li><a href="javascript:void(0);">Charts</a></li>--}}
                                                     {{--<li><a href="javascript:void(0);">Tables</a></li>--}}
                                                     {{--<li><a href="javascript:void(0);">Other Pages</a></li>--}}
                                                 </ul>
@@ -632,8 +631,7 @@
                                                     <li>
                                                         <a href="#" data-bs-target="#registration" data-bs-toggle="modal">Registration</a>
                                                     </li>
-                                                    <li><a href="javascript:void(0);">About</a></li>
-                                                    {{--<li><a href="javascript:void(0);">Services</a></li>--}}
+                                                    <li><a href="{{ route('delivery') }}">Delivery Policy</a></li>
                                                     {{--<li><a href="javascript:void(0);">Blog</a></li>--}}
                                                     {{--<li><a href="javascript:void(0);">Terms and Services</a></li>--}}
                                                 </ul>
@@ -675,25 +673,7 @@
     </div>
 </div>
 
-<div class="modal fade test" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header text-white">
-                <h5 class="modal-title p-title"></h5>
-                <button  class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body text-center">
-                <img id="popup-img" src="" alt="">
-                <div class="top-left"
-                     style="position: absolute;top: 18px;left: 18px;">
-                    <img src="{{ asset('/') }}website/assets/images/logo1.png" alt="" style="height:32px; width: 32px; border: 2px solid lightskyblue; border-radius: 50%">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 <!-- page -->
 
 <!-- BACK-TO-TOP -->
@@ -731,6 +711,8 @@
 <!-- CUSTOM JS -->
 <script src="{{ asset('/') }}website/assets/js/custom.js"></script>
 
+{{--<script src="{{ asset('/') }}website/assets/js/maps.js"></script>--}}
+
 <!-- SWITCHER JS -->
 <script src="{{ asset('/') }}website/assets/switcher/js/switcher.js"></script>
 
@@ -740,15 +722,48 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 
+{{--<script>--}}
+    {{--$(document).on('click', '.quick-view', function (e) {--}}
+        {{--e.preventDefault();--}}
+        {{--var productId = $(this).attr('id');--}}
+        {{--console.log(productId);--}}
+    {{--})--}}
+{{--</script>--}}
+
+<div class="modal fade test" id="quick-view" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header text-danger">
+                <h5 class="modal-title p-title"></h5>
+                <button  class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body text-center" id="quick_view_body">
+
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
-
-    $('.pop').click(function () {
-        var src = $(this).attr('src');
-        var title = $(this).attr('alt');
-
-        $('.test').modal('show');
-        $('#popup-img').attr('src',src);
-        $('.p-title').text(title);
+    $('.quick-view').click(function () {
+        // var src = $(this).attr('src');
+        // var title = $(this).attr('alt');
+        var productId = $(this).attr('id');
+        $.ajax({
+            type: "GET",
+            url:"{{route('productQuickView')}}",
+            data: {id: productId},
+            DataType: "JSON",
+            success: function (response) {
+                $("#quick_view_body").html(response)
+            }
+        });
+        //
+        // $('.test').modal('show');
+        // $('#popup-img').attr('src',src);
+        // $('.p-title').text(title);
     });
 
     $(document).ready(function () {
@@ -818,11 +833,41 @@
         })
     })
 </script>
-
-<script type="text/javascript"
-        src="https://maps.google.com/maps/api/js?key={{ env('GOOGLE_MAP_KEY') }}&callback=initMap" >
+<script>
+    $('#cartForm').submit(function (e) {
+        e.preventDefault();
+        var productId = $(this).attr('data-id');
+        var url = $(this).attr('action');
+        var request = $(this).serialize();
+        $.ajax({
+            url: url,
+            type: 'post',
+            data: request,
+            DataType: "JSON",
+            async: false,
+            success: function (response) {
+                if (response.message)
+                {
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-right',
+                        iconColor: 'white',
+                        customClass: {
+                            popup: 'colored-toast'
+                        },
+                        showConfirmButton: false,
+                        timer: 5000,
+                        timerProgressBar: true
+                    })
+                    Toast.fire({
+                        icon: 'success',
+                        title: response.message
+                    })
+                }
+            }
+        });
+    })
 </script>
-
 </body>
 
 </html>

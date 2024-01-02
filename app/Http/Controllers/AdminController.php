@@ -18,7 +18,8 @@ class AdminController extends Controller
     {
         $this->orders = Order::where('order_date',date('Y-m-d'))->get();
         $this->order = Order::orderTotal();
-        return view('admin.home.index',['order'=>$this->order,'orders'=>$this->orders]);
+        $customers = Customer::all();
+        return view('admin.home.index',['customers'=>$customers,'order'=> $this->order,'orders'=>$this->orders]);
     }
 
     public function allOrder()

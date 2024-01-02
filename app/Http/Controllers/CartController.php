@@ -9,9 +9,9 @@ class CartController extends Controller
 {
     private $product,$cart;
 
-    public function cartAdd(Request $request, $id)
+    public function cartAdd(Request $request)
     {
-        $this->product = Product::find($id);
+        $this->product = Product::find($request->id);
         if ($this->product)
         {
             Cart::add(
@@ -27,7 +27,7 @@ class CartController extends Controller
                             'image' => $this->product->image
                         ]
                 ]);
-            return back()->with('message','Product Successfully Added to Cart.');
+            return response()->json(['message'=>'Product Successfully Added to Cart.']);
         }
         elseif ($this->product->stock < 1)
         {

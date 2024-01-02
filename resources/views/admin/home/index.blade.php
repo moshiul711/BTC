@@ -92,7 +92,7 @@
                 </div>
             </div>
         </div>
-@endif
+        @endif
         <div class="col-lg-6 col-sm-12 col-md-6 col-xl-3">
             <div class="card overflow-hidden">
                 <div class="card-body">
@@ -522,51 +522,6 @@
     <!-- ROW-4 -->
     <div class="row">
         <div class="col-12 col-sm-12">
-            <div class="card ">
-                <div class="card-header border-bottom">
-                    <h3 class="card-title mb-0">Registered Customer</h3>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive text-justify">
-                        <table class="table table-bordered text-nowrap border-bottom" id="basic-datatable1">
-                            <thead class="table-head">
-                            <tr>
-                                <th class="bg-transparent border-bottom-0 wp-15">##</th>
-                                <th class="bg-transparent border-bottom-0">Name</th>
-                                <th class="bg-transparent border-bottom-0">Phone</th>
-                                <th class="bg-transparent border-bottom-0">Email</th>
-                                <th class="bg-transparent border-bottom-0">Phone</th>
-                                <th class="bg-transparent border-bottom-0">Address</th>
-                                <th class="bg-transparent border-bottom-0 no-btn">Action</th>
-                            </tr>
-                            </thead>
-                            <tbody class="table-body">
-                            @foreach($order['users'] as $user)
-                            <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{ $user->first_name.' '.$user->last_name }}</td>
-                                <td>{{ $user->phone }}</td>
-                                <td>{{ $user->email }}</td>
-                                <td>{{ $user->phone }}</td>
-                                <td>{{ $user->city }}</td>
-                                <td>
-                                    {{--<a href="" class="btn btn-success-gradient">--}}
-                                        {{--<i class="fa fa-edit"></i>--}}
-                                    {{--</a>--}}
-                                    <a href="{{ route('user.delete',$user->id) }}" onclick="return confirm('Are you sure to delete this?')" class="btn btn-danger-gradient">
-                                        <i class="fa fa-trash-o"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-12 col-sm-12">
             <div class="card">
                 <div class="card-header border-bottom">
                     <h3 class="card-title mb-0">Orders Of {{ date('d-m-Y') }}</h3>
@@ -630,6 +585,50 @@
                                     </td>
                                 </tr>
                             @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-12">
+            <div class="card ">
+                <div class="card-header border-bottom">
+                    <h3 class="card-title mb-0">Registered Customer</h3>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive text-justify">
+                        <table class="table table-bordered text-nowrap border-bottom" id="basic-datatable1">
+                            <thead class="table-head">
+                            <tr>
+                                <th class="bg-transparent border-bottom-0 wp-15">##</th>
+                                <th class="bg-transparent border-bottom-0">Name</th>
+                                <th class="bg-transparent border-bottom-0">Phone</th>
+                                <th class="bg-transparent border-bottom-0">Email</th>
+                                <th class="bg-transparent border-bottom-0">Phone</th>
+                                <th class="bg-transparent border-bottom-0">Address</th>
+                                <th class="bg-transparent border-bottom-0 no-btn">Action</th>
+                            </tr>
+                            </thead>
+                            <tbody class="table-body">
+                            @foreach($customers as $user)
+                            <tr>
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ $user->first_name.' '.$user->last_name }}</td>
+                                <td>{{ $user->phone }}</td>
+                                <td>{{ $user->email }}</td>
+                                <td>{{ $user->phone }}</td>
+                                <td>{{ $user->city }}</td>
+                                <td>
+                                    <a href="" class="btn btn-success-gradient">
+                                        <i class="fa fa-edit"></i>
+                                    </a>
+                                    <a href="{{ route('user.delete',$user->id) }}" onclick="return confirm('Are you sure to delete this?')" class="btn btn-danger-gradient">
+                                        <i class="fa fa-trash-o"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

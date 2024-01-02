@@ -24,7 +24,7 @@
         <div class="col-md-6">
             <div class="card custom-card">
                 <div class="card-header border-bottom">
-                    <h4 class="card-title text-lg-bold">Contact Form</h4>
+                    <h2 class="card-title text-lg-bold">Contact Form</h2>
                 </div>
                 <div class="card-body">
                     <form class="form-horizontal" action="{{ route('contact.message') }}" method="post">

@@ -401,6 +401,8 @@
 
                     <div class="row">
                         <div class="col-12">
+                            {{--<iframe defer src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d912.1391864629985!2d90.39105636953198!3d23.869868725058065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c41bbb5acb1f%3A0xeb8a49fa5d1d1637!2sWorkstation%20Communication!5e0!3m2!1sen!2sbd!4v1702115489464!5m2!1sen!2sbd" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>--}}
+
                             <div class="card">
                                 <div class="card-body">
                                     <div class="top-footer">
@@ -408,7 +410,7 @@
                                             <div class="col-lg-4 col-md-12">
                                                 <h6>About</h6>
                                                 <p>
-                                                    Workstation communication Limited has 5 years professional experience in selling Cisco, MikroTik, Juniper, Netgear and others ISP grade hardware, offering better pre-sale and after-sale support, solutions, which attracted more than 500+ Buyers internet service provider, IIG, IGW and call center all over the Bangladesh
+                                                    Workstation Communication Limited has 5 years professional experience in selling Cisco, MikroTik, Juniper, Netgear and others ISP grade hardware, offering better pre-sale and after-sale support, solutions, which attracted more than 500+ Buyers internet service provider, IIG, IGW and call center all over the Bangladesh
                                                 </p>
                                                 <ul class="footer-social-list" style="text-align: center">
                                                     <li>
@@ -440,52 +442,58 @@
                                                     {{--</li>--}}
                                                 </ul>
                                             </div>
-                                            <div class="col-lg-2 col-md-12">
+                                            <div class="col-6 col-lg-2 col-md-12">
                                                 <h6>Pages</h6>
                                                 <ul class="list-unstyled mb-4">
-                                                    <li><a href="javascript:void(0);">Dashboard</a></li>
-                                                    <li><a href="javascript:void(0);">Elements</a></li>
-                                                    <li><a href="javascript:void(0);">Forms</a></li>
-                                                    <li><a href="javascript:void(0);">Charts</a></li>
-                                                    <li><a href="javascript:void(0);">Tables</a></li>
-                                                    <li><a href="javascript:void(0);">Other Pages</a></li>
+                                                    <li><a href="{{ route('about') }}">About</a></li>
+                                                    <li><a href="{{ route('contact-us')}}">Contact Us</a></li>
+                                                    <li><a href="{{ route('privacy')}}">Privacy Policy</a></li>
+                                                    <li><a href="{{ route('refund') }}">Return & Refund Policy</a></li>
+                                                    <li><a href="{{ route('refer-earn') }}">Refer & Win</a></li>
+                                                    {{--<li><a href="javascript:void(0);">Tables</a></li>--}}
+                                                    {{--<li><a href="javascript:void(0);">Other Pages</a></li>--}}
                                                 </ul>
                                             </div>
-                                            <div class="col-lg-2 col-md-12">
+                                            <div class="col-6 col-lg-2 col-md-6 col-sm-6">
                                                 <h6>Information</h6>
                                                 <ul class="list-unstyled mb-4">
-                                                    <li><a href="javascript:void(0);">Our Team</a></li>
-                                                    <li><a href="javascript:void(0);">Contact US</a></li>
-                                                    <li><a href="javascript:void(0);">About</a></li>
-                                                    <li><a href="javascript:void(0);">Services</a></li>
-                                                    <li><a href="javascript:void(0);">Blog</a></li>
-                                                    <li><a href="javascript:void(0);">Terms and Services</a></li>
+                                                    <li>
+                                                        <a href="#" data-bs-target="#smallmodal" data-bs-toggle="modal">
+                                                            Login
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" data-bs-target="#registration" data-bs-toggle="modal">Registration</a>
+                                                    </li>
+                                                    <li><a href="{{ route('delivery') }}">Delivery Policy</a></li>
+                                                    {{--<li><a href="javascript:void(0);">Blog</a></li>--}}
+                                                    {{--<li><a href="javascript:void(0);">Terms and Services</a></li>--}}
                                                 </ul>
                                             </div>
-                                            <div class="col-lg-4 col-md-12">
+                                            <div class="col-lg-4 col-md-6 col-sm-6">
                                                 <h6>Location</h6>
                                                 <ul class="list-unstyled mb-4">
-                                                    <li><a href="javascript:void(0);">Address1:7363 Old Livingston Drive Dyersburg</a></li>
-                                                    <li><a href="javascript:void(0);">Address2:4 Harrison St.Fairborn, OH 45324</a></li>
-                                                    <li><a href="javascript:void(0);">Phno1: +123 456 8976</a></li>
-                                                    <li><a href="javascript:void(0);">Phno2: +567 234 7865</a></li>
-                                                    <li><a href="javascript:void(0);">Mail1: yourdomain@gmail.com</a></li>
-                                                    <li><a href="javascript:void(0);">Mail2: infodomain@gmail.com</a></li>
+                                                    <li><a href="javascript:void(0);">House #02, Road #03, Sector #13</a></li>
+                                                    <li><a href="javascript:void(0);">Uttara, Dhaka, Bangladesh</a></li>
+                                                    <li><a href="javascript:void(0);">Phone 1 : +01977699801</a></li>
+                                                    <li><a href="javascript:void(0);">Phone 2 : +01977699806</a></li>
+                                                    <li><a href="javascript:void(0);">Mail: info@workstation.com.bd</a></li>
+                                                    {{--<li><a href="javascript:void(0);">Mail2: infodomain@gmail.com</a></li>--}}
                                                 </ul>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-12">
+                                                {{--<img src="{{ asset('/') }}website/assets/icons/ssl.png" alt="">--}}
                                                 <img src="{{ asset('/') }}website/assets/icons/ssl1.png" alt="">
                                             </div>
                                         </div>
                                     </div>
                                     <footer class="main-footer ps-3 pe-3">
                                         <div class="row">
-                                            <div class="col-xl-12 col-lg-12 col-md-12 footer1 text-center">
-                                                Copyright ©2023. All Rights Reserved By<a href="{{ route('home') }}"> Workstation Communication Limited</a>
+                                            <div class="col-xl-12 col-lg-12 col-md-12 footer1 text-center text-lg-bold">
+                                                Copyright © {{ date('Y') }}. All Rights Reserved By<a href="{{ route('home') }}"> Workstation Communication Limited</a>
                                             </div>
-
                                         </div>
                                     </footer>
                                 </div>
@@ -538,19 +546,14 @@
 <!-- SWITCHER JS -->
 <script src="{{ asset('/') }}website/assets/switcher/js/switcher.js"></script>
 
-<script src="{{ asset('/') }}admin/assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
-<script src="{{ asset('/') }}admin/assets/plugins/datatable/js/dataTables.bootstrap5.js"></script>
-<script src="{{ asset('/') }}admin/assets/plugins/datatable/js/dataTables.buttons.min.js"></script>
-<script src="{{ asset('/') }}admin/assets/plugins/datatable/js/buttons.bootstrap5.min.js"></script>
-<script src="{{ asset('/') }}admin/assets/plugins/datatable/js/jszip.min.js"></script>
-<script src="{{ asset('/') }}admin/assets/plugins/datatable/pdfmake/pdfmake.min.js"></script>
-<script src="{{ asset('/') }}admin/assets/plugins/datatable/pdfmake/vfs_fonts.js"></script>
-<script src="{{ asset('/') }}admin/assets/plugins/datatable/js/buttons.html5.min.js"></script>
-<script src="{{ asset('/') }}admin/assets/plugins/datatable/js/buttons.print.min.js"></script>
-<script src="{{ asset('/') }}admin/assets/plugins/datatable/js/buttons.colVis.min.js"></script>
-<script src="{{ asset('/') }}admin/assets/plugins/datatable/dataTables.responsive.min.js"></script>
-<script src="{{ asset('/') }}admin/assets/plugins/datatable/responsive.bootstrap5.min.js"></script>
-<script src="{{ asset('/') }}admin/assets/js/table-data.js"></script>
+<script src="{{ asset('/') }}website/assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
+<script src="{{ asset('/') }}website/assets/plugins/datatable/js/dataTables.bootstrap5.js"></script>
+<script src="{{ asset('/') }}website/assets/plugins/datatable/js/dataTables.buttons.min.js"></script>
+<script src="{{ asset('/') }}website/assets/plugins/datatable/js/buttons.bootstrap5.min.js"></script>
+
+<script src="{{ asset('/') }}website/assets/plugins/datatable/dataTables.responsive.min.js"></script>
+<script src="{{ asset('/') }}website/assets/plugins/datatable/responsive.bootstrap5.min.js"></script>
+<script src="{{ asset('/') }}website/assets/js/table-data.js"></script>
 
 <script src="{{ asset('/') }}website/assets/plugins/sweet-alert/sweetalert.min.js"></script>
 <script src="{{ asset('/') }}website/assets/plugins/sweet-alert/jquery.sweet-alert.js"></script>

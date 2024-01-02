@@ -25,22 +25,34 @@ use App\Http\Controllers\SliderController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 Route::get('/',[WebsiteController::class,'index'])->name('home');
 Route::get('/contact-us',[WebsiteController::class,'contact'])->name('contact-us');
+Route::get('/about',[WebsiteController::class,'about'])->name('about');
+Route::get('/privacy',[WebsiteController::class,'privacy'])->name('privacy');
+Route::get('/refund',[WebsiteController::class,'refund'])->name('refund');
+Route::get('/delivery',[WebsiteController::class,'delivery'])->name('delivery');
 Route::post('/contact-message',[WebsiteController::class,'message'])->name('contact.message');
 Route::get('/refer-earn',[WebsiteController::class,'referEarn'])->name('refer-earn');
 Route::get('/faq',[WebsiteController::class,'faq'])->name('faq');
 Route::post('/coupon-apply',[CouponController::class,'apply'])->name('coupon.apply');
 
-
-
 //Product on Home Page
 Route::get('/product/category/{id}/{name}',[WebsiteController::class,'productCategory'])->name('product.category');
 Route::get('/product/subcategory/{id}/{name}',[WebsiteController::class,'productSubcategory'])->name('product.subcategory');
 Route::get('/product-detail/{id}/{name}',[WebsiteController::class,'productDetail'])->name('product.detail');
+Route::get('/product-quick-view',[WebsiteController::class,'productQuickView'])->name('productQuickView');
 Route::post('/product-review/{id}',[WebsiteController::class,'productReview'])->name('product.review');
 Route::get('/search',[WebsiteController::class,'productSearch'])->name('product.search');
+
+//Cart Module
+Route::post('/cart-add/',[CartController::class,'cartAdd'])->name('cart.add');
+Route::get('/cart-show',[CartController::class,'cartShow'])->name('cart.show');
+Route::get('/cart-destroy',[CartController::class,'cartDestroy'])->name('cart.destroy');
+Route::get('/cart-delete/{rowId}',[CartController::class,'cartDelete'])->name('cart.delete');
+Route::post('/cart-update/{rowId}',[CartController::class,'cartUpdate'])->name('cart.update');
+//Checkout Module
+Route::get('/checkout',[CheckoutController::class,'index'])->name('checkout');
+Route::post('/order-place',[CheckoutController::class,'placeOrder'])->name('order-place')->middleware('managePage');
 
 //Customer Module
 Route::middleware('customer')->group(function (){
@@ -63,22 +75,9 @@ Route::get('/forgot-password',[CustomerController::class,'forgotPassword'])->nam
 Route::post('/forgot-password',[CustomerController::class,'forgotEmailCheck'])->name('forgot-password');
 Route::post('/update-password/{id}',[CustomerController::class,'recoveryPassword'])->name('update-password');
 
-
-//Checkout Module
-Route::get('/checkout',[CheckoutController::class,'index'])->name('checkout');
-Route::post('/order-place',[CheckoutController::class,'placeOrder'])->name('order-place')->middleware('managePage');
-
-
-//Cart Module
-Route::post('/cart-add/{id}',[CartController::class,'cartAdd'])->name('cart.add');
-Route::get('/cart-show',[CartController::class,'cartShow'])->name('cart.show');
-Route::get('/cart-destroy',[CartController::class,'cartDestroy'])->name('cart.destroy');
-Route::get('/cart-delete/{rowId}',[CartController::class,'cartDelete'])->name('cart.delete');
-Route::post('/cart-update/{rowId}',[CartController::class,'cartUpdate'])->name('cart.update');
-
+//Admin Module
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {
     Route::get('/dashboard',[AdminController::class,'index'])->name('dashboard');
-
 //    Category Module
     Route::get('/category/manage',[CategoryController::class,'index'])->name('category.manage');
     Route::get('/category/create',[CategoryController::class,'create'])->name('category.create');
@@ -86,7 +85,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::get('/category/edit/{id}',[CategoryController::class,'edit'])->name('category.edit');
     Route::post('/category/update/{id}',[CategoryController::class,'update'])->name('category.update');
     Route::get('/category/delete/{id}',[CategoryController::class,'delete'])->name('category.delete');
-
     //    Sub Category Module
     Route::get('/sub-category/manage',[SubCategoryController::class,'index'])->name('sub-category.manage');
     Route::get('/sub-category/create',[SubCategoryController::class,'create'])->name('sub-category.create');
@@ -94,7 +92,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::get('/sub-category/edit/{id}',[SubCategoryController::class,'edit'])->name('sub-category.edit');
     Route::post('/sub-category/update/{id}',[SubCategoryController::class,'update'])->name('sub-category.update');
     Route::get('/sub-category/delete/{id}',[SubCategoryController::class,'delete'])->name('sub-category.delete');
-
     //    Brand Module
     Route::get('/brand/manage',[BrandController::class,'index'])->name('brand.manage');
     Route::get('/brand/create',[BrandController::class,'create'])->name('brand.create');
@@ -102,7 +99,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::get('/brand/edit/{id}',[BrandController::class,'edit'])->name('brand.edit');
     Route::post('/brand/update/{id}',[BrandController::class,'update'])->name('brand.update');
     Route::get('/brand/delete/{id}',[BrandController::class,'delete'])->name('brand.delete');
-
     //    Unit Module
     Route::get('/unit/manage',[UnitController::class,'index'])->name('unit.manage');
     Route::get('/unit/create',[UnitController::class,'create'])->name('unit.create');
@@ -110,7 +106,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::get('/unit/edit/{id}',[UnitController::class,'edit'])->name('unit.edit');
     Route::post('/unit/update/{id}',[UnitController::class,'update'])->name('unit.update');
     Route::get('/unit/delete/{id}',[UnitController::class,'delete'])->name('unit.delete');
-
     //Courier Module
     Route::get('/courier/create',[CourierController::class,'create'])->name('courier.create');
     Route::post('/courier/store',[CourierController::class,'store'])->name('courier.store');
@@ -118,7 +113,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::get('/courier/edit/{id}',[CourierController::class,'edit'])->name('courier.edit');
     Route::post('/courier/update/{id}',[CourierController::class,'update'])->name('courier.update');
     Route::get('/courier/delete/{id}',[CourierController::class,'delete'])->name('courier.delete');
-
 //    Coupon Module
     Route::get('/coupon/create',[CouponController::class,'create'])->name('coupon.create');
     Route::post('/coupon/store',[CouponController::class,'store'])->name('coupon.store');
@@ -126,10 +120,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::get('/coupon/edit/{id}',[CouponController::class,'edit'])->name('coupon.edit');
     Route::post('/coupon/update/{id}',[CouponController::class,'update'])->name('coupon.update');
     Route::get('/coupon/delete/{id}',[CouponController::class,'delete'])->name('coupon.delete');
-
-
+//    Product Module -- Resource Controller
     Route::resource('product',ProductController::class);
-
 //    Order Module
     Route::get('/admin/order',[AdminController::class,'allOrder'])->name('order.manage');
     Route::get('admin/order-detail/{id}',[AdminController::class,'orderDetail'])->name('admin.order-detail');
@@ -140,7 +132,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::get('admin/order-delete/{id}',[AdminController::class,'orderDelete'])->name('admin.order-delete');
     Route::get('admin/order-search',[AdminController::class,'orderSearch'])->name('order.search');
     Route::get('admin/order-search',[AdminController::class,'orderSearchResult'])->name('order.search');
-
 //    Slider Module
     Route::get('/slider/manage',[SliderController::class,'index'])->name('slider.manage');
     Route::get('/slider/create',[SliderController::class,'create'])->name('slider.create');
@@ -148,26 +139,19 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::get('/slider/edit/{id}',[SliderController::class,'edit'])->name('slider.edit');
     Route::post('/slider/update/{id}',[SliderController::class,'update'])->name('slider.update');
     Route::get('/slider/delete/{id}',[SliderController::class,'delete'])->name('slider.delete');
-
-
     //User Module
     Route::get('/user/delete/{id}',[AdminController::class,'userDelete'])->name('user.delete');
-
     Route::get('/get-sub-category-by-category', [ProductController::class, 'getCategoryBySubCategory'])->name('get-sub-category-by-category');
 });
-
 
 // SSLCOMMERZ Start
 Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout']);
 Route::get('/example2', [SslCommerzPaymentController::class, 'exampleHostedCheckout']);
-
 Route::post('/pay', [SslCommerzPaymentController::class, 'index']);
 Route::post('/pay-via-ajax', [SslCommerzPaymentController::class, 'payViaAjax']);
-
 Route::post('/success', [SslCommerzPaymentController::class, 'success']);
 Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
 Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
-
 Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
 //SSLCOMMERZ END
 

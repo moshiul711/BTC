@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Workstation Communication Limited</title>
     <style>
         .invoice-box {
             max-width: 100%;
@@ -110,11 +110,11 @@
                 <table>
                     <tr>
                         <td class="title">
-                            <img src="https://www.bangladeshtechcom.com/assets/uploads/logos/header_logo-BTC.png" style="width: 100%; max-width: 300px"/>
+                            <img src="http://localhost/bdTechCom/public/website/assets/images/logo1.png"/>
                         </td>
 
                         <td>
-                            <h4>Bangladesh Technology Company</h4>
+                            <h4>Workstation Communication Limited</h4>
                             House 02, Road 03 <br/>
                             Sector 13 Uttara Dhaka, Bangladesh<br/>
                             Call +8801977699801 +8801977699806<br/>

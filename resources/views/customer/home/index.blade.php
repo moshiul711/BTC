@@ -121,7 +121,7 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table id="data-table" class="table text-nowrap mb-0 table-bordered">
+                        <table class="table table-bordered text-nowrap border-bottom" id="basic-datatable">
                             <thead class="table-head">
                             <tr>
                                 <th class="wd-15p border-bottom-0">##</th>

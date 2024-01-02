@@ -12,18 +12,7 @@ class Delivery extends Model
     private static $delivery;
     public static function storeDeliveryInfo($request)
     {
-        $query = http_build_query([
-            'apikey'=>'83f4751692fdf3f6',
-            'secretkey'=>'33b1e9a8',
-            'callerID'=>'wsc',
-            'toUser'=>'01893791757',
-            'messageContent'=>'MESSAGE'
-        ]);
 
-        $c = curl_init();
-        curl_setopt($c , CURLOPT_URL , 'https://sms.dinisoftbd.com:7790/sendtext?' . $query);
-        curl_exec($c);
-        curl_close($c);
         self::$delivery = new Delivery();
         self::$delivery->customer_id = Session::get('customer_id');
         self::$delivery->first_name = $request->first_name;

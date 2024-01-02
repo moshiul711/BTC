@@ -1,6 +1,48 @@
 @import url(https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;display=swap);
 
 @charset "UTF-8";
+
+
+.colored-toast.swal2-icon-success {
+    background-color: #a5dc86 !important;
+}
+.colored-toast.swal2-icon-error {
+    background-color: #f27474 !important;
+}
+.colored-toast.swal2-icon-warning {
+    background-color: #f8bb86 !important;
+}
+.colored-toast.swal2-icon-info {
+    background-color: #3fc3ee !important;
+}
+.colored-toast.swal2-icon-question {
+    background-color: #87adbd !important;
+}
+.colored-toast .swal2-title {
+    color: white;
+}
+.colored-toast .swal2-close {
+    color: white;
+}
+.colored-toast .swal2-html-container {
+    color: white;
+}
+[type=radio] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+/* IMAGE STYLES */
+[type=radio] + img {
+    cursor: pointer;
+}
+/* CHECKED STYLES */
+[type=radio]:checked + img {
+    outline: 2px solid #008069;
+}
+
+
 :root {
     --primary-bg-color: #8fbd56;
     --primary-bg-hover: #82c035;
@@ -60947,7 +60989,7 @@ div.dtr-bs-modal table.table tr:first-child td {
     margin-right: 2px;
     transform-origin: center;
     float: right;
-    padding-top: 10px;
+    padding-top: 4px;
     transition: transform .3s ease
 }
 

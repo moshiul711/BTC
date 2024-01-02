@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('model');
             $table->string('code');
+            $table->integer('cost');
             $table->integer('offer_price');
             $table->integer('regular_price');
             $table->string('service');

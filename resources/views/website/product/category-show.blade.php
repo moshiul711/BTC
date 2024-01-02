@@ -37,7 +37,7 @@
                                 <div class="product-grid6 card-body">
                                     <div class="product-image6">
                                         <div class="">
-                                            <img class="pop img-fluid" src="{{ asset($product->image) }}"
+                                            <img data-bs-target="#quick-view" data-bs-toggle="modal" class="quick-view img-fluid" src="{{ asset($product->image) }}" id="{{ $product->id }}"
                                                  style="height: 150px;cursor: pointer" alt="{{ $product->name }}">
                                             <div class="top-left"
                                                  style="position: absolute;top: 2px;left: 2px;">

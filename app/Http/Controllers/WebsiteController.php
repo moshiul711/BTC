@@ -33,6 +33,25 @@ class WebsiteController extends Controller
         );
     }
 
+    public function about()
+    {
+        return view('website.home.about');
+    }
+
+    public function privacy()
+    {
+        return view('website.home.privacy');
+    }
+    public function refund()
+    {
+        return view('website.home.refund');
+    }
+    public function delivery()
+    {
+        return view('website.home.delivery');
+    }
+
+
     public function productDetail($id,$name)
     {
         $this->product = Product::where(['id' =>$id,'name' => $name])->first();
@@ -51,6 +70,13 @@ class WebsiteController extends Controller
                 'relatedProducts' => $this->relatedProducts
             ]);
         }
+    }
+
+    public function productQuickView()
+    {
+//        return response()->json(Product::where('id',$_GET['id'])->first());
+        $this->product = Product::where('id',$_GET['id'])->first();
+        return view('website.product.quick-view',['product'=>$this->product]);
     }
 
     public function productReview(Request $request, $id)

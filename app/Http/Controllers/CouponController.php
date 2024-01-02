@@ -52,7 +52,7 @@ class CouponController extends Controller
         {
             if ($this->coupon->order_amount >= Cart::subTotal())
             {
-                return response()->json(['error'=>'This Coupon Is Not Valid For This Order Amount']);
+                return response()->json(['error'=>'The coupn is not valid for this order total']);
             }
             elseif (Session::get('customer_id'))
             {
@@ -72,7 +72,7 @@ class CouponController extends Controller
 
         else
         {
-            return response()->json(['error'=>'Coupon You Have Applied Not Found']);
+            return response()->json(['error'=>'Invalid Coupon']);
         }
 
     }

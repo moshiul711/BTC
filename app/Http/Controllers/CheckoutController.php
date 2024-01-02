@@ -41,7 +41,7 @@ class CheckoutController extends Controller
 
 // Caller ID, user, and message content
         $callerID = 'wsc';
-        $toUser = '01977699806';
+        $toUser = $request->phone;
         $messageContent = 'Thank you for placing an order with us. You will receive a phone call to verify your order. We appreciate your co-operation - Workstation Communication';
 
 // Make a GET request to the API

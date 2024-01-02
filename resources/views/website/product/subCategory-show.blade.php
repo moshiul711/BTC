@@ -46,14 +46,13 @@
                                     <div class="product-grid6 card-body">
                                         <div class="product-image6">
                                             <div class="">
-                                                <img class="pop img-fluid" src="{{ asset($product->image) }}"
-                                                     style="height: 150px;cursor: pointer" alt="img">
+                                                <img data-bs-target="#quick-view" data-bs-toggle="modal" class="quick-view img-fluid" src="{{ asset($product->image) }}" id="{{ $product->id }}"
+                                                     style="height: 150px;cursor: pointer" alt="{{ $product->name }}">
                                                 <div class="top-left"
                                                      style="position: absolute;top: 2px;left: 2px;">
-                                                    <img src="{{ asset('/') }}website/assets/images/logo1.png" alt="{{ $product->name }}" style="height:32px; width: 32px; border: 2px solid lightskyblue; border-radius: 50%">
+                                                    <img src="{{ asset('/') }}website/assets/images/logo1.png" alt="" style="height:32px; width: 32px; border: 2px solid lightskyblue; border-radius: 50%">
                                                 </div>
                                             </div>
-                                        </div>
                                         <div class="product-content w-100 p-3">
                                             <div class="mb-2">
                                                 <h4 class="mb-1 text-normal">
